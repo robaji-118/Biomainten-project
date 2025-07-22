@@ -1,0 +1,125 @@
+@font-face {
+  font-family: "RethinkSans";
+  src: url("../../css/font/RethinkSans-VariableFont_wght.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "RethinkSans";
+}
+
+.container {
+  max-width: 1280;
+  padding-left: 16px auto;
+  width: 100%;
+}
+
+.features__section {
+  margin: 5rem;
+}
+.features__section--text {
+  display: grid;
+  text-align: center;
+  grid-template-rows: 2 1fr;
+  gap: 56;
+}
+
+.hero__section {
+  background-image: url(../../img/hero.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 820px;
+  min-width: 1440px;
+  margin-top: -80px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.hero__section--heading {
+  font-size: 88px;
+  line-height: 88px;
+  font-weight: 600;
+}
+.hero__section__left {
+  max-width: 780px;
+}
+.hero__section__content {
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  padding: 0 15px;
+}
+
+header {
+  width: 100%;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  padding: 16px;
+  gap: 20px;
+}
+
+.navbar__left-group {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.navbar__logo a {
+  text-decoration: none;
+  color: #333;
+  width: 144px;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+.navbar__logo a img {
+  height: 100%;
+  width: 100%;
+  margin-right: 8px;
+}
+
+.navbar__links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+.navbar__links .navbar__list-item a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+  line-height: 20px;
+}
+.navbar__links .navbar__list-item a:hover {
+  color: #007bff;
+}
+
+.navbar__button {
+  background-color: #763CEA;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.navbar__button:hover {
+  background-color: rgb(88.875, 23.625, 219.375);
+}
+
+/*# sourceMappingURL=style.css.map */

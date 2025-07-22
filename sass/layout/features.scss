@@ -1,0 +1,13 @@
+.features__section{
+
+    margin: 5rem;
+
+    &--text{
+        display: grid;
+        text-align: center;
+        grid-template-rows: 2 1fr;
+        gap: 56;
+    }
+
+
+}

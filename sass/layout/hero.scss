@@ -1,0 +1,64 @@
+.hero__section {
+    background-image: url(../../img/hero.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 820px; // Minimum tinggi untuk section
+    min-width: 1440px ;
+    margin-top: -80px; // Mungkin untuk mengkompensasi navbar fixed
+
+
+
+    display: flex; 
+    justify-content: start;
+    align-items: center; 
+
+    &--heading{
+        font-size: 88px;
+        // letter-spacing: -2%;
+        line-height: 88px;
+        font-weight: 600;
+    }
+
+    &__left{
+        max-width: 780px;
+    }
+
+    &__content {
+        gap: 20px;
+        display: flex;
+        flex-direction: row; 
+        padding: 0 15px; 
+    }
+
+    // Jika Anda ingin dua kolom (kiri teks, kanan gambar/visual) di dalam hero__section:
+    // Maka hero__section harus memiliki display: flex;
+    // dan __content menjadi salah satu item di dalamnya.
+    // __visual menjadi item lainnya.
+    // Contoh:
+    // .hero__section {
+    //     display: flex;
+    //     align-items: center; // Untuk memastikan kedua kolom di tengah secara vertikal
+    //     justify-content: space-around; // Atau space-between, center, dll.
+    //     padding: 20px; // Padding untuk hero section secara keseluruhan
+    //
+    //     &__content {
+    //         // Properti untuk kolom teks
+    //         flex: 1; // Agar mengisi ruang
+    //         max-width: 50%; // Atau sesuaikan
+    //         padding-right: 30px; // Jarak antara teks dan visual
+    //  
+    //         // Jika konten di dalamnya (judul, desk, tombol) mau di center:
+    //         display: flex;
+    //         flex-direction: column;
+    //         justify-content: center; // Center vertikal elemen dalam kolom
+    //         align-items: flex-start; // Biasanya teks di kiri
+    //     }
+    //
+    //     &__visual {
+    //         flex: 1;
+    //         max-width: 50%;
+    //         // Styling untuk visual di sini
+    //     }
+    // }
+}
