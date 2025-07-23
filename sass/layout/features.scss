@@ -1,13 +1,197 @@
-.features__section{
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px;
+  gap: 56px;
+  //   margin-top: ;
 
-    margin: 5rem;
+  //   position: absolute ;
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 24px;
 
-    &--text{
-        display: grid;
-        text-align: center;
-        grid-template-rows: 2 1fr;
-        gap: 56;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+
+    &--subtitle {
+      /* Badge [1.0] */
+
+      /* Auto layout */
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4px 8px;
+      gap: 2px;
+
+      width: 396px;
+      height: 28px;
+
+      background: #efebff;
+      border-radius: 999px;
+
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+
+      p {
+        width: 380px;
+        height: 20px;
+
+        font-family: "RethinkSans";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+
+        letter-spacing: -0.03em;
+        font-feature-settings: "calt" off, "liga" off;
+
+        color: #763cea;
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+      }
     }
 
+    &--description {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0px;
+      gap: 16px;
 
+      width: 920px;
+      height: 160px;
+
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+
+      h2 {
+        // width: 920px;
+        height: 80px;
+
+        font-family: "RethinkSans";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 72px;
+        line-height: 80px;
+
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        letter-spacing: -0.04em;
+        font-feature-settings: "calt" off, "liga" off;
+
+        color: #000000;
+
+        flex: flex;
+        order: 0;
+        align-self: center;
+        flex-grow: 0;
+      }
+
+      p {
+        width: 920px;
+        height: 64px;
+
+        font-family: "Manrope";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 32px;
+        /* or 160% */
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: -0.03em;
+        font-feature-settings: "calt" off, "liga" off;
+
+        color: #000000;
+
+        flex: none;
+        order: 1;
+        align-self: stretch;
+        flex-grow: 0;
+      }
+    }
+  }
+
+  &__our {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    gap: 32px;
+
+    &__benefits {
+      /* Frame 166 */
+
+      /* Auto layout */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0px;
+      gap: 32px;
+
+      width: 296px;
+      height: 220px;
+
+      /* Inside auto layout */
+      flex: none;
+      order: 0;
+      flex-grow: 1;
+
+      h3 {
+        /* Lab tracking */
+
+
+        /* Title/H5 Title */
+        font-family: "RethinkSans";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 32px;
+        /* identical to box height, or 133% */
+        align-items: center;
+        text-align: center;
+        letter-spacing: -0.04em;
+        font-feature-settings: "calt" off, "liga" off;
+
+        color: #171938;
+
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        align-self: stretch;
+        flex-grow: 0;
+      }
+
+      p{
+        font-size: 18px;
+        font-weight: 400px;
+        font-family: "RethinkSans";
+      }
+
+      &__icon {
+        // width: 64px;
+        height: 64px;
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+      }
+    }
+  }
 }

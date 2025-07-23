@@ -1,140 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biomainten - Body Maintenance & Health Optimization</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Biomainten - Body Maintenance & Health Optimization</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-
-<body>
-  <header>
+  <body>
     <div class="container">
-      <nav class="navbar">
-        <div class="navbar__left-group">
-          <div class="navbar__logo">
-            <a href="#">
-              <img src="img/logo.png" class="navbar__img" alt="Biomainten Logo">
-            </a>
+      <header>
+        <nav class="navbar">
+          <div class="navbar__left-group">
+            <div class="navbar__logo">
+              <a href="#">
+                <img
+                  src="img/logo.png"
+                  class="navbar__img"
+                  alt="Biomainten Logo"
+                />
+              </a>
+            </div>
+            <ul class="navbar__links">
+              <li class="navbar__list-item">
+                <a href="#">Why We're Building This</a>
+              </li>
+              <li class="navbar__list-item">
+                <a href="#">What You'll Get</a>
+              </li>
+            </ul>
           </div>
-          <ul class="navbar__links">
-            <li class="navbar__list-item"><a href="#">Why We're Building This</a></li>
-            <li class="navbar__list-item"><a href="#">What You'll Get</a></li>
-          </ul>
-        </div>
 
-        <div class="navbar__actions">
-          <button class="navbar__button">Join Waitlist</button>
-        </div>
-      </nav>
+          <div class="navbar__actions">
+            <button class="navbar__button">Join Waitlist</button>
+          </div>
+        </nav>
+      </header>
     </div>
-  </header>
-
-  <main>
-    <section class="hero__section">
-      <div class="container hero__section__content">
-        <div class="hero__section__left">
-          <h1 class="hero__section--heading">Your body deserves maintenance, not just emergency repairs.</h1>
-          <p>
-            Join the waitlist to track what's happening inside your body and
-            take proactive control of your health.
-          </p>
-          <button class="notify-button">Notify Me When It Launches</button>
-        </div>
-        <!-- <div class="hero__section__right">
-          <div class="health-dashboard-overlay">
-            <div class="health-score">
-              <p>Health Score</p>
-              <div class="score-circle">
-                <span class="score-number">82</span>
-                <span class="score-text">Good</span>
-              </div>
-              <p class="on-track">You're on track, keep it up!</p>
-            </div>
-            <div class="rheumatoid-factor">
-              <div class="rf-header">
-                <p>Rheumatoid Factor (RF)</p>
-                <a href="#" class="view-details">View Details</a>
-              </div>
-              <div class="rf-value">
-                <span class="value-number">&lt;10</span>
-                <span class="value-unit">IU/mL</span>
-                <span class="value-range">In range</span>
-              </div>
-              <p class="rf-description">
-                Checks for an indication of autoimmune disorders like
-                rheumatoid arthritis, rheumatoid vasculitis, or Sjogren's.
-              </p>
-              <div class="range-indicator">
-                <span class="legend-box in-range"></span><span class="legend-text">In range</span>
-                <span class="legend-box above-range"></span><span class="legend-text">Above range</span>
-                <span class="legend-box below-range"></span><span class="legend-text">Below range</span>
-              </div>
-            </div>
-          </div>
-        </div> -->
-      </div>
-    </section>
-
-    <!-- <section id="features" class="features__section">
-        <div class="container features__section--text">
-          <p class="subtitle">
-            No more guessing. No more waiting until something goes wrong.
-          </p>
-          <h2>Why we're building this</h2>
-          <p class="description">
-            We track everything – our steps, our cars, our packages. But when it
-            comes to our health, we're flying blind. That's about to change.
-            We're building a platform that makes body maintenance simple and
-            routine.
-          </p>
-
-          <div class="features-grid">
-            <div class="feature-item">
-              <img
-                src="path/to/icon-lab-tracking.svg"
-                alt="Lab Tracking Icon"
-              />
-              <h3>Lab tracking</h3>
-              <p>
-                Test your labs regularly and understand the results (no medical
-                jargon)
+    <main>
+      <section class="hero__section container">
+        <div class="hero__section--gradient__light"></div>
+        <div class="hero__section__content">
+          <div class="hero__section__left">
+            <div class="hero__section__left--item">
+              <h1 class="hero__section__left--heading">
+                Your body deserves maintenance, not just emergency repairs.
+              </h1>
+              <p class="hero__section__left--heading-paragraph">
+                Join the waitlist to track what's happening inside your body and
+                take proactive control of your health.
               </p>
             </div>
-            <div class="feature-item">
-              <img
-                src=""
-                alt="Early Detection Icon"
-              />
-              <h3>Early detection</h3>
-              <p>Detect imbalances before they become illness</p>
+            <button class="hero__section__left--notify-button">
+              <span class="hero__section__left--notify-button--text__button"
+                >Notify Me When It Launches</span
+              >
+            </button>
+          </div>
+
+          <!-- <div class="hero__section__right">
+            <div class="health-dashboard-overlay">
+              <div class="health-score">
+                <p>Health Score</p>
+                <div class="score-circle">
+                  <span class="score-number">82</span>
+                  <span class="score-text">Good</span>
+                </div>
+                <p class="on-track">You're on track, keep it up!</p>
+              </div>
+              <div class="rheumatoid-factor">
+                <div class="rf-header">
+                  <p>Rheumatoid Factor (RF)</p>
+                  <a href="#" class="view-details">View Details</a>
+                </div>
+                <div class="rf-value">
+                  <span class="value-number">&lt;10</span>
+                  <span class="value-unit">IU/mL</span>
+                  <span class="value-range">In range</span>
+                </div>
+                <p class="rf-description">
+                  Checks for an indication of autoimmune disorders like
+                  rheumatoid arthritis, rheumatoid vasculitis, or Sjogren's.
+                </p>
+                <div class="range-indicator">
+                  <span class="legend-box in-range"></span
+                  ><span class="legend-text">In range</span>
+                  <span class="legend-box above-range"></span
+                  ><span class="legend-text">Above range</span>
+                  <span class="legend-box below-range"></span
+                  ><span class="legend-text">Below range</span>
+                </div>
+              </div>
             </div>
-            <div class="feature-item">
-              <img
-                src=""
-                alt="Personalized Insights Icon"
-              />
-              <h3>Personalized insights</h3>
-              <p>Get personalized insights tailored to your body's data</p>
-            </div>
-            <div class="feature-item">
-              <img
-                src=""
-                alt="Daily Prevention Icon"
-              />
-              <h3>Daily prevention</h3>
-              <p>Make prevention part of your daily habits—not a last resort</p>
-            </div>
+          </div> -->
+        </div>
+      </section>
+
+      <section id="features" class="features container">
+        <div class="features__text">
+          <div class="features__text--subtitle">
+            <p>No more guessing. No more waiting until something goes wrong.</p>
+          </div>
+          <div class="features__text--description">
+            <h2 class="features__text--description-item1">
+              Why we're building this
+            </h2>
+            <p class="">
+              We track everything – our steps, our cars, our packages. But when
+              it comes to our health, we're flying blind. That's about to
+              change. We're building a platform that makes body maintenance
+              simple and routine.
+            </p>
           </div>
         </div>
-      </section> -->
 
-      <!-- <section id="about" class="about__section">
-        <div class="container">
-          <div class="left-column">
+        <div class="features__our">
+          <div class="features__our__benefits">
+            <img
+              src="css/svg/Frame.svg"
+              class="features__our__benefits__icon"
+              alt=""
+            />
+            <h3>Lab tracking</h3>
+            <p>
+              Test your labs regularly and understand the results (no medical
+              jargon)
+            </p>
+          </div>
+          <div class="features__our__benefits">
+            <img
+              src="css/svg/Frame (1).svg"
+              class="features__our__benefits__icon"
+              alt=""
+            />
+            <h3>Early detection</h3>
+            <p>Detect imbalances before they become illness</p>
+          </div>
+          <div class="features__our__benefits">
+            <img
+              src="css/svg/Frame (2).svg"
+              class="features__our__benefits__icon"
+              alt=""
+            />
+            <h3>Personalized insights</h3>
+            <p>Get personalized insights tailored to your body's data</p>
+          </div>
+          <div class="features__our__benefits">
+            <img
+              src="css/svg/Frame (3).svg"
+              class="features__our__benefits__icon"
+              alt=""
+            />
+            <h3>Daily prevention</h3>
+            <p>Make prevention part of your daily habits—not a last resort</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="container about__section">
+          <div class="about__section__left-column">
             <h2>What you'll get when you join early</h2>
-            <ul class="benefit-list">
+            <ul class="about__section__left-column--benefit-list">
               <li>
                 <span class="checkmark">&#10003;</span> Yearly blood testing to
                 catch imbalances early
@@ -153,9 +179,8 @@
               </li>
             </ul>
           </div>
-          <div class="right-column benefit-image-container">
-            <img src="img/about.jpg" alt="about" />
-            <div class="health-overview-overlay">
+          <div class="about__section__right-column">
+            <!-- <div class="health-overview-overlay">
               <div class="blood-summary">
                 <div class="blood-header">
                   <p>Blood</p>
@@ -197,10 +222,10 @@
                   ><span class="legend-text">Below range: &lt;38.5</span>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
-        </div>
-      </section> -->
+      </section>
+      
 
       <!-- <section class="contact__section">
         <div class="container">
@@ -231,6 +256,5 @@
         <p>&copy;2025 Biomainten. All Rights Reserved</p>
       </div>
     </footer> -->
-</body>
-
+  </body>
 </html>

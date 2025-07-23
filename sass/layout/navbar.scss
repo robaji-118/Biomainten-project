@@ -1,85 +1,82 @@
 header {
-    width: 100%;
-    background-color: transparent;
-    // padding:0;
-    // margin-top: 10rem;
-    box-sizing: border-box;
+
+  position: relative;
+  width: 100%;
 }
 
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; // Ini yang utama: mendorong item pertama ke kiri, item terakhir ke kanan
-    
-    max-width: 100%; 
-    // margin-left: 40px auto ; 
-    padding: 16px; 
-    // left: 80px auto;
-    gap: 20px; // Memberikan sedikit jarak default agar item tidak terlalu rapat jika ukuran menyempit
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+//   width: 1440px;
+  gap: 649px;
+  position: absolute;
+  z-index: 2;
 }
 
 .navbar__left-group {
-    display: flex; // Mengaktifkan flexbox di dalam grup ini juga
-    align-items: center;
-    gap: 80px; // Jarak antara logo dan link navigasi, sesuaikan
+  display: flex; // Mengaktifkan flexbox di dalam grup ini juga
+  align-items: center;
+  gap: 80px; // Jarak antara logo dan link navigasi, sesuaikan
 }
 
 .navbar__logo {
-    a {
-        text-decoration: none;
-        color: #333;
-        width: 144px;
-        height: auto;
-        display: flex;
-        align-items: center;
-        img {
-            height: 100%; // Sesuaikan tinggi logo Anda
-            width: 100%;
-            margin-right: 8px;
-        }
+  a {
+    text-decoration: none;
+    color: #333;
+    width: 144px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    img {
+      height: 100%; // Sesuaikan tinggi logo Anda
+      width: 100%;
+      margin-right: 8px;
     }
+  }
 }
 
 .navbar__links {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 30px; // Jarak antar link navigasi, sesuaikan
-    
-    .navbar__list-item {
-        a {
-            text-decoration:  none;
-            color: #555;
-            font-weight: 600 ;
-            font-size: 14px;
-            padding: 5px 10px;
-            transition: color 0.3s ease;
-            line-height: 20px;
-            // letter-spacing: -3px;
-            &:hover {
-                color: #007bff;
-            }
-        }
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px; // Jarak antar link navigasi, sesuaikan
+
+  .navbar__list-item {
+    a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 600;
+      font-size: 14px;
+      // padding: 5px 10px;
+      transition: color 0.3s ease;
+      line-height: 20px;
+      // letter-spacing: -3px;
+      &:hover {
+        color: #007bff;
+      }
     }
+  }
 }
 
 .navbar__actions {
-    // Tidak perlu style khusus di sini, karena sudah didorong ke kanan oleh justify-content: space-between;
+  // Tidak perlu style khusus di sini, karena sudah didorong ke kanan oleh justify-content: space-between;
 }
 
 .navbar__button {
-    background-color: $color-primary;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: $color-primary;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 
-    &:hover {
-        background-color: darken($color-primary, 10%);
-    }
+  &:hover {
+    background-color: darken($color-primary, 10%);
+  }
 }

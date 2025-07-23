@@ -1,0 +1,32 @@
+
+/* xxl : 1440px <<
+1369
+1280
+1200px <<<
+1064px
+992px <<<
+768px <<<
+640px
+576px <<<
+480px <<<
+375px << screen mobile paling kecil
+350px 
+320px << 
+
+fluidSize << rubah px ke vw dengan 1440px
+px/1440 * 100
+
+toRem << px / 16 * 100
+
+
+.container{
+    width: 100%;
+    max-width:unset;
+    padding: fluidSize(80);
+    @media screen 1440 {
+        padding: 0 toRem(80);
+    }
+    @media screen 1200 { 
+            
+    }
+} */
