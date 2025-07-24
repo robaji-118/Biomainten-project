@@ -1,7 +1,13 @@
+// layout/navbar.scss
 header {
+  // Hapus position: relative; dari sini jika tidak ada child absolut di HEADER itu sendiri.
+  // Jika Anda ingin header punya padding vertikal, set di sini:
+  padding: 24px 0; // Contoh padding atas/bawah untuk header
+  width: 100%; // Pastikan header mengambil 100% lebar dari parentnya (.container)
+  box-sizing: border-box; // Penting untuk padding agar tidak menambah lebar
+  position: absolute;
 
-  position: relative;
-  width: 100%;
+  z-index: 10;
 }
 
 .navbar {
@@ -9,30 +15,35 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-//   width: 1440px;
-  gap: 649px;
-  position: absolute;
-  z-index: 2;
+  padding: 0;
+
+  // Padding horizontal sudah ditangani oleh .container di HTML
+  // Padding vertikal navbar sudah ditangani oleh padding di header
+
+  // Hapus semua ini:
+  // width: 1440px;
+  // gap: 649px;
+  // position: absolute;
+  // z-index: 2;
 }
 
 .navbar__left-group {
-  display: flex; // Mengaktifkan flexbox di dalam grup ini juga
+  display: flex;
   align-items: center;
-  gap: 80px; // Jarak antara logo dan link navigasi, sesuaikan
+  gap: 80px; // Jarak antara logo dan link navigasi, sesuai desain gambar Anda
 }
 
 .navbar__logo {
   a {
     text-decoration: none;
     color: #333;
-    width: 144px;
+    width: 144px; // Lebar logo sesuai gambar
     height: auto;
     display: flex;
     align-items: center;
     img {
-      height: 100%; // Sesuaikan tinggi logo Anda
-      width: 100%;
-      margin-right: 8px;
+      max-width: 100%; // Pastikan logo responsif
+      height: auto;
     }
   }
 }
@@ -42,33 +53,23 @@ header {
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 30px; // Jarak antar link navigasi, sesuaikan
+  gap: 30px; // Jarak antar link navigasi
+}
 
-  .navbar__list-item {
-    a {
-      text-decoration: none;
-      color: #555;
-      font-weight: 600;
-      font-size: 14px;
-      // padding: 5px 10px;
-      transition: color 0.3s ease;
-      line-height: 20px;
-      // letter-spacing: -3px;
-      &:hover {
-        color: #007bff;
-      }
-    }
+.navbar__list-item {
+  a {
+    list-style: none;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000000;
   }
 }
 
-.navbar__actions {
-  // Tidak perlu style khusus di sini, karena sudah didorong ke kanan oleh justify-content: space-between;
-}
-
 .navbar__button {
-  background-color: $color-primary;
+  background-color: #763cea; // Contoh warna primary dari gambar
   color: white;
-  padding: 12px;
+  padding: 12px 24px; // Sesuaikan padding tombol
   border: none;
   border-radius: 10px;
   font-size: 14px;
@@ -77,6 +78,6 @@ header {
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: darken($color-primary, 10%);
+    background-color: darken(#763cea, 10%);
   }
 }

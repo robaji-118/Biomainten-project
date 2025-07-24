@@ -1,192 +1,204 @@
+// layout/hero.scss
+
+@function toRem($px) {
+  @return calc($px / 16) * 1rem; // Asumsi 16px = 1rem
+}
+
+@function fluidSize($px) {
+  $base-viewport-width: 1440; // Ukuran layar desain dasar Anda (misal Figma/XD)
+  @return calc((#{$px} / $base-viewport-width) * 100vw);
+}
+
 .hero__section {
-    background-image: url(../../img/hero.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 820px;
-    width: 100% ;
+  background-image: url(../../img/hero.png); // Gambar latar belakang full-width
+  background-size: cover; // Memastikan gambar menutupi seluruh area
+  background-position: center; // Memusatkan gambar latar belakang
+  background-repeat: no-repeat; // Mencegah pengulangan gambar
 
-    // position: relative;
-    // left: 1px;
-    // top: 0px;
+  height: 820px; // Tinggi keseluruhan hero section sesuai desain
+  width: 100%; // Memastikan lebar penuh
 
-    /* Rectangle 48 */
+  position: relative; // PENTING: Untuk positioning anak absolut (seperti gradient overlay)
 
-    .hero__section--gradient__light {
-        /* Rectangle 48 */
-        position: absolute;
-        width: 1065px;
-        height: 821px;
-        left: 0;
+  display: flex; // Aktifkan Flexbox
+  // Tambahkan padding-top di sini jika navbar overlay (position: absolute/fixed)
+  // padding-top: 100px; // Contoh: Sesuaikan dengan tinggi navbar + ruang
 
-        background: linear-gradient(90deg,
-        #ffffff 44.71%,
-        rgba(255, 255, 255, 0) 94.15%);
-    }
+  .hero__section--gradient__light {
+    position: absolute; // Posisikan secara absolut relatif terhadap .hero__section
+    width: 1065px; // Gunakan fluidSize jika ingin responsif
+    height: 821px; // Tinggi yang sama dengan hero section
+    left: 0; // Mulai dari tepi kiri
 
-    &__left {
+    background: linear-gradient(
+      90deg,
+      #ffffff 44.71%,
+      rgba(255, 255, 255, 0) 94.15%
+    );
+    z-index: 1; // Pastikan di atas gambar latar belakang tapi di bawah teks/dashboard
+  }
+
+  .hero__section__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; // Mendorong kolom kiri dan kanan ke ujung container
+    align-items: center; // Pusatkan konten secara vertikal di dalam hero section
+    // padding: 0 auto; // <--- Ini salah sintaks, padding hanya menerima 1-4 nilai, 'auto' bukan nilai padding
+    // Jika Anda ingin padding horizontal, pakai padding: 0 Npx; atau terapkan pada .container di HTML
+    height: 100%; // Mengambil tinggi penuh dari .hero__section (penting!)
+    width: 100%;
+    // width: 556px; // <--- Hapus atau sesuaikan ini jika ini maksudnya lebar content keseluruhan,
+    // karena .container di HTML seharusnya mengatur lebar maksimal.
+    position: relative;
+    z-index: 2;
+
+    .hero__section__content__left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; // Pusatkan konten di kolom kiri secara vertikal
+      align-items: flex-start; // Untuk menjaga teks di kiri
+      padding: 0;
+      gap: 48px;
+      // margin: 0 auto; // <--- Hapus ini jika parentnya flex, gunakan width atau flex-basis
+      width: 780px; // Lebar tetap untuk kolom kiri
+      height: 556px; // Pastikan ini cukup tinggi untuk kontennya
+      // Hapus duplikasi width jika ada
+
+      .hero__section__content__left--item {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        padding: 0px;
-        gap: 48px;
+        padding: 0;
+        gap: 32px;
 
-        position: absolute;
-        // left: calc(50% - 780px / 2 - 250px);
-        // top: 155px;
-        height: 820px;
+        width: 100%;
+
+        .hero__section__content__left--item-heading {
+          width: 100%; // Mengisi lebar parent (780px)
+          height: auto; // Biarkan tinggi ditentukan oleh kontennya, bukan fixed
+          // height: 352px; // <--- Hapus ini, biarkan konten mengatur tinggi
+          font-family: "RethinkSans";
+          font-weight: 600;
+          font-size: 88px;
+          line-height: 88px;
+          letter-spacing: -0.02em;
+          color: #171938;
+        }
+
+        .hero__section__content__left--item-heading-paragraph {
+          width: fluidSize(521); // Lebih baik pakai fluidSize untuk responsif
+          font-family: "RethinkSans";
+          font-weight: 400;
+          font-size: fluidSize(20);
+          line-height: fluidSize(30);
+          letter-spacing: -0.03em;
+          color: #000000;
+        }
+      }
+
+      .hero__section__content__left--notify-button {
+        display: flex;
+        flex-direction: row;
         justify-content: center;
+        align-items: center;
+        padding: toRem(20);
+        gap: toRem(4);
+        border: none;
 
-        &--item {
-           
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 0px;
-            gap: 32px;
+        width: toRem(241);
+        height: toRem(64);
 
-            width: 780px;
-            height: 444px;
+        background: #763cea;
+        border-radius: toRem(12);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
 
-            /* Inside auto layout */
-            flex: none;
-            order: 0;
-            align-self: stretch;
-            flex-grow: 0;
+        &:hover {
+          background-color: darken(#763cea, 10%);
         }
 
-        &--heading {
-            /* Your body deserves maintenance, not just emergency repairs. */
-
-            width: 780px;
-            height: 352px;
-
-            font-family: "RethinkSans";
-            font-style: normal;
-            font-weight: 600;
-            font-size: 88px;
-            line-height: 88px;
-            /* or 100% */
-            display: flex;
-            align-items: center;
-            letter-spacing: -0.02em;
-            font-feature-settings: "calt" off, "liga" off;
-
-            color: #171938;
-
-            /* Inside auto layout */
-            flex: none;
-            order: 0;
-            align-self: stretch;
-            flex-grow: 0;
+        .hero__section__content__left--notify-button--text__button {
+          font-family: "RethinkSans";
+          font-style: normal;
+          font-weight: 500;
+          font-size: toRem(16);
+          line-height: toRem(24);
+          letter-spacing: -0.03em;
+          color: #ffffff;
         }
+      }
+    }
 
-        &--heading-paragraph {
+    .hero__section__content__right {
+      position: relative;
+      display: flex;
+      justify-content: flex-end; // Dorong konten internal ke kanan
+      align-items: center; // Pusatkan konten internal secara vertikal
 
-            width: 521px;
-            height: 60px;
+      flex-grow: 1;
 
-            /* Paragraph/X Large */
-            font-family: "RethinkSans";
+      .hero__section__content__right__overlay1 {
+        /* Frame 193 */
+
+        box-sizing: border-box;
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 14.8879px;
+        gap: 29.78px;
+        isolation: isolate;
+
+        
+        width: 240.07px;
+        height: 219.79px;
+        
+
+        background: rgba(17, 8, 33, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0px 8.93px 9.86px rgba(10, 13, 20, 0.05),
+          inset -8px -13px 32px rgba(255, 255, 255, 1),
+          inset 8px 11px 32px rgba(255, 255, 255, 1);
+        border-radius: 16px;
+
+        .hero__section__content__right__overlay1__item {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0px;
+          gap: 13.03px;
+
+          height: 100%;
+          width: 100%;
+
+          p {
+            margin: 0 auto;
+            width: 86px;
+            height: 23px;
+
+            font-family: "Geist";
             font-style: normal;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 30px;
+            font-weight: 500;
+            font-size: 14.8879px;
+            line-height: 22px;
 
             display: flex;
             align-items: center;
             letter-spacing: -0.03em;
             font-feature-settings: "calt" off, "liga" off;
 
-            color: #000000;
+            color: #ffffff;
 
             flex: none;
-            order: 1;
+            order: 0;
             flex-grow: 0;
+          }
         }
-
-        &--notify-button {
-           
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            gap: 4px;
-            border: none;
-
-            width: 241px;
-            height: 64px;
-
-            background: #763cea;
-            border-radius: 12px;
-
-            /* Inside auto layout */
-            flex: none;
-            order: 1;
-            flex-grow: 0;
-
-            &--text__button {
-              
-                height: 24px;
-
-                /* Label/Medium */
-                font-family: 'RethinkSans';
-                font-style: normal;
-                font-weight: 500;
-                font-size: 16px;
-                line-height: 24px;
-                display: flex;
-                align-items: center;
-                letter-spacing: -0.03em;
-                font-feature-settings: 'calt' off, 'liga' off;
-
-                color: #FFFFFF;
-                flex: none;
-                order: 0;
-                flex-grow: 0;
-
-            }
-        }
-
-        &__content {
-            gap: 20px;
-            display: flex;
-            flex-direction: row;
-            padding: 0 15px;
-        }
+      }
     }
-
-        // Jika Anda ingin dua kolom (kiri teks, kanan gambar/visual) di dalam hero__section:
-        // Maka hero__section harus memiliki display: flex;
-        // dan __content menjadi salah satu item di dalamnya.
-        // __visual menjadi item lainnya.
-        // Contoh:
-        // .hero__section {
-        //     display: flex;
-        //     align-items: center; // Untuk memastikan kedua kolom di tengah secara vertikal
-        //     justify-content: space-around; // Atau space-between, center, dll.
-        //     padding: 20px; // Padding untuk hero section secara keseluruhan
-        //
-        //     &__content {
-        //         // Properti untuk kolom teks
-        //         flex: 1; // Agar mengisi ruang
-        //         max-width: 50%; // Atau sesuaikan
-        //         padding-right: 30px; // Jarak antara teks dan visual
-        //
-        //         // Jika konten di dalamnya (judul, desk, tombol) mau di center:
-        //         display: flex;
-        //         flex-direction: column;
-        //         justify-content: center; // Center vertikal elemen dalam kolom
-        //         align-items: flex-start; // Biasanya teks di kiri
-        //     }
-        //
-        //     &__visual {
-        //         flex: 1;
-        //         max-width: 50%;
-        //         // Styling untuk visual di sini
-        //     }
-        // }
-    }
+  }
+}

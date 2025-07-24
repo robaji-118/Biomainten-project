@@ -8,8 +8,8 @@
   </head>
 
   <body>
-    <div class="container">
-      <header>
+    <header>
+        <div class="container">
         <nav class="navbar">
           <div class="navbar__left-group">
             <div class="navbar__logo">
@@ -35,68 +35,44 @@
             <button class="navbar__button">Join Waitlist</button>
           </div>
         </nav>
+      </div>
       </header>
-    </div>
     <main>
       <section class="hero__section container">
         <div class="hero__section--gradient__light"></div>
         <div class="hero__section__content">
-          <div class="hero__section__left">
-            <div class="hero__section__left--item">
-              <h1 class="hero__section__left--heading">
+          <div class="hero__section__content__left">
+            <div class="hero__section__content__left--item">
+              <h1 class="hero__section__content__left--item-heading">
                 Your body deserves maintenance, not just emergency repairs.
               </h1>
-              <p class="hero__section__left--heading-paragraph">
+              <p class="hero__section__content__left--item-heading-paragraph">
                 Join the waitlist to track what's happening inside your body and
                 take proactive control of your health.
               </p>
             </div>
-            <button class="hero__section__left--notify-button">
-              <span class="hero__section__left--notify-button--text__button"
+            <button class="hero__section__content__left--notify-button">
+              <span class="hero__section__content__left--notify-button--text__button"
                 >Notify Me When It Launches</span
               >
             </button>
           </div>
 
-          <!-- <div class="hero__section__right">
-            <div class="health-dashboard-overlay">
-              <div class="health-score">
+          <div class="hero__section__content__right">
+            <div class="hero__section__content__right__overlay1">
+              <div class="hero__section__content__right__overlay1__item">
                 <p>Health Score</p>
-                <div class="score-circle">
-                  <span class="score-number">82</span>
-                  <span class="score-text">Good</span>
-                </div>
-                <p class="on-track">You're on track, keep it up!</p>
-              </div>
-              <div class="rheumatoid-factor">
-                <div class="rf-header">
-                  <p>Rheumatoid Factor (RF)</p>
-                  <a href="#" class="view-details">View Details</a>
-                </div>
-                <div class="rf-value">
-                  <span class="value-number">&lt;10</span>
-                  <span class="value-unit">IU/mL</span>
-                  <span class="value-range">In range</span>
-                </div>
-                <p class="rf-description">
-                  Checks for an indication of autoimmune disorders like
-                  rheumatoid arthritis, rheumatoid vasculitis, or Sjogren's.
-                </p>
-                <div class="range-indicator">
-                  <span class="legend-box in-range"></span
-                  ><span class="legend-text">In range</span>
-                  <span class="legend-box above-range"></span
-                  ><span class="legend-text">Above range</span>
-                  <span class="legend-box below-range"></span
-                  ><span class="legend-text">Below range</span>
+                <div class="hero__section__content__right__overlay1__item1">
+                  
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>  
         </div>
       </section>
 
-      <section id="features" class="features container">
+      <div class="container">
+      <section id="features" class="features">
         <div class="features__text">
           <div class="features__text--subtitle">
             <p>No more guessing. No more waiting until something goes wrong.</p>
@@ -156,26 +132,43 @@
           </div>
         </div>
       </section>
+      </div>
 
-      <section id="about" class="container about__section">
+      <div class="container">
+        <section id="about" class="about__section">
           <div class="about__section__left-column">
-            <h2>What you'll get when you join early</h2>
+            <h2 class="about__section__left-column--heading">
+              What you'll get when you join early
+            </h2>
             <ul class="about__section__left-column--benefit-list">
-              <li>
-                <span class="checkmark">&#10003;</span> Yearly blood testing to
-                catch imbalances early
+              <li class="about__section__left-column--benefit-list--item">
+                <span
+                  class="about__section__left-column--benefit-list--item-checkmark"
+                  ><img src="/css/svg/Check.svg" alt=""
+                /></span>
+                Yearly blood testing to catch imbalances early
               </li>
-              <li>
-                <span class="checkmark">&#10003;</span> Clear, personalized
-                reports that are easy to understand
+              <li class="about__section__left-column--benefit-list--item">
+                <span
+                  class="about__section__left-column--benefit-list--item-checkmark"
+                  ><img src="/css/svg/Check.svg" alt=""
+                /></span>
+                Clear, personalized reports that are easy to understand
               </li>
-              <li>
-                <span class="checkmark">&#10003;</span> Smart, actionable
-                recommendations to optimize your health
+              <li class="about__section__left-column--benefit-list--item">
+                <span
+                  class="about__section__left-column--benefit-list--item-checkmark"
+                  ><img src="/css/svg/Check.svg" alt=""
+                /></span>
+                Smart, actionable recommendations to optimize your health
               </li>
-              <li>
-                <span class="checkmark">&#10003;</span> Optional access to
-                premium supplements, based on your unique needs
+              <li class="about__section__left-column--benefit-list--item">
+                <span
+                  class="about__section__left-column--benefit-list--item-checkmark"
+                  ><img src="/css/svg/Check.svg" alt=""
+                /></span>
+                Optional access to premium supplements, based on your unique
+                needs
               </li>
             </ul>
           </div>
@@ -224,37 +217,45 @@
               </div>
             </div> -->
           </div>
-      </section>
-      
+        </section>
+      </div>
 
-      <!-- <section class="contact__section">
-        <div class="container">
-          <div class="content-wrapper">
-            <div class="left-content">
-              <h2>Join the health optimization movement</h2>
-              <p>Be the first to get tested and access smarter health tools.</p>
-            </div>
-            <div class="right-form-column">
-              <form class="waitlist-form">
-                <input type="text" placeholder="Your full name" required />
-                <input type="email" placeholder="Your email address" required />
-                <button type="submit" class="join-waitlist-btn">
-                  Join Waitlist
-                </button>
-                <p class="privacy-text">
-                  We respect your privacy. No spam — just smarter health.
-                </p>
-              </form>
-            </div>
+      <div class="container">
+        <section class="contact__section">
+          <div class="contact__section_left-content">
+            <h2>Join the health optimization movement</h2>
+            <p>Be the first to get tested and access smarter health tools.</p>
           </div>
-        </div>
-      </section> -->
+          <div class="contact__section_right-content">
+            <form class="contact__section_right-content--waitlist-form">
+              <input
+                class="name_contact"
+                type="text"
+                placeholder="Your full name"
+                required
+              />
+              <input
+                class="email_contact"
+                type="email"
+                placeholder="Your email address"
+                required
+              />
+              <button type="submit" class="join-waitlist-btn">
+                <p>Join Waitlist</p>
+              </button>
+            </form>
+            <p class="contact__section_right-content--privacy-text">
+              We respect your privacy. No spam — just smarter health.
+            </p>
+          </div>
+        </section>
+      </div>
     </main>
 
-    <!-- <footer>
-      <div class="container">
+    <div class="container">
+      <footer class="footer">
         <p>&copy;2025 Biomainten. All Rights Reserved</p>
-      </div>
-    </footer> -->
+      </footer>
+    </div>
   </body>
 </html>

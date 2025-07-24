@@ -1,6 +1,11 @@
+@charset "UTF-8";
 @font-face {
   font-family: "RethinkSans";
   src: url("../../css/font/RethinkSans-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Geist";
+  src: url("../../css/font/Geist-VariableFont_wght.ttf");
 }
 * {
   margin: 0;
@@ -13,12 +18,15 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 80px;
+  padding: 0 calc(80 / 1440 * 100vw);
 }
 
 header {
-  position: relative;
+  padding: 24px 0;
   width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 10;
 }
 
 .navbar {
@@ -26,9 +34,7 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 649px;
-  position: absolute;
-  z-index: 2;
+  padding: 0;
 }
 
 .navbar__left-group {
@@ -46,9 +52,8 @@ header {
   align-items: center;
 }
 .navbar__logo a img {
-  height: 100%;
-  width: 100%;
-  margin-right: 8px;
+  max-width: 100%;
+  height: auto;
 }
 
 .navbar__links {
@@ -58,22 +63,19 @@ header {
   padding: 0;
   gap: 30px;
 }
-.navbar__links .navbar__list-item a {
-  text-decoration: none;
-  color: #555;
-  font-weight: 600;
+
+.navbar__list-item a {
+  list-style: none;
   font-size: 14px;
-  transition: color 0.3s ease;
-  line-height: 20px;
-}
-.navbar__links .navbar__list-item a:hover {
-  color: #007bff;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000000;
 }
 
 .navbar__button {
-  background-color: #763CEA;
+  background-color: #763cea;
   color: white;
-  padding: 12px;
+  padding: 12px 24px;
   border: none;
   border-radius: 10px;
   font-size: 14px;
@@ -92,127 +94,151 @@ header {
   background-repeat: no-repeat;
   height: 820px;
   width: 100%;
-  /* Rectangle 48 */
+  position: relative;
+  display: flex;
 }
 .hero__section .hero__section--gradient__light {
-  /* Rectangle 48 */
   position: absolute;
   width: 1065px;
   height: 821px;
   left: 0;
   background: linear-gradient(90deg, #ffffff 44.71%, rgba(255, 255, 255, 0) 94.15%);
+  z-index: 1;
 }
-.hero__section__left {
+.hero__section .hero__section__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+.hero__section .hero__section__content .hero__section__content__left {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 48px;
-  position: absolute;
-  height: 820px;
-  justify-content: center;
+  width: 780px;
+  height: 556px;
 }
-.hero__section__left--item {
+.hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 32px;
-  width: 780px;
-  height: 444px;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
+  width: 100%;
 }
-.hero__section__left--heading {
-  /* Your body deserves maintenance, not just emergency repairs. */
-  width: 780px;
-  height: 352px;
+.hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
+  width: 100%;
+  height: auto;
   font-family: "RethinkSans";
-  font-style: normal;
   font-weight: 600;
   font-size: 88px;
   line-height: 88px;
-  /* or 100% */
-  display: flex;
-  align-items: center;
   letter-spacing: -0.02em;
-  font-feature-settings: "calt" off, "liga" off;
   color: #171938;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
 }
-.hero__section__left--heading-paragraph {
-  width: 521px;
-  height: 60px;
-  /* Paragraph/X Large */
+.hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading-paragraph {
+  width: calc(521 / 1440 * 100vw);
   font-family: "RethinkSans";
-  font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 30px;
-  display: flex;
-  align-items: center;
+  font-size: calc(20 / 1440 * 100vw);
+  line-height: calc(30 / 1440 * 100vw);
   letter-spacing: -0.03em;
-  font-feature-settings: "calt" off, "liga" off;
   color: #000000;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
 }
-.hero__section__left--notify-button {
+.hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--notify-button {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  gap: 4px;
+  padding: 1.25rem;
+  gap: 0.25rem;
   border: none;
-  width: 241px;
-  height: 64px;
+  width: 15.0625rem;
+  height: 4rem;
   background: #763cea;
-  border-radius: 12px;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-.hero__section__left--notify-button--text__button {
-  height: 24px;
-  /* Label/Medium */
+.hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--notify-button:hover {
+  background-color: rgb(88.875, 23.625, 219.375);
+}
+.hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--notify-button .hero__section__content__left--notify-button--text__button {
   font-family: "RethinkSans";
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+.hero__section .hero__section__content .hero__section__content__right {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
+}
+.hero__section .hero__section__content .hero__section__content__right .hero__section__content__right__overlay1 {
+  /* Frame 193 */
+  box-sizing: border-box;
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 14.8879px;
+  gap: 29.78px;
+  isolation: isolate;
+  width: 240.07px;
+  height: 219.79px;
+  background: rgba(17, 8, 33, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 8.93px 9.86px rgba(10, 13, 20, 0.05), inset -8px -13px 32px rgb(255, 255, 255), inset 8px 11px 32px rgb(255, 255, 255);
+  border-radius: 16px;
+}
+.hero__section .hero__section__content .hero__section__content__right .hero__section__content__right__overlay1 .hero__section__content__right__overlay1__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  gap: 13.03px;
+  height: 100%;
+  width: 100%;
+}
+.hero__section .hero__section__content .hero__section__content__right .hero__section__content__right__overlay1 .hero__section__content__right__overlay1__item p {
+  margin: 0 auto;
+  width: 86px;
+  height: 23px;
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14.8879px;
+  line-height: 22px;
   display: flex;
   align-items: center;
   letter-spacing: -0.03em;
   font-feature-settings: "calt" off, "liga" off;
-  color: #FFFFFF;
+  color: #ffffff;
   flex: none;
   order: 0;
   flex-grow: 0;
-}
-.hero__section__left__content {
-  gap: 20px;
-  display: flex;
-  flex-direction: row;
-  padding: 0 15px;
 }
 
 .features {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px;
+  padding: 80px 0;
   gap: 56px;
 }
 .features__text {
@@ -365,14 +391,13 @@ header {
 }
 
 .about__section {
-  /* Frame 203 */
-  /* Auto layout */
+  margin-top: 114px;
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0px;
   gap: 67px;
-  width: 1280px;
+  width: 100%;
   height: 624px;
 }
 .about__section .about__section__left-column {
@@ -381,12 +406,34 @@ header {
   align-items: flex-start;
   padding: 0px;
   gap: 32px;
+  width: 617px;
   height: 100%;
   justify-content: center;
   justify-items: center;
   /* Inside auto layout */
   flex: none;
   order: 0;
+  flex-grow: 0;
+}
+.about__section .about__section__left-column .about__section__left-column--heading {
+  /* What you'll get when you join early */
+  width: 100%;
+  height: 160px;
+  font-family: "RethinkSans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 72px;
+  line-height: 80px;
+  /* or 111% */
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.04em;
+  font-feature-settings: "calt" off, "liga" off;
+  color: #171938;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
   flex-grow: 0;
 }
 .about__section .about__section__left-column .about__section__left-column--benefit-list {
@@ -403,17 +450,189 @@ header {
   align-self: stretch;
   flex-grow: 0;
 }
+.about__section .about__section__left-column .about__section__left-column--benefit-list .about__section__left-column--benefit-list--item {
+  font-family: "RethinkSans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32px;
+  align-items: center;
+  /* identical to box height, or 178% */
+  letter-spacing: -0.03em;
+  font-feature-settings: "calt" off, "liga" off;
+  color: #171938;
+}
+.about__section .about__section__left-column .about__section__left-column--benefit-list .about__section__left-column--benefit-list--item .about__section__left-column--benefit-list--item-checkmark img {
+  align-items: center;
+  padding: 3px;
+  justify-self: center;
+  width: 20px;
+  height: 20px;
+  background: #22d3bb;
+  border-radius: 100px;
+}
 .about__section .about__section__right-column {
-  background-image: url("../../img/about.jpg");
-  background-repeat: repeat;
-  background-size: cover;
   width: 596px;
   height: 624px;
   border-radius: 16px;
+  position: relative;
+  overflow: hidden;
   /* Inside auto layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
+}
+.about__section .about__section__right-column::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../img/about.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100% center;
+  transform: scaleX(-1);
+  z-index: -1;
+}
+
+.contact__section {
+  background-color: #763CEA;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 48px 48px 48px 64px;
+  gap: 48px;
+  isolation: isolate;
+  width: 100%;
+  height: 388px;
+  margin-top: 88px;
+  border-radius: 16px;
+}
+.contact__section .contact__section_left-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+  width: 572px;
+  margin: 0 auto;
+}
+.contact__section .contact__section_left-content h2 {
+  font-family: "RethinkSans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 64px;
+  width: 572px;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+  /* Inside auto layout */
+}
+.contact__section .contact__section_left-content p {
+  font-family: "RethinkSans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #ffffff;
+  opacity: 0.7;
+}
+.contact__section .contact__section_right-content {
+  /* Frame 180 */
+  box-sizing: border-box;
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  gap: 16px;
+  isolation: isolate;
+  margin: 0 auto;
+  width: 100%;
+  height: 292px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0px 8.93px 9.86px rgba(10, 13, 20, 0.05), 0px 1px 2px rgba(10, 13, 20, 0.03), inset -8px -13px 42px rgba(255, 255, 255, 0.35), inset 8px 11px 16px rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+}
+.contact__section .contact__section_right-content .contact__section_right-content--waitlist-form {
+  /* Frame 43 */
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+  width: 100%;
+  gap: 24px;
+}
+.contact__section .contact__section_right-content .contact__section_right-content--waitlist-form input {
+  box-sizing: border-box;
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 14px 10px 14px 12px;
+  gap: 8px;
+  caret-color: #ffffff;
+  color: #ffffff;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 1px 2px rgba(10, 13, 20, 0.03);
+  border-radius: 10px;
+}
+.contact__section .contact__section_right-content .contact__section_right-content--waitlist-form input:focus {
+  outline: none; /* Menghilangkan outline default browser */
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  /* Atau Anda bisa mengubahnya ke warna lain yang diinginkan,
+   misalnya border: 1px solid #yourDesiredColor; */
+}
+.contact__section .contact__section_right-content .contact__section_right-content--waitlist-form input::placeholder {
+  color: rgba(255, 255, 255, 0.6); /* Contoh warna teks placeholder */
+  opacity: 1; /* Beberapa browser mengurangi opacity placeholder secara default */
+}
+.contact__section .contact__section_right-content .contact__section_right-content--waitlist-form button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+  gap: 4px;
+  color: #763CEA;
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: none;
+}
+.contact__section .contact__section_right-content .contact__section_right-content--privacy-text {
+  /* We respect your privacy. No spam — just smarter health. */
+  /* Label/Medium */
+  font-family: "RethinkSans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  align-items: center;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  /* Inside auto layout */
+}
+
+.footer {
+  margin: 50px 0;
+  width: 100%;
+  height: 24px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #8b8c9b;
 }
 
 /*# sourceMappingURL=style.css.map */

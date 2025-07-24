@@ -5,6 +5,10 @@
     src: url('../../css/font/RethinkSans-VariableFont_wght.ttf');
 }
 
+@font-face {
+    font-family: 'Geist';
+    src: url('../../css/font/Geist-VariableFont_wght.ttf');
+}
 
 *{
     margin: 0;
@@ -16,10 +20,10 @@
 
 .container{
     width: 100%;
-    max-width:1440px;
+    max-width: 1440px; // Atau lebar maksimal yang Anda inginkan
     margin: 0 auto;
-    padding: 0 80px; 
-    // padding: fluidSize(80);
+    padding: 0 fluidSize(80);
+
 
     // // text-align: center;
     // @media only screen and (max-width: 1440px ) {

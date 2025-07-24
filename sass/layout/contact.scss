@@ -1,3 +1,164 @@
-.contact__section{
-    
+.contact__section {
+  background-color: $color-primary;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 48px 48px 48px 64px;
+  gap: 48px;
+  isolation: isolate;
+
+  width: 100%;
+  height: 388px;
+
+  margin-top: 88px;
+  border-radius: 16px;
+
+
+  .contact__section_left-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 572px;
+
+    margin: 0 auto;
+
+    // height: 238px;
+
+    h2 {
+      font-family: "RethinkSans";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 64px;
+      width: 572px;
+
+      letter-spacing: -0.04em;
+
+      color: #ffffff;
+
+      /* Inside auto layout */
+    }
+    p {
+      font-family: "RethinkSans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 30px;
+
+      color: #ffffff;
+
+      opacity: 0.7;
+    }
+  }
+
+  .contact__section_right-content {
+    /* Frame 180 */
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    gap: 16px;
+    isolation: isolate;
+
+    margin: 0 auto;
+    width: 100%;
+    height: 292px;
+
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0px 8.93px 9.86px rgba(10, 13, 20, 0.05),
+      0px 1px 2px rgba(10, 13, 20, 0.03),
+      inset -8px -13px 42px rgba(255, 255, 255, 0.35),
+      inset 8px 11px 16px rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+
+    .contact__section_right-content--waitlist-form {
+      /* Frame 43 */
+
+      /* Auto layout */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0px;
+      width: 100%;
+      gap: 24px;
+
+      input {
+        box-sizing: border-box;
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 14px 10px 14px 12px;
+        gap: 8px;
+        caret-color: #ffffff;
+        color: #ffffff;
+
+        width: 100%;
+
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0px 1px 2px rgba(10, 13, 20, 0.03);
+        border-radius: 10px;
+
+        &:focus {
+          outline: none; /* Menghilangkan outline default browser */
+          border: 3px solid rgba(255, 255, 255, 0.2);
+          /* Atau Anda bisa mengubahnya ke warna lain yang diinginkan,
+           misalnya border: 1px solid #yourDesiredColor; */
+        }
+
+        &::placeholder {
+          color: rgba(#ffffff, 0.6); /* Contoh warna teks placeholder */
+          opacity: 1; /* Beberapa browser mengurangi opacity placeholder secara default */
+        }
+      }
+
+      button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 14px;
+        gap: 4px;
+
+        color: $color-primary;
+        font-size: 14px;
+        font-weight: 500;
+
+        width: 100%;
+        height: 48px;
+
+        background: #ffffff;
+        border-radius: 12px;
+        border: none;
+      }
+    }
+    .contact__section_right-content--privacy-text {
+      /* We respect your privacy. No spam — just smarter health. */
+
+      /* Label/Medium */
+      font-family: "RethinkSans";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+
+      align-items: center;
+      text-align: center;
+
+      color: rgba(#ffffff, 0.8);
+
+      /* Inside auto layout */
+    }
+  }
 }

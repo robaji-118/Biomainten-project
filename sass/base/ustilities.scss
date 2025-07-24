@@ -1,9 +1,13 @@
-$color-primary: #763CEA;
-
-$color-secondary: #335CFF;
-$color-secondary-light: #22D3BB;
-
-$color-tertiary: #F6B51E;
-$color-tertiary-dark: #FF8447;
 
 
+
+@function toRem($px) {
+  @return calc($px / 16) * 1rem; // Asumsi 16px = 1rem
+}
+
+// Fungsi fluidSize yang menghitung nilai vw
+// Ini akan memastikan 80px pada 1440px, dan akan menskala secara proporsional
+  @function fluidSize($px) {
+  $base-viewport-width: 1440; // Ukuran layar desain dasar Anda (misal Figma/XD)
+  @return calc((#{$px} / $base-viewport-width) * 100vw);
+}
