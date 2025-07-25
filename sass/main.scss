@@ -1,7 +1,14 @@
 
-@import "base/ustilities.scss";
+
+@import "mixin/ustilities.scss";
+
+@import "mixin/function.scss" ;
+@import "mixin/variables.scss" ;
+@import "mixin/mixin.scss" ;
+
+
 @import "base/base.scss";
-@import "base/variables.scss";
+@import "base/typography.scss";
 
 
 

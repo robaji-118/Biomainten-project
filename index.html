@@ -1,89 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Biomainten - Body Maintenance & Health Optimization</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
 
-  <body>
-    <header>
-        <div class="container">
-        <nav class="navbar">
-          <div class="navbar__left-group">
-            <div class="navbar__logo">
-              <a href="#">
-                <img
-                  src="img/logo.png"
-                  class="navbar__img"
-                  alt="Biomainten Logo"
-                />
-              </a>
-            </div>
-            <ul class="navbar__links">
-              <li class="navbar__list-item">
-                <a href="#">Why We're Building This</a>
-              </li>
-              <li class="navbar__list-item">
-                <a href="#">What You'll Get</a>
-              </li>
-            </ul>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biomainten - Body Maintenance & Health Optimization</title>
+  <link rel="stylesheet" href="css/style.css" />
+  
+</head>
 
-          <div class="navbar__actions">
-            <button class="navbar__button">Join Waitlist</button>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="navbar__left-group">
+          <div class="navbar__logo">
+            <a href="#">
+              <img src="img/logo.png" class="navbar__img" alt="Biomainten Logo" />
+            </a>
           </div>
-        </nav>
-      </div>
-      </header>
-    <main>
-      <section class="hero__section container">
-        <div class="hero__section--gradient__light"></div>
-        <div class="hero__section__content">
-          <div class="hero__section__content__left">
-            <div class="hero__section__content__left--item">
-              <h1 class="hero__section__content__left--item-heading">
-                Your body deserves maintenance, not just emergency repairs.
-              </h1>
-              <p class="hero__section__content__left--item-heading-paragraph">
-                Join the waitlist to track what's happening inside your body and
-                take proactive control of your health.
-              </p>
-            </div>
-            <button class="hero__section__content__left--notify-button">
-              <span class="hero__section__content__left--notify-button--text__button"
-                >Notify Me When It Launches</span
-              >
-            </button>
-          </div>
-
-          <div class="hero__section__content__right">
-            <div class="hero__section__content__right__overlay1">
-              <div class="hero__section__content__right__overlay1__item">
-                <p>Health Score</p>
-                <div class="hero__section__content__right__overlay1__item1">
-                  
-                </div>
-              </div>
-            </div>
-          </div>  
+          <ul class="navbar__links">
+            <li class="navbar__list-item">
+              <a href="#">Why We're Building This</a>
+            </li>
+            <li class="navbar__list-item">
+              <a href="#">What You'll Get</a>
+            </li>
+          </ul>
         </div>
-      </section>
 
-      <div class="container">
+        <div class="navbar__actions">
+          <button class="navbar__button">Join Waitlist</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero__section container">
+      <div class="hero__section--gradient__light"></div>
+      <div class="hero__section__content">
+        <div class="hero__section__content__left">
+          <div class="hero__section__content__left--item">
+            <h1 class="hero__section__content__left--item-heading">
+              Your body deserves maintenance, not just emergency repairs.
+            </h1>
+            <p class="hero__section__content__left--item-heading-paragraph">
+              Join the waitlist to track what's happening inside your body and
+              take proactive control of your health.
+            </p>
+          </div>
+          <button class="hero__section__content__left--notify-button">
+            <span class="hero__section__content__left--notify-button--text__button">Notify Me When It Launches</span>
+          </button>
+        </div>
+
+        <!-- RIGHT CONTENT HEROO -->
+
+        <div class="hero__section__content__right">
+          <div class="hero__overlay hero__overlay--health-score">
+            <div class="hero__overlay-header">
+              <p>Health Score</p>
+            </div>
+            <div class="hero__score-circle">
+              <span class="hero__score-number">82</span>
+              <span class="hero__score-text">Good</span>
+            </div>
+            <p class="hero__score-message">You're on track, keep it up!</p>
+          </div>
+
+          <div class="hero__overlay hero__overlay--rheumatoid-factor">
+            <div class="hero__overlay-header2">
+              <p>Rheumatoid Factor (RF)</p>
+              <a href="#" class="hero__view-details">View Details</a>
+            </div>
+            <div class="hero__rf-value">
+              <span class="hero__value-number">&lt;10</span>
+              <span class="hero__value-unit">IU/mL</span>
+              <p class="hero__value-range">In range</p>
+            </div>
+            <p class="hero__rf-description">
+              Checks for an indication of autoimmune disorders like rheumatoid
+              arthritis, rheumatoid vasculitis, or Sjogren's.
+            </p>
+            <div class="hero__range-indicator">
+              <span class="hero__legend-box hero__legend-box--in-range"></span>
+              <span class="hero__legend-text">In range</span>
+              <span class="hero__legend-box hero__legend-box--above-range"></span>
+              <span class="hero__legend-text">Above range</span>
+              <span class="hero__legend-box hero__legend-box--below-range"></span>
+              <span class="hero__legend-text">Below range</span>
+            </div>
+          </div>
+
+        
+      </div>
+    </section>
+
+    <div class="container">
       <section id="features" class="features">
         <div class="features__text">
           <div class="features__text--subtitle">
-            <p>No more guessing. No more waiting until something goes wrong.</p>
+            <p>
+              No more guessing. No more waiting until something goes wrong.
+            </p>
           </div>
           <div class="features__text--description">
-            <h2 class="features__text--description-item1">
+            <h2 class="features__text--descrip  tion-item1">
               Why we're building this
             </h2>
             <p class="">
-              We track everything – our steps, our cars, our packages. But when
-              it comes to our health, we're flying blind. That's about to
+              We track everything – our steps, our cars, our packages. But
+              when it comes to our health, we're flying blind. That's about to
               change. We're building a platform that makes body maintenance
               simple and routine.
             </p>
@@ -92,11 +119,7 @@
 
         <div class="features__our">
           <div class="features__our__benefits">
-            <img
-              src="css/svg/Frame.svg"
-              class="features__our__benefits__icon"
-              alt=""
-            />
+            <img src="css/svg/Frame.svg" class="features__our__benefits__icon" alt="" />
             <h3>Lab tracking</h3>
             <p>
               Test your labs regularly and understand the results (no medical
@@ -104,158 +127,137 @@
             </p>
           </div>
           <div class="features__our__benefits">
-            <img
-              src="css/svg/Frame (1).svg"
-              class="features__our__benefits__icon"
-              alt=""
-            />
+            <img src="css/svg/Frame (1).svg" class="features__our__benefits__icon" alt="" />
             <h3>Early detection</h3>
             <p>Detect imbalances before they become illness</p>
           </div>
           <div class="features__our__benefits">
-            <img
-              src="css/svg/Frame (2).svg"
-              class="features__our__benefits__icon"
-              alt=""
-            />
+            <img src="css/svg/Frame (2).svg" class="features__our__benefits__icon" alt="" />
             <h3>Personalized insights</h3>
             <p>Get personalized insights tailored to your body's data</p>
           </div>
           <div class="features__our__benefits">
-            <img
-              src="css/svg/Frame (3).svg"
-              class="features__our__benefits__icon"
-              alt=""
-            />
+            <img src="css/svg/Frame (3).svg" class="features__our__benefits__icon" alt="" />
             <h3>Daily prevention</h3>
             <p>Make prevention part of your daily habits—not a last resort</p>
           </div>
         </div>
       </section>
-      </div>
+    </div>
 
-      <div class="container">
-        <section id="about" class="about__section">
-          <div class="about__section__left-column">
+   <div class="container">
+    <section id="about" class="about__section">
+        <div class="about__section__left-column">
             <h2 class="about__section__left-column--heading">
-              What you'll get when you join early
+                What you'll get when you join early
             </h2>
             <ul class="about__section__left-column--benefit-list">
-              <li class="about__section__left-column--benefit-list--item">
-                <span
-                  class="about__section__left-column--benefit-list--item-checkmark"
-                  ><img src="/css/svg/Check.svg" alt=""
-                /></span>
-                Yearly blood testing to catch imbalances early
-              </li>
-              <li class="about__section__left-column--benefit-list--item">
-                <span
-                  class="about__section__left-column--benefit-list--item-checkmark"
-                  ><img src="/css/svg/Check.svg" alt=""
-                /></span>
-                Clear, personalized reports that are easy to understand
-              </li>
-              <li class="about__section__left-column--benefit-list--item">
-                <span
-                  class="about__section__left-column--benefit-list--item-checkmark"
-                  ><img src="/css/svg/Check.svg" alt=""
-                /></span>
-                Smart, actionable recommendations to optimize your health
-              </li>
-              <li class="about__section__left-column--benefit-list--item">
-                <span
-                  class="about__section__left-column--benefit-list--item-checkmark"
-                  ><img src="/css/svg/Check.svg" alt=""
-                /></span>
-                Optional access to premium supplements, based on your unique
-                needs
-              </li>
+                <li class="about__section__left-column--benefit-list--item">
+                    <span class="about__section__left-column--benefit-list--item-checkmark">
+                        <img src="/css/svg/Check.svg" alt="" />
+                    </span>
+                    Yearly blood testing to catch imbalances early
+                </li>
+                <li class="about__section__left-column--benefit-list--item">
+                    <span class="about__section__left-column--benefit-list--item-checkmark">
+                        <img src="/css/svg/Check.svg" alt="" />
+                    </span>
+                    Clear, personalized reports that are easy to understand
+                </li>
+                <li class="about__section__left-column--benefit-list--item">
+                    <span class="about__section__left-column--benefit-list--item-checkmark">
+                        <img src="/css/svg/Check.svg" alt="" />
+                    </span>
+                    Smart, actionable recommendations to optimize your health
+                </li>
+                <li class="about__section__left-column--benefit-list--item">
+                    <span class="about__section__left-column--benefit-list--item-checkmark">
+                        <img src="/css/svg/Check.svg" alt="" />
+                    </span>
+                    Optional access to premium supplements, based on your unique needs
+                </li>
             </ul>
-          </div>
-          <div class="about__section__right-column">
-            <!-- <div class="health-overview-overlay">
-              <div class="blood-summary">
-                <div class="blood-header">
-                  <p>Blood</p>
-                  <a href="#" class="view-details">View Details</a>
+        </div>
+        <div class="about__section__right-column">
+            <div class="about__overlay about__overlay--blood-biomarkers">
+                <div class="about__overlay-header">
+                    <p>Blood</p>
+                    <button href="#" class="about__view-details">View Details</button>
                 </div>
-                <div class="blood-metrics">
-                  <span class="metric-icon">&#9679;</span
-                  ><span class="metric-count">11</span>
-                  <span class="metric-text">Biomarkers</span>
-                  <div class="progress-bar"></div>
+                <div class="about__biomarkers-count">
+                    <img src="/css/svg/blood-icon.svg" alt="">
+                    <span>11</span> Biomarkers
                 </div>
-                <div class="range-indicator small">
-                  <span class="legend-box in-range"></span
-                  ><span class="legend-text">In range</span>
-                  <span class="legend-box above-range"></span
-                  ><span class="legend-text">Above range</span>
-                  <span class="legend-box below-range"></span
-                  ><span class="legend-text">Below range</span>
-                  <span class="legend-box improving"></span
-                  ><span class="legend-text">Improving</span>
+                <div class="about__biomarkers-bars">
+                    <div class="about__biomarker-bar about__biomarker-bar--in-range" style="width: 55%;"></div>
+                    <div class="about__biomarker-bar about__biomarker-bar--out-of-range" style="width: 30%;"></div>
+                    <div class="about__biomarker-bar about__biomarker-bar--improving" style="width: 15%;"></div>
                 </div>
-              </div>
-              <div class="hematocrit-detail">
-                <div class="hematocrit-header">
-                  <p>Hematocrit</p>
-                  <a href="#" class="view-details">View Details</a>
+                <div class="about__biomarkers-legend">
+                    <span class="about__legend-box about__legend-box--in-range"></span> In-range: 6
+                    <span class="about__legend-box about__legend-box--out-of-range"></span> Out of range: 5
+                    <span class="about__legend-box about__legend-box--improving"></span> Improving: 0
                 </div>
-                <div class="hematocrit-value">
-                  <span class="value-range-label in-range">In range</span>
-                  <span class="value-percent">46%</span>
-                </div>
-                <p class="lab-reference">Lab Reference Range: 38.5-50.0%</p>
-                <div class="range-indicator">
-                  <span class="legend-box above-range"></span
-                  ><span class="legend-text">Above range: &gt;50.0</span>
-                  <span class="legend-box in-range"></span
-                  ><span class="legend-text">In range: 38.5-50.0</span>
-                  <span class="legend-box below-range"></span
-                  ><span class="legend-text">Below range: &lt;38.5</span>
-                </div>
-              </div>
-            </div> -->
-          </div>
-        </section>
-      </div>
+            </div>
 
-      <div class="container">
-        <section class="contact__section">
-          <div class="contact__section_left-content">
-            <h2>Join the health optimization movement</h2>
-            <p>Be the first to get tested and access smarter health tools.</p>
-          </div>
-          <div class="contact__section_right-content">
-            <form class="contact__section_right-content--waitlist-form">
-              <input
-                class="name_contact"
-                type="text"
-                placeholder="Your full name"
-                required
-              />
-              <input
-                class="email_contact"
-                type="email"
-                placeholder="Your email address"
-                required
-              />
-              <button type="submit" class="join-waitlist-btn">
-                <p>Join Waitlist</p>
-              </button>
-            </form>
-            <p class="contact__section_right-content--privacy-text">
-              We respect your privacy. No spam — just smarter health.
-            </p>
-          </div>
-        </section>
-      </div>
-    </main>
+            <div class="about__overlay about__overlay--hematocrit">
+                <div class="about__overlay-header">
+                    <p>Hematocrit</p>
+                    <button href="#" class="about__view-details">View Details</button>
+                </div>
+                <div class="about__hematocrit-value">
+                    <p class="about__value-number">46%</p>
+                    <p class="about__value-range about__value-range--in-range">In range</p>
+                </div>
+                <p class="about__lab-reference-range">
+                    Lab Reference Range : 38.5-50.0 %
+                </p>
+                <div class="about__range-indicator about__range-indicator--vertical">
+                    <div class="about__legend-item">
+                        
+                        <p class="about__legend-box about__legend-text">   Above range : > 50.0</p>
+                    </div>
+                    <div class="about__legend-item">
+                        <span class="about__legend-box about__legend-box--in-range-hematocrit"></span>
+                        <p class="about__legend-box about__legend-text">In range : 38.5 - 50.0</p>
+                    </div>
+                    <div class="about__legend-item">
+                        <span class="about__legend-box about__legend-box--below-range"></span>
+                        <p class="about__legend-box about__legend-text">Below range : < 38.5</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 
     <div class="container">
-      <footer class="footer">
-        <p>&copy;2025 Biomainten. All Rights Reserved</p>
-      </footer>
+      <section class="contact__section">
+        <div class="contact__section_left-content">
+          <h2>Join the health optimization movement</h2>
+          <p>Be the first to get tested and access smarter health tools.</p>
+        </div>
+        <div class="contact__section_right-content">
+          <form class="contact__section_right-content--waitlist-form">
+            <input class="name_contact" type="text" placeholder="Your full name" required />
+            <input class="email_contact" type="email" placeholder="Your email address" required />
+            <button type="submit" class="join-waitlist-btn">
+              <p>Join Waitlist</p>
+            </button>
+          </form>
+          <p class="contact__section_right-content--privacy-text">
+            We respect your privacy. No spam — just smarter health.
+          </p>
+        </div>
+      </section>
     </div>
-  </body>
+  </main>
+
+  <div class="container">
+    <footer class="footer">
+      <p>&copy;2025 Biomainten. All Rights Reserved</p>
+    </footer>
+  </div>
+</body>
+
 </html>

@@ -18,7 +18,67 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 calc(80 / 1440 * 100vw);
+  padding: 0 5rem;
+}
+@media only screen and (max-width: 1369px) {
+  .container {
+    padding: 0 4.5rem;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .container {
+    padding: 0 5rem;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .container {
+    padding: 0 4rem;
+  }
+}
+@media only screen and (max-width: 1064px) {
+  .container {
+    padding: 0 3rem;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .container {
+    padding: 0 2.5rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .container {
+    padding: 0 0.625rem;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .container {
+    padding: 0 0.5rem;
+  }
 }
 
 header {
@@ -97,6 +157,54 @@ header {
   position: relative;
   display: flex;
 }
+@media only screen and (max-width: 1200px) {
+  .hero__section {
+    height: auto;
+    min-height: calc(700 / 900 * 100vh);
+    background-position: center 35%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .hero__section {
+    height: auto;
+    min-height: calc(600 / 900 * 100vh);
+    background-position: center 40%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .hero__section {
+    height: auto;
+    min-height: calc(550 / 900 * 100vh);
+    background-position: center 45%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .hero__section {
+    height: auto;
+    min-height: calc(500 / 900 * 100vh);
+    background-position: center 50%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .hero__section {
+    height: auto;
+    min-height: calc(450 / 900 * 100vh);
+    background-position: center 55%;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .hero__section {
+    height: auto;
+    min-height: calc(400 / 900 * 100vh);
+    background-position: center 60%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .hero__section {
+    min-height: calc(350 / 900 * 100vh);
+    background-position: center 70%;
+  }
+}
 .hero__section .hero__section--gradient__light {
   position: absolute;
   width: 1065px;
@@ -104,6 +212,34 @@ header {
   left: 0;
   background: linear-gradient(90deg, #ffffff 44.71%, rgba(255, 255, 255, 0) 94.15%);
   z-index: 1;
+}
+@media only screen and (max-width: 1200px) {
+  .hero__section .hero__section--gradient__light {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #ffffff 40%, rgba(255, 255, 255, 0) 94.15%);
+  }
+}
+@media only screen and (max-width: 992px) {
+  .hero__section .hero__section--gradient__light {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #ffffff 10%, rgba(255, 255, 255, 0) 94.15%);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .hero__section .hero__section--gradient__light {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #ffffff 10%, rgba(255, 255, 255, 0) 94.15%);
+  }
+}
+@media only screen and (max-width: 480px) {
+  .hero__section .hero__section--gradient__light {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #ffffff 10%, rgba(255, 255, 255, 0) 94.15%);
+  }
 }
 .hero__section .hero__section__content {
   display: flex;
@@ -114,6 +250,13 @@ header {
   width: 100%;
   position: relative;
   z-index: 2;
+  /* --- Health Score Specific Styles --- */
+  /* --- Rheumatoid Factor Specific Styles --- */
+}
+@media only screen and (max-width: 992px) {
+  .hero__section .hero__section__content {
+    flex-direction: column;
+  }
 }
 .hero__section .hero__section__content .hero__section__content__left {
   display: flex;
@@ -124,6 +267,11 @@ header {
   gap: 48px;
   width: 780px;
   height: 556px;
+}
+@media only screen and (max-width: 992px) {
+  .hero__section .hero__section__content .hero__section__content__left {
+    justify-content: end;
+  }
 }
 .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item {
   display: flex;
@@ -144,12 +292,30 @@ header {
   letter-spacing: -0.02em;
   color: #171938;
 }
+@media only screen and (max-width: 1280px) {
+  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
+    font-size: 70px;
+    line-height: 60px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
+    font-size: 50px;
+    line-height: 50px;
+  }
+}
+@media only screen and (max-width: 1064px) {
+  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
+    font-size: 50px;
+    width: 500px;
+  }
+}
 .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading-paragraph {
   width: calc(521 / 1440 * 100vw);
   font-family: "RethinkSans";
   font-weight: 400;
-  font-size: calc(20 / 1440 * 100vw);
-  line-height: calc(30 / 1440 * 100vw);
+  font-size: calc(15 / 1440 * 100vw);
+  line-height: calc(20 / 1440 * 100vw);
   letter-spacing: -0.03em;
   color: #000000;
 }
@@ -181,57 +347,221 @@ header {
   color: #ffffff;
 }
 .hero__section .hero__section__content .hero__section__content__right {
-  position: relative;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-grow: 1;
+  flex-direction: column;
+  align-items: end;
+  gap: 20px;
+  flex: 1;
+  max-width: 50%;
+  position: relative;
+  justify-content: end;
+  padding: 53px 0;
+  height: 100%;
 }
-.hero__section .hero__section__content .hero__section__content__right .hero__section__content__right__overlay1 {
-  /* Frame 193 */
+@media only screen and (max-width: 1200px) {
+  .hero__section .hero__section__content .hero__section__content__right {
+    width: 100%;
+    max-width: 100%;
+    padding: 100px 0 0 0;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .hero__section .hero__section__content .hero__section__content__right {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+.hero__section .hero__section__content .hero__overlay {
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 14.8879px;
+  gap: 15px;
+  width: 280px;
+  height: auto;
+  background: rgba(17, 8, 33, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0px 8.93px 9.86px rgba(10, 13, 20, 0.05), inset -8px -13px 32px rgba(255, 255, 255, 0.05), inset 8px 11px 32px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+}
+.hero__section .hero__section__content .hero__overlay-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 5px;
+  justify-content: center;
+}
+.hero__section .hero__section__content .hero__overlay-header p {
+  font-family: "RethinkSans";
+  font-weight: 500;
+  font-size: 14.8879px;
+  line-height: 22px;
+  color: #ffffff;
+  margin: 0;
+}
+.hero__section .hero__section__content .hero__overlay-header .hero__view-details {
+  font-family: "RethinkSans";
+  font-weight: 500;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+.hero__section .hero__section__content .hero__overlay-header .hero__view-details:hover {
+  text-decoration: underline;
+}
+.hero__section .hero__section__content .hero__overlay-header2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.hero__section .hero__section__content .hero__overlay-header2 p {
+  font-family: "RethinkSans";
+  font-weight: 500;
+  font-size: 14.8879px;
+  line-height: 22px;
+  color: #ffffff;
+  margin: 0;
+}
+.hero__section .hero__section__content .hero__overlay-header2 .hero__view-details {
+  font-family: "RethinkSans";
+  font-weight: 500;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+.hero__section .hero__section__content .hero__overlay-header2 .hero__view-details:hover {
+  text-decoration: underline;
+}
+.hero__section .hero__section__content .hero__overlay--health-score {
+  align-items: center;
+  text-align: center;
+  padding-bottom: 25px;
+}
+.hero__section .hero__section__content .hero__score-circle {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  margin: 15px 0;
+  background: conic-gradient(#763cea 0deg, #763cea 70%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0.2) 100%);
+  transform: rotate(-90deg);
+}
+.hero__section .hero__section__content .hero__score-circle .hero__score-number {
+  font-family: "RethinkSans";
+  font-size: 48px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1;
+  transform: rotate(90deg);
+}
+.hero__section .hero__section__content .hero__score-circle .hero__score-text {
+  font-family: "RethinkSans";
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  transform: rotate(90deg);
+}
+.hero__section .hero__section__content .hero__score-message {
+  font-family: "RethinkSans";
+  font-size: 13.0269px;
+  line-height: 19px;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-top: 5px;
+}
+.hero__section .hero__section__content .hero__overlay--rheumatoid-factor {
+  width: 460px;
+}
+.hero__section .hero__section__content .hero__rf-value {
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 10px;
+  display: flex;
+}
+.hero__section .hero__section__content .hero__rf-value .hero__value-number {
+  font-family: "RethinkSans";
+  font-size: 48px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1;
+}
+.hero__section .hero__section__content .hero__rf-value .hero__value-unit {
+  font-family: "RethinkSans";
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+.hero__section .hero__section__content .hero__rf-value .hero__value-range {
+  /* Badge [1.0] */
   /* Auto layout */
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
-  padding: 14.8879px;
-  gap: 29.78px;
-  isolation: isolate;
-  width: 240.07px;
-  height: 219.79px;
-  background: rgba(17, 8, 33, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 8.93px 9.86px rgba(10, 13, 20, 0.05), inset -8px -13px 32px rgb(255, 255, 255), inset 8px 11px 32px rgb(255, 255, 255);
-  border-radius: 16px;
-}
-.hero__section .hero__section__content .hero__section__content__right .hero__section__content__right__overlay1 .hero__section__content__right__overlay1__item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding: 0px;
-  gap: 13.03px;
-  height: 100%;
-  width: 100%;
-}
-.hero__section .hero__section__content .hero__section__content__right .hero__section__content__right__overlay1 .hero__section__content__right__overlay1__item p {
-  margin: 0 auto;
-  width: 86px;
-  height: 23px;
-  font-family: "Geist";
+  padding: 1.93548px 7.74194px;
+  gap: 1.94px;
+  width: 52.48px;
+  height: 15.87px;
+  background: #c2f5da;
+  border-radius: 972px;
+  font-family: "RethinkSans";
   font-style: normal;
-  font-weight: 500;
-  font-size: 14.8879px;
-  line-height: 22px;
-  display: flex;
-  align-items: center;
+  font-weight: 600;
+  font-size: 10.6452px;
+  line-height: 12px;
+  /* identical to box height, or 109% */
   letter-spacing: -0.03em;
-  font-feature-settings: "calt" off, "liga" off;
-  color: #ffffff;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  color: #0b4627;
+  /* Inside auto layout */
+}
+.hero__section .hero__section__content .hero__rf-description {
+  font-family: "RethinkSans";
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 15px;
+}
+.hero__section .hero__section__content .hero__range-indicator {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.hero__section .hero__section__content .hero__legend-box {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+.hero__section .hero__section__content .hero__legend-box--in-range {
+  background-color: #a3ffd2;
+}
+.hero__section .hero__section__content .hero__legend-box--above-range {
+  background-color: #ffa3a3;
+}
+.hero__section .hero__section__content .hero__legend-box--below-range {
+  background-color: #a3d2ff;
+}
+.hero__section .hero__section__content .hero__legend-text {
+  font-family: "RethinkSans";
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  vertical-align: middle;
 }
 
 .features {
@@ -400,7 +730,8 @@ header {
   width: 100%;
   height: 624px;
 }
-.about__section .about__section__left-column {
+
+.about__section__left-column {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -409,14 +740,11 @@ header {
   width: 617px;
   height: 100%;
   justify-content: center;
-  justify-items: center;
-  /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 0;
 }
-.about__section .about__section__left-column .about__section__left-column--heading {
-  /* What you'll get when you join early */
+.about__section__left-column--heading {
   width: 100%;
   height: 160px;
   font-family: "RethinkSans";
@@ -424,19 +752,15 @@ header {
   font-weight: 600;
   font-size: 72px;
   line-height: 80px;
-  /* or 111% */
-  display: flex;
-  align-items: center;
   letter-spacing: -0.04em;
   font-feature-settings: "calt" off, "liga" off;
   color: #171938;
-  /* Inside auto layout */
   flex: none;
   order: 0;
   align-self: stretch;
   flex-grow: 0;
 }
-.about__section .about__section__left-column .about__section__left-column--benefit-list {
+.about__section__left-column--benefit-list {
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -450,36 +774,66 @@ header {
   align-self: stretch;
   flex-grow: 0;
 }
-.about__section .about__section__left-column .about__section__left-column--benefit-list .about__section__left-column--benefit-list--item {
+.about__section__left-column--benefit-list--item {
   font-family: "RethinkSans";
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 32px;
+  display: flex;
+  /* Tambahkan flexbox untuk checkmark dan teks */
   align-items: center;
-  /* identical to box height, or 178% */
+  /* Sejajarkan vertikal */
+  gap: 12px;
+  /* Jarak antara checkmark dan teks */
   letter-spacing: -0.03em;
   font-feature-settings: "calt" off, "liga" off;
   color: #171938;
 }
-.about__section .about__section__left-column .about__section__left-column--benefit-list .about__section__left-column--benefit-list--item .about__section__left-column--benefit-list--item-checkmark img {
+.about__section__left-column--benefit-list--item-checkmark {
+  display: flex;
+  /* Gunakan flexbox untuk memusatkan img */
   align-items: center;
-  padding: 3px;
-  justify-self: center;
+  justify-content: center;
+  width: 28px;
+  /* Ukuran container checkmark (agak lebih besar dari img) */
+  height: 28px;
+  background: #22d3bb;
+  border-radius: 50%;
+  /* Membuat lingkaran */
+  flex-shrink: 0;
+  /* Pastikan checkmark tidak menyusut */
+}
+.about__section__left-column--benefit-list--item-checkmark img {
   width: 20px;
   height: 20px;
-  background: #22d3bb;
-  border-radius: 100px;
+  padding: 0;
+  /* Hapus padding yang di sini, sudah diatur di container */
+  display: block;
+  /* Hapus spasi di bawah gambar */
 }
-.about__section .about__section__right-column {
+
+.about__section__right-column {
   width: 596px;
   height: 624px;
   border-radius: 16px;
   position: relative;
+  /* PENTING: Untuk positioning overlay secara absolut */
   overflow: hidden;
-  /* Inside auto layout */
+  /* Penting untuk gambar background yang dibalik */
+  display: flex;
+  flex-direction: column;
+  /* Overlay akan bertumpuk vertikal */
+  justify-content: flex-start;
+  /* Pusatkan secara vertikal jika ada sisa ruang */
+  align-items: center;
+  /* Pusatkan secara horizontal */
+  gap: 20px;
+  /* Jarak antar overlay */
+  padding: 20px;
+  /* Beri sedikit padding agar overlay tidak terlalu pinggir */
 }
-.about__section .about__section__right-column::before {
+.about__section__right-column::before {
   content: "";
   position: absolute;
   top: 0;
@@ -489,9 +843,270 @@ header {
   background-image: url("../../img/about.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 100% center;
+  background-position: 100%;
+  /* Posisikan di tengah */
   transform: scaleX(-1);
   z-index: -1;
+}
+
+/* --- Gaya Dasar untuk Overlay di About Section --- */
+.about__overlay {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 14.8879px;
+  gap: 15px;
+  background: rgba(17, 8, 33, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0px 8.93px 9.86px rgba(10, 13, 20, 0.05), inset -8px -13px 32px rgba(255, 255, 255, 0.05), inset 8px 11px 32px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+}
+
+.about__overlay-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.about__overlay-header p {
+  font-family: "RethinkSans";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+  margin: 0;
+}
+.about__overlay-header .about__view-details {
+  /* Buttons [1.0] */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 3.98002px 5.97003px;
+  gap: 1.99px;
+  width: 82.9px;
+  height: 23.96px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 0.995005px solid #e7e8eb;
+  box-shadow: 0px 0.995005px 1.99001px rgba(10, 13, 20, 0.03);
+  border-radius: 6.03772px;
+  color: white;
+  font-size: 11.94px;
+  font-weight: 500px;
+}
+
+/* --- Blood Biomarkers Specific Styles (di dalam About Section) --- */
+.about__overlay--blood-biomarkers {
+  width: 276px;
+  height: 166px;
+  position: absolute;
+  top: 24px;
+  /* Sesuaikan posisi vertikal */
+  left: 24px;
+  /* Sesuaikan posisi horizontal */
+}
+
+.about__biomarkers-count {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "RethinkSans";
+  font-size: 12px;
+  font-weight: 500;
+}
+.about__biomarkers-count img {
+  width: 24px;
+  height: 24px;
+}
+.about__biomarkers-count span {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.about__biomarkers-bars {
+  display: flex;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.about__biomarker-bar {
+  height: 100%;
+}
+.about__biomarker-bar--in-range {
+  background-color: #763cea;
+}
+.about__biomarker-bar--out-of-range {
+  background-color: #ff5c00;
+}
+.about__biomarker-bar--improving {
+  background-color: #a3ffd2;
+}
+
+.about__biomarkers-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  font-family: "RethinkSans";
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+}
+.about__biomarkers-legend .about__legend-box {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+.about__biomarkers-legend .about__legend-box--in-range {
+  background-color: #763cea;
+}
+.about__biomarkers-legend .about__legend-box--out-of-range {
+  background-color: #ff5c00;
+}
+.about__biomarkers-legend .about__legend-box--improving {
+  background-color: #a3ffd2;
+}
+
+/* --- Hematocrit Specific Styles (di dalam About Section) --- */
+.about__overlay--hematocrit {
+  width: 252px;
+  height: 289px;
+  position: absolute;
+  bottom: 24px;
+  /* Sesuaikan posisi vertikal */
+  right: 24px;
+  /* Sesuaikan posisi horizontal */
+}
+
+.about__hematocrit-value {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  margin-top: 16px;
+  /* Frame 218 */
+  box-sizing: border-box;
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 11px 16px 2px;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+}
+
+.about__value-number {
+  font-family: "RethinkSans";
+  font-size: 64px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1;
+  display: flex;
+  order: 2;
+  align-items: baseline;
+}
+
+.about__value-percent {
+  font-size: 0.5em;
+  font-weight: 400;
+  align-self: flex-start;
+  margin-left: 5px;
+  transform: translateY(-5px);
+}
+
+.about__value-range--in-range {
+  font-family: "RethinkSans";
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+  background-color: rgba(34, 211, 187, 0.2);
+  border-radius: 4px;
+  order: 1;
+  /* Badge [1.0] */
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  width: 54px;
+  height: 16px;
+  background: #84ebdd;
+  border-radius: 999px;
+}
+
+.about__lab-reference-range {
+  /* Label/Small */
+  font-family: "RethinkSans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.03em;
+  font-feature-settings: "calt" off, "liga" off;
+  color: #ffffff;
+}
+
+.about__range-indicator--vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.about__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.about__legend-box {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.about__legend-box--above-range {
+  background-color: #ff5c00;
+  border-radius: 100%;
+}
+.about__legend-box--in-range-hematocrit {
+  background-color: #22d3bb;
+  border-radius: 100%;
+}
+.about__legend-box--below-range {
+  background-color: #763cea;
+  border-radius: 100%;
+}
+
+.about__legend-text {
+  align-items: center;
+  padding: 0px;
+  gap: 4px;
+  font-size: 12px;
+  width: 100%;
+  height: 16px;
+  /* Inside auto layout */
+  flex: none;
 }
 
 .contact__section {

@@ -1,0 +1,14 @@
+// _functions.scss
+@function toRem($px) {
+  @return calc($px / 16) * 1rem; // Asumsi 16px = 1rem
+}
+
+@function fluidSize($px) {
+  $base-viewport-width: 1440; // Ukuran layar desain dasar Anda (misal Figma/XD)
+  @return calc((#{$px} / $base-viewport-width) * 100vw);
+}
+
+@function toVh($px, $base-viewport-height: 900) { // Menambahkan $base-viewport-height dengan nilai default
+    // $base-viewport-height adalah tinggi viewport yang Anda gunakan sebagai referensi di desain (misal Figma/XD)
+    @return calc((#{$px} / $base-viewport-height) * 100vh);
+}

@@ -1,0 +1,43 @@
+// _variables.scss (Disarankan membuat file terpisah untuk variabel global)
+
+// Definisi breakpoint dalam sebuah map
+$breakpoints: (
+    'xxl': 1440px, //<< wajib
+    'lg-plus': 1369px, // Menggunakan nama deskriptif
+    'lg': 1280px,
+    'md-plus': 1200px, //<< wajib   
+    'md': 1064px,
+    'tablet-lg': 992px, //<< wajib
+    'tablet-md': 768px, //<< wajib
+    'tablet-sm': 640px,
+    'mobile-lg': 576px,//<< wajib
+    'mobile-md': 480px,//<< wajib
+    'mobile-sm': 375px,//<< wajib
+    'mobile-xs': 350px, 
+    'mobile-xxs': 320px //<< opsional lebih baik digunakan
+);
+
+// Anda juga bisa membuat mixin untuk mempermudah penggunaan media query
+// Ini adalah cara yang sangat umum dan direkomendasikan
+@mixin breakpoint($size) {
+    @if map-has-key($breakpoints, $size) {
+        $width: map-get($breakpoints, $size);
+        @media only screen and (max-width: $width) {
+            @content;
+        }
+    } @else {
+        @warn "Breakpoint '#{$size}' not found in $breakpoints map.";
+    }
+}
+
+// Opsional: Mixin untuk min-width jika Anda juga butuh mobile-first
+@mixin breakpoint-min($size) {
+    @if map-has-key($breakpoints, $size) {
+        $width: map-get($breakpoints, $size);
+        @media only screen and (min-width: $width) {
+            @content;
+        }
+    } @else {
+        @warn "Breakpoint '#{$size}' not found in $breakpoints map.";
+    }
+}

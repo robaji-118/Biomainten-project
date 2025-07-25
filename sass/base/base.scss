@@ -1,5 +1,8 @@
 
 
+
+
+
 @font-face {
     font-family: 'RethinkSans';
     src: url('../../css/font/RethinkSans-VariableFont_wght.ttf');
@@ -15,23 +18,63 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'RethinkSans';
-    
 }
 
-.container{
+
+.container {
     width: 100%;
-    max-width: 1440px; // Atau lebar maksimal yang Anda inginkan
+    max-width: map-get($breakpoints, 'xxl'); // Menggunakan variabel untuk max-width
     margin: 0 auto;
-    padding: 0 fluidSize(80);
+    padding: 0 toRem(80); // Default padding
 
+    // Menggunakan mixin breakpoint
+    @include breakpoint('lg-plus') {
+        padding: 0 toRem(72);
+    }
 
-    // // text-align: center;
-    // @media only screen and (max-width: 1440px ) {
-    //     padding: 0 toRem(80);
-    // }
-    // @media only screen and (max-width: 1200px ) { 
-    //     padding: 0 toRem(64);
-    // }
+    @include breakpoint('lg') {
+        padding: 0 toRem(80); // Contoh: kembali ke 80px, sesuaikan dengan desain Anda
+    }
+
+    @include breakpoint('md-plus') {
+        padding: 0 toRem(64);
+    }
+
+    @include breakpoint('md') {
+        padding: 0 toRem(48);
+    }
+
+    @include breakpoint('tablet-lg') {
+        padding: 0 toRem(40);
+    }
+
+    @include breakpoint('tablet-md') {
+        padding: 0 toRem(32);
+    }
+
+    @include breakpoint('tablet-sm') {
+        padding: 0 toRem(24);
+    }
+
+    @include breakpoint('mobile-lg') {
+        padding: 0 toRem(20);
+    }
+
+    @include breakpoint('mobile-md') {
+        padding: 0 toRem(16);
+    }
+
+    @include breakpoint('mobile-sm') {
+        padding: 0 toRem(12);
+    }
+
+    @include breakpoint('mobile-xs') {
+        padding: 0 toRem(10);
+    }
+
+    @include breakpoint('mobile-xxs') {
+        padding: 0 toRem(8);
+    }
 }
 
 body{
