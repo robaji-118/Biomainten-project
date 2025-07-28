@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "RethinkSans";
   src: url("../../css/font/RethinkSans-VariableFont_wght.ttf");
@@ -82,11 +81,21 @@
 }
 
 header {
-  padding: 24px 0;
-  width: 100%;
-  box-sizing: border-box;
   position: absolute;
+  width: 100%;
   z-index: 10;
+  padding: 24px 0;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 1200px) {
+  header {
+    padding: 20px 0;
+  }
+}
+@media only screen and (max-width: 576px) {
+  header {
+    padding: 15px 0;
+  }
 }
 
 .navbar {
@@ -102,6 +111,21 @@ header {
   align-items: center;
   gap: 80px;
 }
+@media only screen and (max-width: 1280px) {
+  .navbar__left-group {
+    gap: 60px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .navbar__left-group {
+    gap: 40px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .navbar__left-group {
+    gap: 0;
+  }
+}
 
 .navbar__logo a {
   text-decoration: none;
@@ -115,6 +139,21 @@ header {
   max-width: 100%;
   height: auto;
 }
+@media only screen and (max-width: 768px) {
+  .navbar__logo a {
+    width: 120px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .navbar__logo a {
+    width: 100px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .navbar__logo a {
+    width: 80px;
+  }
+}
 
 .navbar__links {
   display: flex;
@@ -123,6 +162,21 @@ header {
   padding: 0;
   gap: 30px;
 }
+@media only screen and (max-width: 1280px) {
+  .navbar__links {
+    gap: 25px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .navbar__links {
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .navbar__links {
+    display: none;
+  }
+}
 
 .navbar__list-item a {
   list-style: none;
@@ -130,6 +184,31 @@ header {
   font-weight: 600;
   text-decoration: none;
   color: #000000;
+  transition: color 0.3s ease;
+}
+.navbar__list-item a:hover {
+  color: black;
+}
+@media only screen and (max-width: 1280px) {
+  .navbar__list-item a {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .navbar__list-item a {
+    font-size: 12px;
+  }
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+@media only screen and (max-width: 992px) {
+  .navbar__actions {
+    gap: 0;
+  }
 }
 
 .navbar__button {
@@ -146,6 +225,46 @@ header {
 .navbar__button:hover {
   background-color: rgb(88.875, 23.625, 219.375);
 }
+@media only screen and (max-width: 992px) {
+  .navbar__button {
+    display: none;
+  }
+}
+
+.navbar__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  position: relative;
+  z-index: 11;
+}
+.navbar__hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+.navbar__hamburger span:nth-child(2) {
+  width: 20px;
+}
+@media only screen and (max-width: 992px) {
+  .navbar__hamburger {
+    display: block;
+  }
+}
+.navbar__hamburger.is-active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.navbar__hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+.navbar__hamburger.is-active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
 
 .hero__section {
   background-image: url(../../img/hero.png);
@@ -156,6 +275,8 @@ header {
   width: 100%;
   position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media only screen and (max-width: 1200px) {
   .hero__section {
@@ -224,21 +345,21 @@ header {
   .hero__section .hero__section--gradient__light {
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, #ffffff 10%, rgba(255, 255, 255, 0) 94.15%);
+    background: linear-gradient(180deg, #ffffff 20%, rgba(255, 255, 255, 0) 90%);
   }
 }
 @media only screen and (max-width: 768px) {
   .hero__section .hero__section--gradient__light {
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, #ffffff 10%, rgba(255, 255, 255, 0) 94.15%);
+    background: linear-gradient(180deg, #ffffff 10%, rgba(255, 255, 255, 0) 94.15%);
   }
 }
 @media only screen and (max-width: 480px) {
   .hero__section .hero__section--gradient__light {
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, #ffffff 10%, rgba(255, 255, 255, 0) 94.15%);
+    background: linear-gradient(180deg, #ffffff 35%, rgba(255, 255, 255, 0) 70%);
   }
 }
 .hero__section .hero__section__content {
@@ -250,12 +371,33 @@ header {
   width: 100%;
   position: relative;
   z-index: 2;
-  /* --- Health Score Specific Styles --- */
-  /* --- Rheumatoid Factor Specific Styles --- */
+  padding: 40 0px;
+}
+@media only screen and (max-width: 1369px) {
+  .hero__section .hero__section__content {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .hero__section .hero__section__content {
+    width: 100%;
+    padding: 100px 0 0 0;
+  }
+}
+@media only screen and (max-width: 1064px) {
+  .hero__section .hero__section__content {
+    padding: 100px 0 0 0;
+  }
 }
 @media only screen and (max-width: 992px) {
   .hero__section .hero__section__content {
     flex-direction: column;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .hero__section .hero__section__content {
+    gap: 20px;
   }
 }
 .hero__section .hero__section__content .hero__section__content__left {
@@ -267,10 +409,47 @@ header {
   gap: 48px;
   width: 780px;
   height: 556px;
+  flex-shrink: 0;
+}
+@media only screen and (max-width: 1369px) {
+  .hero__section .hero__section__content .hero__section__content__left {
+    width: 520px;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .hero__section .hero__section__content .hero__section__content__left {
+    width: 480px;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .hero__section .hero__section__content .hero__section__content__left {
+    width: 360px;
+    padding: 100px 0;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 1064px) {
+  .hero__section .hero__section__content .hero__section__content__left {
+    width: 250px;
+    height: auto;
+  }
 }
 @media only screen and (max-width: 992px) {
   .hero__section .hero__section__content .hero__section__content__left {
-    justify-content: end;
+    width: 100%;
+    height: auto;
+    padding: 50px 0 0 0;
+    gap: 32px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .hero__section .hero__section__content .hero__section__content__left {
+    gap: 24px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
   }
 }
 .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item {
@@ -282,6 +461,11 @@ header {
   gap: 32px;
   width: 100%;
 }
+@media only screen and (max-width: 576px) {
+  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item {
+    gap: 20px;
+  }
+}
 .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
   width: 100%;
   height: auto;
@@ -292,22 +476,61 @@ header {
   letter-spacing: -0.02em;
   color: #171938;
 }
+@media only screen and (max-width: 1369px) {
+  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
+    font-size: 80px;
+    line-height: 80px;
+    width: 700px;
+  }
+}
 @media only screen and (max-width: 1280px) {
   .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
-    font-size: 70px;
-    line-height: 60px;
+    font-size: 72px;
+    line-height: 72px;
   }
 }
 @media only screen and (max-width: 1200px) {
   .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
-    font-size: 50px;
-    line-height: 50px;
+    font-size: 64px;
+    line-height: 64px;
+    width: 500px;
   }
 }
 @media only screen and (max-width: 1064px) {
   .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
-    font-size: 50px;
+    font-size: 56px;
+    line-height: 56px;
     width: 500px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
+    font-size: 64px;
+    line-height: 64px;
+    width: 500px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
+    font-size: 46px;
+    line-height: 46px;
+    width: 100%;
+    gap: 20px;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
+    font-size: 38px;
+    line-height: 38px;
+    width: 100%;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
+    font-size: 28px;
+    line-height: 28px;
   }
 }
 .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading-paragraph {
@@ -318,6 +541,36 @@ header {
   line-height: calc(20 / 1440 * 100vw);
   letter-spacing: -0.03em;
   color: #000000;
+}
+@media only screen and (max-width: 1200px) {
+  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading-paragraph {
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading-paragraph {
+    font-size: 15px;
+    line-height: 22px;
+    width: 400px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading-paragraph {
+    font-size: 14px;
+    line-height: 20px;
+    width: 100%;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading-paragraph {
+    font-size: 10px;
+    line-height: 10px;
+    width: 100%;
+    text-align: center;
+  }
 }
 .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--notify-button {
   display: flex;
@@ -337,6 +590,30 @@ header {
 .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--notify-button:hover {
   background-color: rgb(88.875, 23.625, 219.375);
 }
+@media only screen and (max-width: 992px) {
+  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--notify-button {
+    width: 17.5rem;
+    height: 3.5rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--notify-button {
+    width: 50%;
+    height: 3.125rem;
+  }
+  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--notify-button .hero__section__content__left--notify-button--text__button {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--notify-button {
+    width: 70%;
+    height: 3.125rem;
+  }
+  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--notify-button .hero__section__content__left--notify-button--text__button {
+    font-size: 20px;
+  }
+}
 .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--notify-button .hero__section__content__left--notify-button--text__button {
   font-family: "RethinkSans";
   font-style: normal;
@@ -346,222 +623,82 @@ header {
   letter-spacing: -0.03em;
   color: #ffffff;
 }
+@media only screen and (max-width: 576px) {
+  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--notify-button .hero__section__content__left--notify-button--text__button {
+    font-size: 0.6875rem;
+    line-height: 0.6875rem;
+  }
+}
 .hero__section .hero__section__content .hero__section__content__right {
   display: flex;
   flex-direction: column;
   align-items: end;
-  gap: 20px;
-  flex: 1;
-  max-width: 50%;
-  position: relative;
   justify-content: end;
+  flex: 1;
+  width: 100%;
+  position: relative;
   padding: 53px 0;
   height: 100%;
 }
-@media only screen and (max-width: 1200px) {
-  .hero__section .hero__section__content .hero__section__content__right {
-    width: 100%;
-    max-width: 100%;
-    padding: 100px 0 0 0;
-  }
-}
 @media only screen and (max-width: 992px) {
   .hero__section .hero__section__content .hero__section__content__right {
-    width: 100%;
-    max-width: 100%;
+    padding: 53px 0 0 0;
+    margin-top: -200px;
   }
 }
-.hero__section .hero__section__content .hero__overlay {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  padding: 14.8879px;
-  gap: 15px;
-  width: 280px;
+@media only screen and (max-width: 768px) {
+  .hero__section .hero__section__content .hero__section__content__right {
+    padding: 53px 0 0 0;
+    margin-top: 0;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .hero__section .hero__section__content .hero__section__content__right {
+    align-items: center;
+    justify-content: center;
+  }
+}
+.hero__section .hero__section__content .hero__section__content__right img {
   height: auto;
-  background: rgba(17, 8, 33, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
-  box-shadow: 0px 8.93px 9.86px rgba(10, 13, 20, 0.05), inset -8px -13px 32px rgba(255, 255, 255, 0.05), inset 8px 11px 32px rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: #ffffff;
+  display: block;
+  object-fit: contain;
 }
-.hero__section .hero__section__content .hero__overlay-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 5px;
-  justify-content: center;
+.hero__section .hero__section__content .hero__section__content__right img:first-child {
+  width: 240px;
 }
-.hero__section .hero__section__content .hero__overlay-header p {
-  font-family: "RethinkSans";
-  font-weight: 500;
-  font-size: 14.8879px;
-  line-height: 22px;
-  color: #ffffff;
-  margin: 0;
+@media only screen and (max-width: 1064px) {
+  .hero__section .hero__section__content .hero__section__content__right img:first-child {
+    width: 200px;
+  }
 }
-.hero__section .hero__section__content .hero__overlay-header .hero__view-details {
-  font-family: "RethinkSans";
-  font-weight: 500;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
-  text-decoration: none;
+@media only screen and (max-width: 576px) {
+  .hero__section .hero__section__content .hero__section__content__right img:first-child {
+    width: 200px;
+  }
 }
-.hero__section .hero__section__content .hero__overlay-header .hero__view-details:hover {
-  text-decoration: underline;
+@media only screen and (max-width: 480px) {
+  .hero__section .hero__section__content .hero__section__content__right img:first-child {
+    width: 200px;
+  }
 }
-.hero__section .hero__section__content .hero__overlay-header2 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 5px;
+@media only screen and (max-width: 375px) {
+  .hero__section .hero__section__content .hero__section__content__right img:first-child {
+    width: 200px;
+  }
 }
-.hero__section .hero__section__content .hero__overlay-header2 p {
-  font-family: "RethinkSans";
-  font-weight: 500;
-  font-size: 14.8879px;
-  line-height: 22px;
-  color: #ffffff;
-  margin: 0;
-}
-.hero__section .hero__section__content .hero__overlay-header2 .hero__view-details {
-  font-family: "RethinkSans";
-  font-weight: 500;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
-  text-decoration: none;
-}
-.hero__section .hero__section__content .hero__overlay-header2 .hero__view-details:hover {
-  text-decoration: underline;
-}
-.hero__section .hero__section__content .hero__overlay--health-score {
-  align-items: center;
-  text-align: center;
-  padding-bottom: 25px;
-}
-.hero__section .hero__section__content .hero__score-circle {
-  position: relative;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 5px solid rgba(255, 255, 255, 0.3);
-  margin: 15px 0;
-  background: conic-gradient(#763cea 0deg, #763cea 70%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0.2) 100%);
-  transform: rotate(-90deg);
-}
-.hero__section .hero__section__content .hero__score-circle .hero__score-number {
-  font-family: "RethinkSans";
-  font-size: 48px;
-  font-weight: 600;
-  color: #ffffff;
-  line-height: 1;
-  transform: rotate(90deg);
-}
-.hero__section .hero__section__content .hero__score-circle .hero__score-text {
-  font-family: "RethinkSans";
-  font-size: 14px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
-  transform: rotate(90deg);
-}
-.hero__section .hero__section__content .hero__score-message {
-  font-family: "RethinkSans";
-  font-size: 13.0269px;
-  line-height: 19px;
-  letter-spacing: -0.03em;
-  color: #ffffff;
-  margin-top: 5px;
-}
-.hero__section .hero__section__content .hero__overlay--rheumatoid-factor {
+.hero__section .hero__section__content .hero__section__content__right img:last-child {
   width: 460px;
 }
-.hero__section .hero__section__content .hero__rf-value {
-  align-items: flex-end;
-  gap: 8px;
-  margin-bottom: 10px;
-  display: flex;
+@media only screen and (max-width: 1064px) {
+  .hero__section .hero__section__content .hero__section__content__right img:last-child {
+    width: 400px;
+  }
 }
-.hero__section .hero__section__content .hero__rf-value .hero__value-number {
-  font-family: "RethinkSans";
-  font-size: 48px;
-  font-weight: 600;
-  color: #ffffff;
-  line-height: 1;
-}
-.hero__section .hero__section__content .hero__rf-value .hero__value-unit {
-  font-family: "RethinkSans";
-  font-size: 16px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.5;
-}
-.hero__section .hero__section__content .hero__rf-value .hero__value-range {
-  /* Badge [1.0] */
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 1.93548px 7.74194px;
-  gap: 1.94px;
-  width: 52.48px;
-  height: 15.87px;
-  background: #c2f5da;
-  border-radius: 972px;
-  font-family: "RethinkSans";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 10.6452px;
-  line-height: 12px;
-  /* identical to box height, or 109% */
-  letter-spacing: -0.03em;
-  color: #0b4627;
-  /* Inside auto layout */
-}
-.hero__section .hero__section__content .hero__rf-description {
-  font-family: "RethinkSans";
-  font-size: 14px;
-  line-height: 20px;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 15px;
-}
-.hero__section .hero__section__content .hero__range-indicator {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: flex-start;
-  align-items: center;
-}
-.hero__section .hero__section__content .hero__legend-box {
-  width: 12px;
-  height: 12px;
-  border-radius: 3px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 4px;
-}
-.hero__section .hero__section__content .hero__legend-box--in-range {
-  background-color: #a3ffd2;
-}
-.hero__section .hero__section__content .hero__legend-box--above-range {
-  background-color: #ffa3a3;
-}
-.hero__section .hero__section__content .hero__legend-box--below-range {
-  background-color: #a3d2ff;
-}
-.hero__section .hero__section__content .hero__legend-text {
-  font-family: "RethinkSans";
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.9);
-  vertical-align: middle;
+@media only screen and (max-width: 576px) {
+  .hero__section .hero__section__content .hero__section__content__right img:last-child {
+    width: 100%;
+    order: 2;
+  }
 }
 
 .features {
@@ -570,21 +707,58 @@ header {
   align-items: center;
   padding: 80px 0;
   gap: 56px;
+  margin: 0px auto;
+}
+@media only screen and (max-width: 1200px) {
+  .features {
+    padding: 70px 0;
+    gap: 50px;
+  }
+}
+@media only screen and (max-width: 1064px) {
+  .features {
+    padding: 65px 0;
+    gap: 45px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .features {
+    padding: 60px 0;
+    gap: 40px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .features {
+    gap: 35px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .features {
+    gap: 60px;
+  }
 }
 .features__text {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   padding: 0px;
   gap: 24px;
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
+  width: 100%;
+  max-width: 920px;
+  text-align: center;
+}
+@media only screen and (max-width: 992px) {
+  .features__text {
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .features__text {
+    gap: 16px;
+  }
 }
 .features__text--subtitle {
-  /* Badge [1.0] */
-  /* Auto layout */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -596,9 +770,6 @@ header {
   height: 28px;
   background: #efebff;
   border-radius: 999px;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
 }
 .features__text--subtitle p {
   width: 380px;
@@ -611,9 +782,62 @@ header {
   letter-spacing: -0.03em;
   font-feature-settings: "calt" off, "liga" off;
   color: #763cea;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+}
+@media only screen and (max-width: 1064px) {
+  .features__text--subtitle p {
+    width: 100%;
+    font-size: 13px;
+    line-height: 19px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .features__text--subtitle {
+    padding: 3px 6px;
+  }
+  .features__text--subtitle p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .features__text--subtitle {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    padding: 2px 5px;
+  }
+  .features__text--subtitle p {
+    width: auto;
+    font-size: 12px;
+    line-height: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .features__text--subtitle p {
+    font-size: 10px;
+    height: 15px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .features__text--subtitle {
+    max-width: 240px;
+  }
+  .features__text--subtitle p {
+    font-size: 8px;
+    line-height: 16px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .features__text--subtitle {
+    max-width: 200px;
+  }
+  .features__text--subtitle p {
+    font-size: 6px;
+    line-height: 14px;
+  }
 }
 .features__text--description {
   display: flex;
@@ -624,12 +848,9 @@ header {
   gap: 16px;
   width: 920px;
   height: 160px;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
+  height: auto;
 }
 .features__text--description h2 {
-  height: 80px;
   font-family: "RethinkSans";
   font-style: normal;
   font-weight: 600;
@@ -641,40 +862,134 @@ header {
   letter-spacing: -0.04em;
   font-feature-settings: "calt" off, "liga" off;
   color: #000000;
-  flex: flex;
-  order: 0;
-  align-self: center;
-  flex-grow: 0;
 }
 .features__text--description p {
   width: 920px;
-  height: 64px;
   font-family: "Manrope";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 32px;
-  /* or 160% */
   display: flex;
   align-items: center;
   text-align: center;
   letter-spacing: -0.03em;
   font-feature-settings: "calt" off, "liga" off;
   color: #000000;
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
+  width: 100%;
+}
+@media only screen and (max-width: 1280px) {
+  .features__text--description {
+    width: 80%;
+  }
+  .features__text--description h2 {
+    font-size: 68px;
+  }
+  .features__text--description p {
+    font-size: 19px;
+    line-height: 30px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .features__text--description {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 1064px) {
+  .features__text--description {
+    width: 95%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .features__text--description {
+    width: 95%;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .features__text--description {
+    width: 90%;
+  }
+  .features__text--description h2 {
+    font-size: 64px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .features__text--description {
+    width: 100%;
+  }
+  .features__text--description h2 {
+    font-size: 60px;
+    line-height: 60px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .features__text--description {
+    width: 90%;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .features__text--description {
+    width: 95%;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .features__text--description {
+    width: 95%;
+  }
+  .features__text--description h2 {
+    font-size: 50px;
+    line-height: 50px;
+  }
+  .features__text--description p {
+    font-size: 15px;
+    line-height: 26px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .features__text--description {
+    width: 95%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .features__text--description {
+    width: 95%;
+  }
 }
 .features__our {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   text-align: center;
   gap: 32px;
 }
+@media only screen and (max-width: 1280px) {
+  .features__our {
+    gap: 28px;
+  }
+  .features__our .features__our__benefits {
+    flex: 0 0 calc(50% - 14px);
+    max-width: calc(50% - 14px);
+  }
+}
+@media only screen and (max-width: 992px) {
+  .features__our {
+    gap: 24px;
+  }
+  .features__our .features__our__benefits {
+    flex: 0 0 calc(50% - 12px);
+    max-width: calc(50% - 12px);
+  }
+}
+@media only screen and (max-width: 576px) {
+  .features__our {
+    gap: 85px;
+    flex-direction: column;
+  }
+}
 .features__our__benefits {
-  /* Frame 166 */
-  /* Auto layout */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -683,41 +998,96 @@ header {
   gap: 32px;
   width: 296px;
   height: 220px;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 1;
+  flex-shrink: 0;
+  height: auto;
+}
+@media only screen and (max-width: 1200px) {
+  .features__our__benefits {
+    width: 280px;
+    gap: 28px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .features__our__benefits {
+    width: 100%;
+    margin: 0 auto;
+    gap: 20px;
+  }
+  .features__our__benefits:first-child {
+    border-top: 1px solid;
+    padding-top: 20px;
+  }
+  .features__our__benefits:last-child {
+    border-bottom: 1px solid;
+    padding-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .features__our__benefits {
+    width: 100%;
+    gap: 16px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .features__our__benefits {
+    width: 95%;
+    gap: 12px;
+  }
 }
 .features__our__benefits h3 {
-  /* Lab tracking */
-  /* Title/H5 Title */
   font-family: "RethinkSans";
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 32px;
-  /* identical to box height, or 133% */
   align-items: center;
   text-align: center;
   letter-spacing: -0.04em;
   font-feature-settings: "calt" off, "liga" off;
   color: #171938;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
 }
 .features__our__benefits p {
   font-size: 18px;
-  font-weight: 400px;
+  font-weight: 400;
   font-family: "RethinkSans";
+  text-align: center;
+  line-height: 28px;
+  width: 100%;
+}
+@media only screen and (max-width: 1280px) {
+  .features__our__benefits p {
+    width: 200px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .features__our__benefits p {
+    font-size: 15px;
+  }
 }
 .features__our__benefits__icon {
   height: 64px;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.features__our__benefits__icon img {
+  max-width: 100%;
+  height: auto;
+}
+@media only screen and (max-width: 992px) {
+  .features__our__benefits__icon {
+    height: 64px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .features__our__benefits__icon {
+    height: 64px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .features__our__benefits__icon {
+    height: 64px;
+  }
 }
 
 .about__section {
@@ -725,10 +1095,75 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 67px;
   width: 100%;
   height: 624px;
+  box-sizing: border-box;
+  height: auto;
+  min-height: 500px;
+}
+@media only screen and (max-width: 1369px) {
+  .about__section {
+    margin-top: 100px;
+    gap: 60px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .about__section {
+    margin-top: 90px;
+    gap: 50px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .about__section {
+    margin-top: 80px;
+    gap: 40px;
+  }
+}
+@media only screen and (max-width: 1064px) {
+  .about__section {
+    margin-top: 70px;
+    gap: 30px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .about__section {
+    flex-direction: column;
+    margin-top: 60px;
+    gap: 40px;
+    min-height: auto;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .about__section {
+    margin-top: 50px;
+    gap: 32px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .about__section {
+    margin-top: 40px;
+    gap: 24px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .about__section {
+    margin-top: 30px;
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about__section {
+    margin-top: 25px;
+    gap: 16px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .about__section {
+    margin-top: 20px;
+    gap: 12px;
+  }
 }
 
 .about__section__left-column {
@@ -740,9 +1175,54 @@ header {
   width: 617px;
   height: 100%;
   justify-content: center;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  flex-shrink: 0;
+}
+@media only screen and (max-width: 1369px) {
+  .about__section__left-column {
+    width: 55%;
+    gap: 28px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .about__section__left-column {
+    width: 50%;
+    gap: 24px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .about__section__left-column {
+    width: 48%;
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 1064px) {
+  .about__section__left-column {
+    width: 45%;
+    gap: 18px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .about__section__left-column {
+    width: 100%;
+    align-items: start;
+    text-align: start;
+    gap: 32px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .about__section__left-column {
+    gap: 28px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .about__section__left-column {
+    gap: 24px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about__section__left-column {
+    gap: 20px;
+  }
 }
 .about__section__left-column--heading {
   width: 100%;
@@ -755,10 +1235,43 @@ header {
   letter-spacing: -0.04em;
   font-feature-settings: "calt" off, "liga" off;
   color: #171938;
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
+  height: auto;
+}
+@media only screen and (max-width: 1369px) {
+  .about__section__left-column--heading {
+    font-size: 68px;
+    line-height: 76px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .about__section__left-column--heading {
+    font-size: 60px;
+    line-height: 60px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .about__section__left-column--heading {
+    font-size: 50px;
+    line-height: 50px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .about__section__left-column--heading {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about__section__left-column--heading {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .about__section__left-column--heading {
+    font-size: 40px;
+    line-height: 40px;
+  }
 }
 .about__section__left-column--benefit-list {
   list-style: none;
@@ -769,10 +1282,23 @@ header {
   gap: 12px;
   width: 617px;
   height: 164px;
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
+  height: auto;
+  width: 100%;
+}
+@media only screen and (max-width: 992px) {
+  .about__section__left-column--benefit-list {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .about__section__left-column--benefit-list {
+    gap: 10px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about__section__left-column--benefit-list {
+    gap: 8px;
+  }
 }
 .about__section__left-column--benefit-list--item {
   font-family: "RethinkSans";
@@ -781,36 +1307,77 @@ header {
   font-size: 18px;
   line-height: 32px;
   display: flex;
-  /* Tambahkan flexbox untuk checkmark dan teks */
   align-items: center;
-  /* Sejajarkan vertikal */
   gap: 12px;
-  /* Jarak antara checkmark dan teks */
   letter-spacing: -0.03em;
   font-feature-settings: "calt" off, "liga" off;
   color: #171938;
+  width: 100%;
+}
+@media only screen and (max-width: 1280px) {
+  .about__section__left-column--benefit-list--item {
+    font-size: 17px;
+    line-height: 30px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .about__section__left-column--benefit-list--item {
+    font-size: 16px;
+    line-height: 16px;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .about__section__left-column--benefit-list--item {
+    font-size: 12px;
+    line-height: 12px;
+    width: 100%;
+  }
 }
 .about__section__left-column--benefit-list--item-checkmark {
   display: flex;
-  /* Gunakan flexbox untuk memusatkan img */
   align-items: center;
   justify-content: center;
   width: 28px;
-  /* Ukuran container checkmark (agak lebih besar dari img) */
   height: 28px;
   background: #22d3bb;
   border-radius: 50%;
-  /* Membuat lingkaran */
   flex-shrink: 0;
-  /* Pastikan checkmark tidak menyusut */
 }
 .about__section__left-column--benefit-list--item-checkmark img {
   width: 20px;
   height: 20px;
-  padding: 0;
-  /* Hapus padding yang di sini, sudah diatur di container */
   display: block;
-  /* Hapus spasi di bawah gambar */
+}
+@media only screen and (max-width: 992px) {
+  .about__section__left-column--benefit-list--item-checkmark {
+    width: 24px;
+    height: 24px;
+  }
+  .about__section__left-column--benefit-list--item-checkmark img {
+    width: 18px;
+    height: 18px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .about__section__left-column--benefit-list--item-checkmark {
+    width: 20px;
+    height: 20px;
+  }
+  .about__section__left-column--benefit-list--item-checkmark img {
+    width: 16px;
+    height: 16px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about__section__left-column--benefit-list--item-checkmark {
+    width: 18px;
+    height: 18px;
+  }
+  .about__section__left-column--benefit-list--item-checkmark img {
+    width: 14px;
+    height: 14px;
+  }
 }
 
 .about__section__right-column {
@@ -818,20 +1385,72 @@ header {
   height: 624px;
   border-radius: 16px;
   position: relative;
-  /* PENTING: Untuk positioning overlay secara absolut */
   overflow: hidden;
-  /* Penting untuk gambar background yang dibalik */
   display: flex;
   flex-direction: column;
-  /* Overlay akan bertumpuk vertikal */
   justify-content: flex-start;
-  /* Pusatkan secara vertikal jika ada sisa ruang */
   align-items: center;
-  /* Pusatkan secara horizontal */
   gap: 20px;
-  /* Jarak antar overlay */
   padding: 20px;
-  /* Beri sedikit padding agar overlay tidak terlalu pinggir */
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 1369px) {
+  .about__section__right-column {
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .about__section__right-column {
+    width: 48%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .about__section__right-column {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 1064px) {
+  .about__section__right-column {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .about__section__right-column {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .about__section__right-column {
+    min-height: 400px;
+    padding: 16px;
+    gap: 16px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .about__section__right-column {
+    height: 500px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .about__section__right-column {
+    height: 500px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about__section__right-column {
+    height: 300px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .about__section__right-column {
+    height: 200px;
+  }
 }
 .about__section__right-column::before {
   content: "";
@@ -844,12 +1463,11 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 100%;
-  /* Posisikan di tengah */
   transform: scaleX(-1);
   z-index: -1;
 }
 
-/* --- Gaya Dasar untuk Overlay di About Section --- */
+/* --- Base Styles for Overlays in About Section --- */
 .about__overlay {
   box-sizing: border-box;
   display: flex;
@@ -863,6 +1481,50 @@ header {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: #ffffff;
+  width: 100%;
+  max-width: 300px;
+}
+@media only screen and (max-width: 992px) {
+  .about__overlay {
+    padding: 14px;
+    gap: 14px;
+    max-width: 350px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .about__overlay {
+    padding: 12px;
+    gap: 12px;
+    max-width: 320px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .about__overlay {
+    padding: 10px;
+    gap: 10px;
+    max-width: 280px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .about__overlay {
+    padding: 8px;
+    gap: 8px;
+    max-width: 250px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about__overlay {
+    padding: 6px;
+    gap: 6px;
+    max-width: 220px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .about__overlay {
+    padding: 5px;
+    gap: 5px;
+    max-width: 200px;
+  }
 }
 
 .about__overlay-header {
@@ -879,8 +1541,25 @@ header {
   color: #ffffff;
   margin: 0;
 }
+@media only screen and (max-width: 576px) {
+  .about__overlay-header p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about__overlay-header p {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .about__overlay-header p {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
 .about__overlay-header .about__view-details {
-  /* Buttons [1.0] */
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -896,18 +1575,56 @@ header {
   border-radius: 6.03772px;
   color: white;
   font-size: 11.94px;
-  font-weight: 500px;
+  font-weight: 500;
+}
+@media only screen and (max-width: 576px) {
+  .about__overlay-header .about__view-details {
+    width: 70px;
+    height: 20px;
+    font-size: 10px;
+    padding: 3px 5px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about__overlay-header .about__view-details {
+    width: 60px;
+    height: 18px;
+    font-size: 7px;
+    padding: 2px 4px;
+  }
 }
 
-/* --- Blood Biomarkers Specific Styles (di dalam About Section) --- */
+/* --- Blood Biomarkers Specific Styles (inside About Section) --- */
 .about__overlay--blood-biomarkers {
   width: 276px;
   height: 166px;
   position: absolute;
   top: 24px;
-  /* Sesuaikan posisi vertikal */
   left: 24px;
-  /* Sesuaikan posisi horizontal */
+  box-sizing: border-box;
+  height: auto;
+}
+@media only screen and (max-width: 992px) {
+  .about__overlay--blood-biomarkers {
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    top: 24px;
+    left: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .about__overlay--blood-biomarkers {
+    max-width: 350px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .about__overlay--blood-biomarkers {
+    max-width: 100%;
+    height: 100%;
+    position: static;
+    padding: 20px;
+  }
 }
 
 .about__biomarkers-count {
@@ -926,6 +1643,30 @@ header {
   color: #ffffff;
   font-size: 24px;
 }
+@media only screen and (max-width: 576px) {
+  .about__biomarkers-count {
+    gap: 6px;
+  }
+  .about__biomarkers-count img {
+    width: 20px;
+    height: 20px;
+  }
+  .about__biomarkers-count span {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about__biomarkers-count {
+    font-size: 11px;
+  }
+  .about__biomarkers-count img {
+    width: 18px;
+    height: 18px;
+  }
+  .about__biomarkers-count span {
+    font-size: 18px;
+  }
+}
 
 .about__biomarkers-bars {
   display: flex;
@@ -934,6 +1675,18 @@ header {
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 15px;
+}
+@media only screen and (max-width: 576px) {
+  .about__biomarkers-bars {
+    height: 8px;
+    margin-bottom: 12px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about__biomarkers-bars {
+    height: 6px;
+    margin-bottom: 10px;
+  }
 }
 
 .about__biomarker-bar {
@@ -957,6 +1710,18 @@ header {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.9);
 }
+@media only screen and (max-width: 576px) {
+  .about__biomarkers-legend {
+    font-size: 11px;
+    gap: 8px 16px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about__biomarkers-legend {
+    font-size: 10px;
+    gap: 6px 12px;
+  }
+}
 .about__biomarkers-legend .about__legend-box {
   width: 12px;
   height: 12px;
@@ -964,6 +1729,20 @@ header {
   display: inline-block;
   vertical-align: middle;
   margin-right: 4px;
+}
+@media only screen and (max-width: 576px) {
+  .about__biomarkers-legend .about__legend-box {
+    width: 10px;
+    height: 10px;
+    margin-right: 3px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about__biomarkers-legend .about__legend-box {
+    width: 8px;
+    height: 8px;
+    margin-right: 2px;
+  }
 }
 .about__biomarkers-legend .about__legend-box--in-range {
   background-color: #763cea;
@@ -975,38 +1754,67 @@ header {
   background-color: #a3ffd2;
 }
 
-/* --- Hematocrit Specific Styles (di dalam About Section) --- */
+/* --- Hematocrit Specific Styles (inside About Section) --- */
 .about__overlay--hematocrit {
   width: 252px;
   height: 289px;
   position: absolute;
   bottom: 24px;
-  /* Sesuaikan posisi vertikal */
   right: 24px;
-  /* Sesuaikan posisi horizontal */
+  box-sizing: border-box;
+  padding: 20px;
+  height: auto;
+}
+@media only screen and (max-width: 992px) {
+  .about__overlay--hematocrit {
+    position: absolute;
+    width: 100%;
+    max-width: 400px;
+    bottom: 24px;
+    right: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .about__overlay--hematocrit {
+    max-width: 350px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .about__overlay--hematocrit {
+    position: static;
+    max-width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
 }
 
 .about__hematocrit-value {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  position: relative;
-  width: 100%;
-  text-align: center;
-  align-items: center;
-  margin-top: 16px;
-  /* Frame 218 */
-  box-sizing: border-box;
-  /* Auto layout */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 11px 16px 2px;
   gap: 8px;
+  box-sizing: border-box;
   background: rgba(255, 255, 255, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
+  width: 100%;
+  margin-top: 16px;
+}
+@media only screen and (max-width: 576px) {
+  .about__hematocrit-value {
+    padding: 10px 14px 2px;
+    gap: 6px;
+    margin-top: 12px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about__hematocrit-value {
+    padding: 8px 12px 2px;
+    gap: 5px;
+    margin-top: 10px;
+  }
 }
 
 .about__value-number {
@@ -1016,8 +1824,28 @@ header {
   color: #ffffff;
   line-height: 1;
   display: flex;
-  order: 2;
   align-items: baseline;
+  order: 2;
+}
+@media only screen and (max-width: 576px) {
+  .about__value-number {
+    font-size: 56px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .about__value-number {
+    font-size: 48px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about__value-number {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .about__value-number {
+    font-size: 36px;
+  }
 }
 
 .about__value-percent {
@@ -1027,32 +1855,49 @@ header {
   margin-left: 5px;
   transform: translateY(-5px);
 }
+@media only screen and (max-width: 576px) {
+  .about__value-percent {
+    margin-left: 4px;
+    transform: translateY(-4px);
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about__value-percent {
+    margin-left: 3px;
+    transform: translateY(-3px);
+  }
+}
 
 .about__value-range--in-range {
   font-family: "RethinkSans";
-  font-size: 14px;
-  font-weight: 500;
-  color: black;
-  background-color: rgba(34, 211, 187, 0.2);
-  border-radius: 4px;
-  order: 1;
-  /* Badge [1.0] */
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 2px;
   font-size: 11px;
   font-weight: 600;
-  width: 54px;
-  height: 16px;
+  color: black;
   background: #84ebdd;
   border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 54px;
+  height: 16px;
+  order: 1;
+}
+@media only screen and (max-width: 576px) {
+  .about__value-range--in-range {
+    font-size: 10px;
+    width: 50px;
+    height: 15px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about__value-range--in-range {
+    font-size: 9px;
+    width: 45px;
+    height: 14px;
+  }
 }
 
 .about__lab-reference-range {
-  /* Label/Small */
   font-family: "RethinkSans";
   font-style: normal;
   font-weight: 500;
@@ -1063,6 +1908,25 @@ header {
   letter-spacing: -0.03em;
   font-feature-settings: "calt" off, "liga" off;
   color: #ffffff;
+  width: 100%;
+}
+@media only screen and (max-width: 576px) {
+  .about__lab-reference-range {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about__lab-reference-range {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .about__lab-reference-range {
+    font-size: 11px;
+    line-height: 15px;
+  }
 }
 
 .about__range-indicator--vertical {
@@ -1076,6 +1940,16 @@ header {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+@media only screen and (max-width: 576px) {
+  .about__legend-item {
+    gap: 6px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about__legend-item {
+    gap: 4px;
+  }
 }
 
 .about__legend-box {
@@ -1097,16 +1971,41 @@ header {
   background-color: #763cea;
   border-radius: 100%;
 }
+@media only screen and (max-width: 576px) {
+  .about__legend-box {
+    width: 10px;
+    height: 10px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about__legend-box {
+    width: 8px;
+    height: 8px;
+  }
+}
 
 .about__legend-text {
   align-items: center;
   padding: 0px;
-  gap: 4px;
   font-size: 12px;
   width: 100%;
   height: 16px;
-  /* Inside auto layout */
-  flex: none;
+  height: auto;
+}
+@media only screen and (max-width: 576px) {
+  .about__legend-text {
+    font-size: 11px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about__legend-text {
+    font-size: 10px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .about__legend-text {
+    font-size: 9px;
+  }
 }
 
 .contact__section {
@@ -1115,13 +2014,98 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 48px 48px 48px 64px;
+  padding: 48px 64px;
   gap: 48px;
   isolation: isolate;
   width: 100%;
   height: 388px;
   margin-top: 88px;
   border-radius: 16px;
+  box-sizing: border-box;
+  height: auto;
+  min-height: 300px;
+}
+@media only screen and (max-width: 1440px) {
+  .contact__section {
+    padding: 48px 64px;
+    gap: 64px;
+  }
+}
+@media only screen and (max-width: 1369px) {
+  .contact__section {
+    padding: 40px 56px;
+    gap: 40px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .contact__section {
+    padding: 40px 48px;
+    gap: 40px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .contact__section {
+    padding: 32px 40px;
+    gap: 32px;
+    margin-top: 72px;
+  }
+}
+@media only screen and (max-width: 1064px) {
+  .contact__section {
+    padding: 32px;
+    gap: 32px;
+    margin-top: 64px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .contact__section {
+    flex-direction: column;
+    padding: 40px 32px;
+    gap: 32px;
+    margin-top: 56px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .contact__section {
+    padding: 32px 24px;
+    gap: 28px;
+    margin-top: 48px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .contact__section {
+    padding: 28px 20px;
+    gap: 24px;
+    margin-top: 40px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .contact__section {
+    padding: 24px 16px;
+    gap: 20px;
+    margin-top: 32px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .contact__section {
+    padding: 20px 16px;
+    gap: 16px;
+    margin-top: 28px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .contact__section {
+    padding: 16px 12px;
+    gap: 16px;
+    margin-top: 24px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .contact__section {
+    padding: 12px 10px;
+    gap: 12px;
+    margin-top: 20px;
+  }
 }
 .contact__section .contact__section_left-content {
   display: flex;
@@ -1130,7 +2114,43 @@ header {
   padding: 0px;
   gap: 16px;
   width: 572px;
-  margin: 0 auto;
+  margin: 0;
+  flex-shrink: 0;
+}
+@media only screen and (max-width: 1200px) {
+  .contact__section .contact__section_left-content {
+    width: 50%;
+    gap: 14px;
+  }
+}
+@media only screen and (max-width: 1064px) {
+  .contact__section .contact__section_left-content {
+    width: 55%;
+    gap: 12px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .contact__section .contact__section_left-content {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .contact__section .contact__section_left-content {
+    gap: 14px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .contact__section .contact__section_left-content {
+    gap: 12px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .contact__section .contact__section_left-content {
+    gap: 10px;
+  }
 }
 .contact__section .contact__section_left-content h2 {
   font-family: "RethinkSans";
@@ -1138,10 +2158,45 @@ header {
   font-weight: 700;
   font-size: 64px;
   line-height: 64px;
-  width: 572px;
+  width: 100%;
   letter-spacing: -0.04em;
   color: #ffffff;
-  /* Inside auto layout */
+}
+@media only screen and (max-width: 1369px) {
+  .contact__section .contact__section_left-content h2 {
+    font-size: calc(60 / 1440 * 100vw);
+    line-height: calc(60 / 1440 * 100vw);
+  }
+}
+@media only screen and (max-width: 992px) {
+  .contact__section .contact__section_left-content h2 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .contact__section .contact__section_left-content h2 {
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .contact__section .contact__section_left-content h2 {
+    font-size: 28px;
+    line-height: 28px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .contact__section .contact__section_left-content h2 {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .contact__section .contact__section_left-content h2 {
+    font-size: 20px;
+    line-height: 20px;
+  }
 }
 .contact__section .contact__section_left-content p {
   font-family: "RethinkSans";
@@ -1151,11 +2206,34 @@ header {
   line-height: 30px;
   color: #ffffff;
   opacity: 0.7;
+  width: 100%;
+}
+@media only screen and (max-width: 1369px) {
+  .contact__section .contact__section_left-content p {
+    font-size: 19px;
+    line-height: 29px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .contact__section .contact__section_left-content p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .contact__section .contact__section_left-content p {
+    font-size: 13px;
+    line-height: 23px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .contact__section .contact__section_left-content p {
+    font-size: 10px;
+    line-height: 20px;
+  }
 }
 .contact__section .contact__section_right-content {
-  /* Frame 180 */
   box-sizing: border-box;
-  /* Auto layout */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1163,16 +2241,74 @@ header {
   padding: 32px;
   gap: 16px;
   isolation: isolate;
-  margin: 0 auto;
   width: 100%;
   height: 292px;
+  max-width: 480px;
+  margin: 0 auto;
   background: rgba(255, 255, 255, 0.04);
   box-shadow: 0px 8.93px 9.86px rgba(10, 13, 20, 0.05), 0px 1px 2px rgba(10, 13, 20, 0.03), inset -8px -13px 42px rgba(255, 255, 255, 0.35), inset 8px 11px 16px rgba(255, 255, 255, 0.12);
   border-radius: 16px;
+  height: auto;
+}
+@media only screen and (max-width: 1200px) {
+  .contact__section .contact__section_right-content {
+    max-width: 450px;
+    padding: 28px;
+    gap: 14px;
+  }
+}
+@media only screen and (max-width: 1064px) {
+  .contact__section .contact__section_right-content {
+    max-width: 400px;
+    padding: 24px;
+    gap: 12px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .contact__section .contact__section_right-content {
+    width: 100%;
+    max-width: 500px;
+    padding: 32px;
+    gap: 16px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .contact__section .contact__section_right-content {
+    max-width: 450px;
+    padding: 28px;
+    gap: 14px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .contact__section .contact__section_right-content {
+    max-width: 350px;
+    padding: 24px;
+    gap: 12px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .contact__section .contact__section_right-content {
+    max-width: 300px;
+    padding: 20px;
+    gap: 10px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .contact__section .contact__section_right-content {
+    max-width: 280px;
+    padding: 16px;
+    gap: 8px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .contact__section .contact__section_right-content {
+    max-width: 250px;
+    padding: 12px;
+    gap: 6px;
+  }
 }
 .contact__section .contact__section_right-content .contact__section_right-content--waitlist-form {
-  /* Frame 43 */
-  /* Auto layout */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1181,9 +2317,18 @@ header {
   width: 100%;
   gap: 24px;
 }
+@media only screen and (max-width: 576px) {
+  .contact__section .contact__section_right-content .contact__section_right-content--waitlist-form {
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .contact__section .contact__section_right-content .contact__section_right-content--waitlist-form {
+    gap: 16px;
+  }
+}
 .contact__section .contact__section_right-content .contact__section_right-content--waitlist-form input {
   box-sizing: border-box;
-  /* Auto layout */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1196,16 +2341,27 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0px 1px 2px rgba(10, 13, 20, 0.03);
   border-radius: 10px;
+  font-size: 16px;
 }
 .contact__section .contact__section_right-content .contact__section_right-content--waitlist-form input:focus {
-  outline: none; /* Menghilangkan outline default browser */
+  outline: none;
   border: 3px solid rgba(255, 255, 255, 0.2);
-  /* Atau Anda bisa mengubahnya ke warna lain yang diinginkan,
-   misalnya border: 1px solid #yourDesiredColor; */
 }
 .contact__section .contact__section_right-content .contact__section_right-content--waitlist-form input::placeholder {
-  color: rgba(255, 255, 255, 0.6); /* Contoh warna teks placeholder */
-  opacity: 1; /* Beberapa browser mengurangi opacity placeholder secara default */
+  color: rgba(255, 255, 255, 0.6);
+  opacity: 1;
+}
+@media only screen and (max-width: 576px) {
+  .contact__section .contact__section_right-content .contact__section_right-content--waitlist-form input {
+    font-size: 15px;
+    padding: 12px 10px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .contact__section .contact__section_right-content .contact__section_right-content--waitlist-form input {
+    font-size: 14px;
+    padding: 10px 8px;
+  }
 }
 .contact__section .contact__section_right-content .contact__section_right-content--waitlist-form button {
   display: flex;
@@ -1222,10 +2378,25 @@ header {
   background: #ffffff;
   border-radius: 12px;
   border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.contact__section .contact__section_right-content .contact__section_right-content--waitlist-form button:hover {
+  background-color: rgb(229.5, 229.5, 229.5);
+}
+@media only screen and (max-width: 576px) {
+  .contact__section .contact__section_right-content .contact__section_right-content--waitlist-form button {
+    height: 44px;
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .contact__section .contact__section_right-content .contact__section_right-content--waitlist-form button {
+    height: 40px;
+    font-size: 12px;
+  }
 }
 .contact__section .contact__section_right-content .contact__section_right-content--privacy-text {
-  /* We respect your privacy. No spam — just smarter health. */
-  /* Label/Medium */
   font-family: "RethinkSans";
   font-style: normal;
   font-weight: 500;
@@ -1234,7 +2405,31 @@ header {
   align-items: center;
   text-align: center;
   color: rgba(255, 255, 255, 0.8);
-  /* Inside auto layout */
+  width: 100%;
+}
+@media only screen and (max-width: 576px) {
+  .contact__section .contact__section_right-content .contact__section_right-content--privacy-text {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .contact__section .contact__section_right-content .contact__section_right-content--privacy-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .contact__section .contact__section_right-content .contact__section_right-content--privacy-text {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .contact__section .contact__section_right-content .contact__section_right-content--privacy-text {
+    font-size: 12px;
+    line-height: 16px;
+  }
 }
 
 .footer {
@@ -1248,6 +2443,11 @@ header {
   line-height: 24px;
   text-align: center;
   color: #8b8c9b;
+}
+@media only screen and (max-width: 576px) {
+  .footer {
+    font-size: 12px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
