@@ -1,463 +1,307 @@
 .hero__section {
-  background-image: url(../../img/hero.png); // Gambar latar belakang full-width
-  background-size: cover; // Memastikan gambar menutupi seluruh area
-  background-position: center; // Memusatkan gambar latar belakang
-  background-repeat: no-repeat; // Mencegah pengulangan gambar
-
-  height: 820px; // Tinggi keseluruhan hero section sesuai desain
-  width: 100%; // Memastikan lebar penuh
-
-  position: relative; // PENTING: Untuk positioning anak absolut (seperti gradient overlay)
-
-  display: flex; // Aktifkan Flexbox
-  justify-content: center; // Pusatkan konten di tengah secara horizontal
-  align-items: center; // Pusatkan konten di tengah secara vertikal
-
-  @include breakpoint("md-plus") { // 1200px
-    height: auto; 
-    min-height: toVh(700, 900); 
-    background-position: center 35%; 
+  position: relative;
+  @include breakpoint(tablet-md) {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
   }
-  @include breakpoint("tablet-lg") { 
-    height: auto;
-    min-height: toVh(600, 900);
-    background-position: center 40%; 
-  }
-  @include breakpoint("tablet-md") { 
-    height: auto;
-    min-height: toVh(550, 900); 
-    background-position: center 45%; // Sesuaikan
-  }
-  @include breakpoint("mobile-lg") { // 576px
-    height: auto;
-    min-height: toVh(500, 900); // Minimal 500px, bisa juga `min-height: 80vh;`
-    background-position: center 50%; // Mungkin sudah cukup 'center' di mobile
-  }
-  @include breakpoint("mobile-md") { // 480px
-    height: auto;
-    min-height: toVh(450, 900);
-    background-position: center 55%;
-  }
-  @include breakpoint("mobile-sm") { // 375px
-    height: auto;
-    min-height: toVh(400, 900); // Minimal tinggi
-    background-position: center 60%; // Lebih ke bawah
-  }
-  @include breakpoint("mobile-xxs") { // 320px
-    min-height: toVh(350, 900);
-    background-position: center 70%; // Paling bawah
-  }
+  .hero__section__hero__background {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // padding: 60px;
+    z-index: -1;
+    width: 100%;
+    height: 820px;
+    overflow: hidden;
 
-  .hero__section--gradient__light {
-    position: absolute; // Posisikan secara absolut relatif terhadap .hero__section
-    width: 1065px;
-    height: 821px;
-    left: 0; // Mulai dari tepi kiri
+    @include breakpoint(tablet-md) {
+        position: relative;
+        top: unset;
+        left: unset;
+        right: unset;
+        bottom: unset;
+        width: 100%;
+        padding: 0 1.5rem;
+        height: 50vw;
+      // container: ;
+    }
 
-    background: linear-gradient(
-      90deg,
-      #ffffff 44.71%,
-      rgba(255, 255, 255, 0) 94.15%
-    );
-    z-index: 1; // Pastikan di atas gambar latar belakang tapi di bawah teks/dashboard
-
-    @include breakpoint("md-plus") {
+    .hero__section__hero__background--img {
+      object-fit: cover;
       width: 100%;
+      height: calc(100% + 72px);
+
+      @include breakpoint(tablet-md){
+        border-radius: 2px;
+      }
+    }
+
+    .hero__section__hero__background--gradient__light {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      width: 73.96%;
       height: 100%;
-      // Sudut gradient disesuaikan agar transisi lebih baik saat layar menyempit
       background: linear-gradient(
         90deg,
-        #ffffff 40%,
+        #fff 44.71%,
         rgba(255, 255, 255, 0) 94.15%
       );
-    }
 
-    @include breakpoint("tablet-lg") {
-      width: 100%;
-      height: 100%;
-      // Sudut gradient disesuaikan lebih jauh untuk tablet
-      background: linear-gradient(
-        180deg,
-        #ffffff 20%, 
-        rgba(255, 255, 255, 0) 90%
-      );
+      @include breakpoint(tablet-md){
+        visibility: hidden;
+        opacity: 0;
+      }
     }
+  }
+}
 
-    @include breakpoint("tablet-md") {
-      width: 100%;
-      height: 100%;
-      // Gradient hampir penuh di mobile
-      background: linear-gradient(
-        180deg,
-        #ffffff 10%,
-        rgba(255, 255, 255, 0) 94.15%
-      );
+.element__group {
+  position: absolute;
+  //   z-index: 10;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  margin: 0 auto;
+  max-width: 90rem;
+
+  .element__group--component-hero1 {
+    position: absolute;
+    right: 56px;
+    bottom: 337px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+    // background-color: hsla(0, 0%, 100%, 0.2);
+    z-index: 2;
+
+    @include breakpoint(tablet-lg) {
+      width: 200px;
+      bottom: 300px;
     }
-
-    @include breakpoint("mobile-md") {
-      width: 100%;
-      height: 100%;
-      // Untuk mobile, mungkin lebih baik gradient vertikal
-      background: linear-gradient(
-        180deg, 
-        #ffffff 35%,
-        rgba(255, 255, 255, 0) 70% 
-      );
+    @include breakpoint(tablet-md) {
+      width: 150px;
+      bottom: 1rem;
+        right: 2.5rem;
+    }
+    @include breakpoint(tablet-sm) {
+      width: 100px;
+      bottom: 1rem;
+        right: 2.5rem;
     }
   }
 
-  .hero__section__content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    position: relative;
+  .element__group--component-hero2 {
+    position: absolute;
+    bottom: 56px;
+    right: 56px;
+    backdrop-filter: blur(10px);
+    // background-color: hsla(0, 0%, 100%, 0.2);
     z-index: 2;
-    // gap: ;
-    // Tambahkan padding horizontal untuk content agar tidak menempel tepi
-    padding: 40 0px; // Padding default
 
-    @include breakpoint("lg-plus") {
-    //   padding: 0 20px;  
-      width: 100%;
+    @include breakpoint(tablet-lg) {
+      width: 400px;
     }
 
-    @include breakpoint("md-plus") {
-    //   padding: 0 20px;
+    @include breakpoint(tablet-md) {
+        //  width: 300px;
+        width: 17.5rem;
+        bottom: 1rem;
+        right: unset;
+        left: 2.5rem;
+    }
+
+    @include breakpoint(tablet-sm) {
+         width: 200px;
+        // width: 17.5rem;
+        bottom: 1rem;
+        right: unset;
+        left: 2.5rem;
+    }
+
+    @include breakpoint(mobile-lg) {
+         width: 150px;
+        // width: 17.5rem;
+        bottom: 1rem;
+        right: unset;
+        left: 2.5rem;
+    }
+  }
+}
+
+.hero__section__content {
+  padding: 50px 0;
+  width: 780px;
+  position: relative;
+
+  @include breakpoint("tablet-lg") {
     width: 100%;
-    padding: 100px 0 0 0;
-    }
+  }
 
-    @include breakpoint("md"){
-        padding: 100px 0 0 0;
-    }
+  @include breakpoint("tablet-lg") {
+  }
+}
 
-    @include breakpoint("tablet-lg") {
-      flex-direction: column; // Tumpuk kolom secara vertikal
-      justify-content: center; // Pusatkan vertikal
-    }
+// Heading
+
+.hero__section__content__left--item {
+  // position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; // Default: rata kiri
+  padding: 60px 0;
+  gap: 32px;
+  width: 100%;
+  z-index: 2;
+
+  @include breakpoint("tablet-md") {
+    // align-items: center; // Rata tengah
+    padding: 30px 0;
+  }
+  @include breakpoint("mobile-lg") {
+    gap: 20px;
+    // align-items: center;
+  }
+}
+
+.hero__section__content__left--item-heading {
+  width: 100%;
+  height: auto;
+  font-family: "RethinkSans";
+  font-weight: 600;
+  font-size: 88px; // Ukuran desktop besar
+  line-height: 88px;
+  letter-spacing: -0.02em;
+  color: #171938;
+  text-align: left; // Default: rata kiri
+
+  @include breakpoint("lg-plus") {
+  }
+  @include breakpoint("lg") {
+  }
+  @include breakpoint("md-plus") {
+    font-size: 72px;
+    line-height: 72px;
+    width: 30;
+    // width: 600px;
+  }
+  @include breakpoint("md") {
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  @include breakpoint("tablet-lg") {
+    width: 480px;
+  }
+  @include breakpoint("tablet-md") {
+    font-size: 50px;
+    line-height: 50px;
+    width: 100%;
+  }
+
+  @include breakpoint("mobile-lg") {
+    // Di bawah 576px
+  
+
+    // text-align: center;
+  }
+  @include breakpoint("mobile-md") {
+    
+  }
+  @include breakpoint("mobile-sm") {
+   
+  }
+}
+
+.hero__section__content__left--item-heading-paragraph {
+  width: 521px; // Ukuran desktop besar, gunakan fluidSize untuk responsif
+  font-family: "RethinkSans";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -0.03em;
+  color: #000000;
+  text-align: left; // Default: rata kiri
+
+  @include breakpoint("lg-plus") {
+    // width: 100%;
+  }
+
+  @include breakpoint("tablet-lg") {
+    font-size: 15px;
+    line-height: 18px;
+    width: 300px;
+  }
+
+  @include breakpoint("md-plus") {
+    // width: 400px;
+  }
+  @include breakpoint("mobile-lg") {
+  }
+  @include breakpoint("mobile-md") {
+  }
+}
+
+.hero__section__content__left--notify-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: toRem(20);
+  gap: toRem(4);
+  border: none;
+
+  width: toRem(241); // Ukuran desktop besar
+  height: toRem(64);
+
+  background: #763cea;
+  border-radius: toRem(12);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken(#763cea, 10%);
+  }
+
+  @include breakpoint("lg-plus") {
+  }
+  @include breakpoint("lg") {
+  }
+  @include breakpoint("md") {
+  }
+  @include breakpoint("mobile-lg") {
+    // Di bawah 576px
+    width: 70%;
+    max-width: toRem(280); // Batasi max-width
+    height: toRem(50);
+  }
+
+  .hero__section__content__left--notify-button--text__button {
+    font-family: "RethinkSans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: toRem(16); // Ukuran desktop besar
+    line-height: toRem(24);
+    letter-spacing: -0.03em;
+    color: #ffffff;
 
     @include breakpoint("mobile-lg") {
-      gap: 20px;
+      font-size: toRem(14);
+      line-height: toRem(20);
     }
-
-    .hero__section__content__left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 0;
-      gap: 48px;
-      width: 780px; // Lebar tetap untuk kolom kiri
-      height: 556px; // Pastikan ini cukup tinggi untuk kontennya
-      flex-shrink: 0; 
-
-      @include breakpoint("lg-plus") {
-        width: 520px; // Beri persentase lebar untuk fleksibilitas
-        height: auto; // Biarkan tinggi menyesuaikan
-      }
-      
-      @include breakpoint("lg") {
-        width:  480px; // Beri persentase lebar untuk fleksibilitas
-        height: auto; // Biarkan tinggi menyesuaikan
-      }
-
-      @include breakpoint("md-plus") {
-        width: 360px;
-        padding: 100px 0; // Beri persentase lebar untuk fleksibilitas
-        height: auto; // Biarkan tinggi menyesuaikan
-      }
-
-      @include breakpoint("md") {
-        width: 250px; // Beri persentase lebar untuk fleksibilitas
-        height: auto;
-        
-         // Biarkan tinggi menyesuaikan
-      }
-
-      @include breakpoint("tablet-lg") {
-        width: 100%; // Lebar penuh saat ditumpuk
-        height: auto;
-        padding: 50px 0 0 0; 
-        // order: 1; 
-        gap: 32px; // Kurangi gap
-      }
-
-      @include breakpoint("mobile-lg") {
-        gap: 24px;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-      }
-
-      .hero__section__content__left--item {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 0;
-        gap: 32px;
-        width: 100%;
-
-        @include breakpoint("mobile-lg") {
-        //   align-items: center;
-            gap: 20px;
-        }
-
-        .hero__section__content__left--item-heading {
-          width: 100%;
-          height: auto;
-          font-family: "RethinkSans";
-          font-weight: 600;
-          font-size: 88px;
-          line-height: 88px;
-          letter-spacing: -0.02em;
-          color: #171938;
-
-          @include breakpoint("lg-plus") {
-            font-size: 80px;
-            line-height: 80px;
-            width: 700px;
-            // height: 500px; 
-          }
-
-          @include breakpoint("lg") {
-            font-size: 72px;
-            line-height: 72px;
-            // height: 500px; 
-          }
-
-          @include breakpoint("md-plus") {
-            font-size: 64px; // Lebih kecil
-            line-height: 64px;
-            width: 500px;
-          }
-
-          @include breakpoint("md") {
-            font-size: 56px;
-            line-height: 56px;
-            
-            width: 500px; // Sedikit lebih sempit agar tidak terlalu lebar
-            // margin: 0 auto; // Pusatkan
-          }
-
-          @include breakpoint("tablet-lg") {
-            font-size: 64px;
-            line-height: 64px;
-            width: 500px; // Kembali ke 100% untuk layar sempit
-          }
-
-          @include breakpoint("mobile-lg") {
-            font-size: 46px;
-            line-height: 46px;
-            width: 100%;
-            gap: 20px;
-            text-align: center;
-          }
-
-        @include breakpoint("mobile-md") {
-            font-size: 38px;
-            line-height: 38px;
-            width: 100%;
-            text-align: center;
-          }
-
-          @include breakpoint("mobile-sm") {
-            font-size: 28px;
-            line-height: 28px;
-          }
-        }
-
-        .hero__section__content__left--item-heading-paragraph {
-          width: fluidSize(521); // Lebih baik pakai fluidSize untuk responsif
-          font-family: "RethinkSans";
-          font-weight: 400;
-          font-size: fluidSize(15);
-          line-height: fluidSize(20);
-          letter-spacing: -0.03em;
-          color: #000000;
-
-          @include breakpoint("md-plus") {
-            width: 100%; // Lebar penuh
-            font-size: 16px;
-            line-height: 24px;
-          }
-
-          @include breakpoint("tablet-lg") {
-            font-size: 15px;
-            line-height: 22px;
-            width: 400px;
-          }
-
-          @include breakpoint("mobile-lg") {
-            font-size: 14px;
-            line-height: 20px;
-            width: 100%;
-            text-align: center;
-          }
-
-          @include breakpoint("mobile-md") {
-            font-size: 10px;
-            line-height: 10px;
-            width: 100%;
-            text-align: center;
-          }
-        }
-      }
-
-      .hero__section__content__left--notify-button {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: toRem(20);
-        gap: toRem(4);
-        border: none;
-
-        width: toRem(241);
-        height: toRem(64);
-
-        background: #763cea;
-        border-radius: toRem(12);
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-          background-color: darken(#763cea, 10%);
-        }
-
-        @include breakpoint("tablet-lg") {
-          width: toRem(280); // Ukuran tombol sedikit lebih besar untuk tablet agar mudah disentuh
-          height: toRem(56);
-        }
-
-        @include breakpoint("mobile-lg") {
-          width: 50%; // Lebar penuh di mobile
-        //   max-width: toRem(280); // Batasi lebar maksimum
-          height: toRem(50);
-          .hero__section__content__left--notify-button--text__button {
-            font-size: 20px;
-          }          
-        }
-
-        @include breakpoint("mobile-md") {
-          width: 70%; // Lebar penuh di mobile
-        //   max-width: toRem(280); // Batasi lebar maksimum
-          height: toRem(50);
-          .hero__section__content__left--notify-button--text__button {
-            font-size: 20px;
-          }          
-        }
-
-        .hero__section__content__left--notify-button--text__button {
-          font-family: "RethinkSans";
-          font-style: normal;
-          font-weight: 500;
-          font-size: toRem(16);
-          line-height: toRem(24);
-          letter-spacing: -0.03em;
-          color: #ffffff;
-
-          @include breakpoint("mobile-lg") {
-            font-size: toRem(11);
-            line-height: toRem(11);
-        }
-          
-        }
-      }
-    }
-
-    // layout/hero.scss
-
-// ... (Kode SCSS hero__section, hero__section--gradient__light, dan hero__section__content sebelumnya) ...
-
-    .hero__section__content__right {
-      // Ini adalah container untuk dua gambar di sisi kanan
-      display: flex;
-      flex-direction: column; 
-      align-items: end; 
-      justify-content: end; 
-    //   gap: 20px; 
-      flex: 1;
-      width: 100%;
-      position: relative; // Tetap relative jika Anda berencana menambahkan elemen absolut di masa depan
-      padding: 53px 0; // Padding vertikal
-      height: 100%;
-
-      @include breakpoint("md-plus") {
-        
-      }
-
-      @include breakpoint("tablet-lg") {
-        padding: 53px 0 0 0;
-        margin-top: -200px;
-      }
-
-      @include breakpoint("tablet-md") {
-        padding: 53px 0 0 0;
-        margin-top: 0;
-      }
-
-      @include breakpoint("mobile-lg") {
-        align-items: center;
-        justify-content: center;
-      }
-
-      // Gaya untuk SEMUA gambar langsung di dalam content__right
-      // Ini akan berlaku untuk Frame 193.svg DAN Frame 132.svg
-      img {
-        height: auto;
-        display: block; // Hapus spasi di bawah gambar
-        object-fit: contain; 
-        // width: 100%;
-
-       
-        
-        
-        &:first-child {
-             width: 240px;
-          @include breakpoint("xxl") {
-            
-          }
-
-          @include breakpoint("md") {
-            width: 200px;
-         
-          }
-
-
-          @include breakpoint("mobile-lg") {
-            width: 200px;
-          }
-          @include breakpoint("mobile-md") {
-            width: 200px;
-          }
-          @include breakpoint("mobile-sm") {
-            width: 200px;
-          }
-        }
-
-        
-        &:last-child {
-
-            width: 460px;
-          
-          @include breakpoint("xxl") {
-            
-          }
-
-           @include breakpoint("md") {
-            width: 400px;
-            // height: 180px;
-          }
-          @include breakpoint("mobile-lg") {
-            width: 100%;
-            order: 2;
-          }
-        }
-      }
+    @include breakpoint("mobile-md") {
+      font-size: toRem(12);
+      line-height: toRem(18);
     }
   }
 }

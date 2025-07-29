@@ -1,138 +1,125 @@
 // layout/navbar.scss
-// @use '../mixin/variables.scss' as *; // Ensure this imports your variables and mixins
+// @use '../mixin/variables.scss' as *;
 
 header {
-    position: absolute;
+    // position: relative;
     width: 100%;
-    z-index: 10; // Ensures header is above other content
-    padding: 24px 0; // Default vertical padding for desktop
-    box-sizing: border-box; // Prevents padding from adding to width
+    z-index: 10;
+    padding: 24px 0;
+    box-sizing: border-box;
 
-    // Adjust header padding for smaller screens
-    @include breakpoint(md-plus) { // 1200px
+    @include breakpoint(md-plus) {
         padding: 20px 0;
     }
-    @include breakpoint(mobile-lg) { // 576px
+    @include breakpoint(mobile-lg) {
         padding: 15px 0;
+
     }
 }
 
 .navbar {
     display: flex;
     flex-direction: row;
-    justify-content: space-between; // Pushes left group and actions to edges
+    justify-content: space-between;
     align-items: center;
-    padding: 0; // Horizontal padding is handled by .container in HTML
+    padding: 0;
 
-    // No significant flex-direction change here, as we're hiding links/button
-    // We want logo on left, hamburger/button on right.
+    @include breakpoint(mobile-lg){
+        flex-direction: column;
+        gap: 23px;
+    }
 }
 
 .navbar__left-group {
     display: flex;
     align-items: center;
-    gap: 80px; // Space between logo and nav links
+    gap: 80px;
 
-    @include breakpoint(lg) { // 1280px
-        gap: 60px; // Slightly reduce gap
+    @include breakpoint(lg) {
+        gap: 60px;
     }
-    @include breakpoint(md-plus) { // 1200px
-        gap: 40px; // Further reduce gap
+    @include breakpoint(md-plus) {
+        gap: 40px;
     }
-    @include breakpoint(tablet-lg) { // 992px
-        // Links are hidden, so this gap is effectively between logo and nothing
-        // Or between logo and the hamburger if it were directly here.
-        // Since hamburger is in navbar__actions, this gap won't apply to it.
+    @include breakpoint(tablet-lg) {
+        // Gap ini sekarang akan relevan jika Anda ingin logo dan tombol Join Waitlist berdekatan
+        // jika navbar__links disembunyikan. Sesuaikan sesuai kebutuhan.
         gap: 0;
+    }
+
+    @include breakpoint(mobile-lg){
+        flex-direction: column;
     }
 }
 
 .navbar__logo {
     a {
         text-decoration: none;
-        color: #333; // Default color for text-based logo (if applicable)
-        width: 144px; // Designed logo width
+        color: #333;
+        width: 144px;
         height: auto;
         display: flex;
         align-items: center;
 
         img {
-            max-width: 100%; // Ensures image scales down within its container
+            max-width: 100%;
             height: auto;
         }
     }
 
-    // Adjust logo size for smaller screens
-    @include breakpoint(tablet-md) { // 768px
+    @include breakpoint(tablet-md) {
         a {
-            width: 120px; // Smaller logo for tablets
+            width: 120px;
         }
     }
-    @include breakpoint(mobile-lg) { // 576px
+    @include breakpoint(mobile-lg) {
         a {
-            width: 100px; // Even smaller for mobile
+            width: 100px;
         }
     }
-    @include breakpoint(mobile-sm) { // 375px
+    @include breakpoint(mobile-sm) {
         a {
-            width: 80px; // Smallest logo size
+            width: 80px;
         }
     }
 }
 
 .navbar__links {
-    display: flex; // Default: visible on desktop
+    display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 30px; // Space between navigation links
+    gap: 30px;
 
-    @include breakpoint(lg) { // 1280px
-        gap: 25px; // Reduce link spacing
+    @include breakpoint(lg) {
+        gap: 25px;
     }
-    @include breakpoint(md-plus) { // 1200px
-        gap: 20px; // Further reduce link spacing
+    @include breakpoint(md-plus) {
+        gap: 20px;
     }
 
-    @include breakpoint(tablet-lg) { // 992px
-        // Hide navigation links on tablet and mobile
-        display: none;
-        // This is where your mobile menu styles would go if activated by JS
-        // For example, if .navbar gains an 'is-open' class:
-        // .navbar.is-open & {
-        //     display: flex;
-        //     flex-direction: column;
-        //     position: absolute;
-        //     top: 100%; // Position below the header
-        //     left: 0;
-        //     width: 100%;
-        //     background-color: white; // Background for the open menu
-        //     padding: 20px 0;
-        //     gap: 15px;
-        //     text-align: center;
-        //     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        // }
+    @include breakpoint(tablet-lg) {
+    
     }
 }
 
 .navbar__list-item {
     a {
-        list-style: none; // Ensure no list styling on the anchor
+        list-style: none;
         font-size: 14px;
         font-weight: 600;
         text-decoration: none;
         color: #000000;
-        transition: color 0.3s ease; // Smooth color transition
+        transition: color 0.3s ease;
 
         &:hover {
             color: darken(#000000, 20%);
         }
 
-        // Adjust font size for smaller desktop/large tablet views
-        @include breakpoint(lg) { // 1280px
+        @include breakpoint(lg) {
             font-size: 13px;
         }
-        @include breakpoint(md-plus) { // 1200px
+        @include breakpoint(md-plus) {
             font-size: 12px;
         }
     }
@@ -141,11 +128,14 @@ header {
 .navbar__actions {
     display: flex;
     align-items: center;
-    gap: 20px; // Space between hamburger and button (if both visible)
+    // Gap ini sekarang hanya akan berlaku jika ada beberapa elemen lain di sini,
+    // misalnya jika tombol "Join Waitlist" selalu terlihat.
+    // Jika hanya satu elemen tersisa, gap ini tidak akan berpengaruh.
+    gap: 20px;
 
-    @include breakpoint(tablet-lg) { // 992px
-        // When the button is hidden, this gap will only apply if there's other content.
-        gap: 0; // Reset gap as only hamburger will be visible.
+    @include breakpoint(tablet-lg) {
+        // Jika hanya ada satu tombol yang terlihat di sini, gap bisa 0 atau tidak perlu disetel.
+        gap: 0;
     }
 }
 
@@ -164,52 +154,9 @@ header {
         background-color: darken(#763cea, 10%);
     }
 
-    // Hide the button on tablet and mobile
-    @include breakpoint(tablet-lg) { // 992px
-        display: none;
+   
+    @include breakpoint(tablet-lg) {
+       
     }
 }
 
-// ---- Menu Hamburger ----
-.navbar__hamburger {
-    display: none; // Default: hidden on desktop
-
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    position: relative; // For positioning the bars
-    z-index: 11; // Ensure it's above other elements if needed
-
-    span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: #333; // Color of the hamburger bars
-        margin: 5px 0;
-        transition: all 0.3s ease; // Animation for icon transformation
-
-        &:nth-child(2) {
-            width: 20px; // Middle bar slightly shorter for visual appeal
-        }
-    }
-
-    // Display the hamburger on tablet and mobile
-    @include breakpoint(tablet-lg) { // 992px
-        display: block;
-    }
-
-    // Styles for the active hamburger icon (e.g., when the menu is open)
-    // You'll need JavaScript to add/remove an 'is-active' class to this button
-    &.is-active {
-        span:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-        span:nth-child(2) {
-            opacity: 0; // Hide the middle bar
-        }
-        span:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-    }
-}

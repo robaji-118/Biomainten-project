@@ -19,11 +19,13 @@
     // Override fixed height for responsiveness
     height: auto; // Biarkan tinggi menyesuaikan konten
     min-height: 300px; // Berikan tinggi minimum agar tidak terlalu kecil di desktop
+    position: relative;
 
     // Adjustments for larger screens
     @include breakpoint(xxl) { // 1440px
         padding: 48px 64px; // Tetap sama untuk XXL
-        gap: 64px; // Mungkin lebih besar gap untuk layar ekstra lebar
+    gap: 64px; // Mungkin lebih besar gap untuk layar ekstra lebar
+
     }
     @include breakpoint(lg-plus) { // 1369px
         padding: 40px 56px;
@@ -81,6 +83,34 @@
         margin-top: 20px;
     }
 
+    .element-1{
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        left: 0;
+    }
+    .element-2{
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 380px;
+
+         @include breakpoint(tablet-md){
+            right: 50px;
+        }
+
+        @include breakpoint(tablet-sm){
+            right: 0;
+        }
+    }
+
+    .element-3{
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        right: 0;
+    }
+
     .contact__section_left-content {
         display: flex;
         flex-direction: column;
@@ -102,8 +132,6 @@
         }
         @include breakpoint(tablet-lg) { // 992px
             width: 100%; // Ambil lebar penuh saat kolom bertumpuk
-            align-items: center; // Pusatkan teks di kolom
-            text-align: center; // Pastikan teks rata tengah
             gap: 16px;
         }
         @include breakpoint(tablet-md) { // 768px
@@ -142,29 +170,25 @@
                 
             }
             @include breakpoint(tablet-lg) { // 992px
-                font-size: 40px; // Akan skala lebih lanjut di bawah
-                line-height: 40px;
-                // width: 80%; // Batasi lebar heading di tablet agar tidak terlalu lebar
+                font-size: 50px; // Akan skala lebih lanjut di bawah
+                line-height: 50px;
+                width: 80%; // Batasi lebar heading di tablet agar tidak terlalu lebar
                 // margin: 0 auto; // Pusatkan
             }
             @include breakpoint(tablet-md) { // 768px
                
             }
             @include breakpoint(tablet-sm) { // 640px
-               font-size: 30px; // Akan skala lebih lanjut di bawah
-                line-height: 30px;
+                
             }
             @include breakpoint(mobile-lg) { // 576px
-                font-size: 28px;
-                line-height: 28px;
+               
             }
             @include breakpoint(mobile-md) { // 480px
-                font-size: 24px;
-                line-height: 24px;
+               
             }
             @include breakpoint(mobile-sm) { // 375px
-                font-size: 20px;
-                line-height: 20\px;
+               
             }
             @include breakpoint(mobile-xs) { // 350px
                
@@ -200,7 +224,7 @@
             }
             @include breakpoint(tablet-lg) { // 992px
 
-                 font-size: 13px;
+                 font-size: 17px;
                 line-height: 23px;
                 
                 // width: 90%; // Batasi lebar paragraf di tablet
@@ -210,8 +234,6 @@
                 
             }
             @include breakpoint(mobile-lg) { // 576px
-                 font-size: 10px;
-                line-height: 20px;
                 
             }
             @include breakpoint(mobile-md) { // 480px
@@ -237,7 +259,7 @@
         isolation: isolate;
         width: 100%; // Default to 100% width, will be restricted by max-width
         height: 292px; // Override this to auto for responsiveness
-        max-width: 480px; // Maksimum lebar untuk form
+        // max-width: 480px; // Maksimum lebar untuk form
         margin: 0 auto; // Pusatkan di desktop jika flex-grow: 0;
         background: rgba(255, 255, 255, 0.04);
         box-shadow: 0px 8.93px 9.86px rgba(10, 13, 20, 0.05),
@@ -250,44 +272,44 @@
 
         // Responsive adjustments for right content
         @include breakpoint(md-plus) { // 1200px
-            max-width: 450px;
+            // max-width: 450px;
             padding: 28px;
             gap: 14px;
         }
         @include breakpoint(md) { // 1064px
-            max-width: 400px;
+            // max-width: 400px;
             padding: 24px;
             gap: 12px;
         }
         @include breakpoint(tablet-lg) { // 992px
             width: 100%; // Ambil lebar penuh container
-            max-width: 500px; // Batasi lebar agar tidak terlalu besar di tablet
+            // max-width: 500px; 
             padding: 32px; // Padding yang sama dengan desktop kecil
             gap: 16px;
-            margin: 0 auto; // Pastikan terpusat
+            // margin: 0 auto; // Pastikan terpusat
         }
         @include breakpoint(tablet-md) { // 768px
-            max-width: 450px;
+            // max-width: 450px;
             padding: 28px;
             gap: 14px;
         }
         @include breakpoint(mobile-lg) { // 576px
-            max-width: 350px;
+            // max-width: 350px;
             padding: 24px;
             gap: 12px;
         }
         @include breakpoint(mobile-md) { // 480px
-            max-width: 300px;
+            // max-width: 300px;
             padding: 20px;
             gap: 10px;
         }
         @include breakpoint(mobile-sm) { // 375px
-            max-width: 280px;
+            // max-width: 280px;
             padding: 16px;
             gap: 8px;
         }
         @include breakpoint(mobile-xxs) { // 320px
-            max-width: 250px;
+            // max-width: 250px;
             padding: 12px;
             gap: 6px;
         }

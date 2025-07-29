@@ -9,17 +9,17 @@
   margin: 0px auto;
   @include breakpoint(md-plus) {
     // 1200px
-    padding: 70px 0;
+    padding: 200px 0;
     gap: 50px;
   }
   @include breakpoint(md) {
     // 1064px
-    padding: 65px 0;
+    // padding: 65px 0;
     gap: 45px;
   }
   @include breakpoint(tablet-lg) {
     // 992px
-    padding: 60px 0;
+    // padding: 60px 0;
     gap: 40px;
   }
   @include breakpoint(tablet-md) {
@@ -30,11 +30,11 @@
   @include breakpoint(mobile-lg) {
     // 576px
 
-    gap: 60px;
+    gap: 40px;
   }
   @include breakpoint(mobile-md) {
     // 480px
-
+    padding: 40px 0;
     // gap: 28px;
   }
   @include breakpoint(mobile-sm) {
@@ -386,15 +386,6 @@
         margin: 0 auto; // Pusatkan
         gap: 20px; // Konsistensi dengan gap induk
 
-         &:first-child {
-          border-top: 1px solid;
-          padding-top: 20px;
-        }
-
-        &:last-child {
-          border-bottom: 1px solid;
-          padding-bottom: 20px;
-        }
       }
       @include breakpoint(mobile-md) {
         // 480px

@@ -46,19 +46,19 @@
     }
     @include breakpoint(mobile-lg) { // 576px
         margin-top: 40px;
-        gap: 24px;
+        // gap: 24px;
     }
     @include breakpoint(mobile-md) { // 480px
         margin-top: 30px;
-        gap: 20px;
+        // gap: 20px;
     }
     @include breakpoint(mobile-sm) { // 375px
         margin-top: 25px;
-        gap: 16px;
+        // gap: 16px;
     }
     @include breakpoint(mobile-xxs) { // 320px
         margin-top: 20px;
-        gap: 12px;
+        // gap: 12px;
     }
 }
 
@@ -295,12 +295,11 @@
     flex-direction: column; // Overlays will stack vertically
     justify-content: flex-start; // Start stacking from the top
     align-items: center; // Center overlays horizontally
-    gap: 20px; // Space between overlays
-    padding: 20px; // Padding around overlays
     box-sizing: border-box; // Essential for padding
 
     @include breakpoint(lg-plus) { // 1369px
-        width: 45%;
+        width: 588;
+        height: 615;
     }
     @include breakpoint(lg) { // 1280px
         width: 48%;
@@ -316,7 +315,7 @@
         // max-width: 600px; // Limit max-width to prevent stretching
         // min-height: 450px; // Ensure enough space for image/overlays
         margin: 0 auto; // Center the column
-        padding: 20px; // Keep some padding
+        // padding: 20px; // Keep some padding
         gap: 20px; // Gap for stacked overlays
         justify-items: center;
         // text-align: center;
@@ -325,7 +324,7 @@
     }
     @include breakpoint(tablet-md) { // 768px
         min-height: 400px;
-        padding: 16px;
+        // padding: 16px;
         gap: 16px;
     }
     @include breakpoint(mobile-lg) { // 576px
@@ -334,7 +333,7 @@
        
     }
     @include breakpoint(mobile-md) { // 480px
-      height: 500px;
+        height: 500px;
     }
     @include breakpoint(mobile-sm) { // 375px
         height: 300px;
@@ -359,492 +358,42 @@
         transform: scaleX(-1  ); // Flip image horizontally
         z-index: -1; // Ensure it's behind the overlays
     }
-}
 
-/* --- Base Styles for Overlays in About Section --- */
-.about__overlay {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    padding: 14.8879px; // Default padding
-    gap: 15px; // Default gap between elements inside overlay
 
-    background: rgba(17, 8, 33, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 16px;
-    box-shadow: 0px 8.93px 9.86px rgba(10, 13, 20, 0.05),
-        inset -8px -13px 32px rgba(255, 255, 255, 0.05),
-        inset 8px 11px 32px rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    color: #ffffff;
-    width: 100%; // Ensure overlays take full width of parent (right column)
-    max-width: 300px; // Limit max width so they don't stretch too much
+    .about__section__right-column--img_1{
+        position: absolute;
+        top: 24px;
+        left: 18px;
+        width: 276px;
+        backdrop-filter: blur(10px);
 
-    // Adjustments for overlay padding and gap
-    @include breakpoint(tablet-lg) { // 992px
-        padding: 14px;
-        gap: 14px;
-        max-width: 350px; // Allow slightly wider when stacked
-    }
-    @include breakpoint(tablet-md) { // 768px
-        padding: 12px;
-        gap: 12px;
-        max-width: 320px;
-    }
-    @include breakpoint(mobile-lg) { // 576px
-        padding: 10px;
-        gap: 10px;
-        max-width: 280px;
-    }
-    @include breakpoint(mobile-md) { // 480px
-        padding: 8px;
-        gap: 8px;
-        max-width: 250px;
-    }
-    @include breakpoint(mobile-sm) { // 375px
-        padding: 6px;
-        gap: 6px;
-        max-width: 220px;
-    }
-    @include breakpoint(mobile-xxs) { // 320px
-        padding: 5px;
-        gap: 5px;
-        max-width: 200px;
-    }
-}
-
-.about__overlay-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-
-    p {
-        font-family: "RethinkSans";
-        font-weight: 500;
-        font-size: 16px; // Default
-        line-height: 22px; // Default
-        color: #ffffff;
-        margin: 0;
-
-        // Responsive font sizes for overlay header text
-        @include breakpoint(mobile-lg) { // 576px
-            font-size: 14px;
-            line-height: 20px;
+        @include breakpoint(mobile-lg){
+            width: 240px;
         }
-        @include breakpoint(mobile-sm) { // 375px
-            font-size: 13px;
-            line-height: 18px;
-        }
-        @include breakpoint(mobile-xxs) { // 320px
-            font-size: 12px;
-            line-height: 16px;
+
+        @include breakpoint(mobile-lg){
+            width: 170px;
+            top: 12px;
+            left: 12px;
         }
     }
 
-    .about__view-details {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 3.98002px 5.97003px; // Default padding
-        gap: 1.99px;
+    .about__section__right-column--img_2{
+        position: absolute;
+        bottom: 24px;
+        right: 24px;
+        width: 252px;
+        backdrop-filter: blur(10px);  
 
-        width: 82.9px; // Default width
-        height: 23.96px; // Default height
-
-        background: rgba(255, 255, 255, 0.2);
-        border: 0.995005px solid #e7e8eb;
-        box-shadow: 0px 0.995005px 1.99001px rgba(10, 13, 20, 0.03);
-        border-radius: 6.03772px;
-
-        color: white;
-        font-size: 11.94px; // Default font size
-        font-weight: 500; // Corrected from 500px
-
-        // Responsive adjustments for view details button
-        @include breakpoint(mobile-lg) { // 576px
-            width: 70px;
-            height: 20px;
-            font-size: 10px;
-            padding: 3px 5px;
+         @include breakpoint(mobile-lg){
+            width: 210px;
         }
-        @include breakpoint(mobile-sm) { // 375px
-            width: 60px;
-            height: 18px;
-            font-size: 7px;
-            padding: 2px 4px;
+
+         @include breakpoint(mobile-sm){
+            width: 150px;
+            bottom: 12px;
+            right: 12px;
         }
     }
 }
 
-/* --- Blood Biomarkers Specific Styles (inside About Section) --- */
-.about__overlay--blood-biomarkers {
-    width: 276px; // Default width
-    height: 166px; // Default height (will be auto)
-    position: absolute; // Default: absolute positioning
-    top: 24px;
-    left: 24px;
-    box-sizing: border-box; // Ensure padding is handled
-
-    height: auto; // Allow height to adjust to content
-
-    // When .about__section becomes column, overlays are no longer absolute
-    @include breakpoint(tablet-lg) { // 992px
-        position: absolute; // Remove absolute positioning
-        width: 100%; // Take full width of parent (right column, which is now full width)
-        // max-width: 400px; // Keep a max-width
-        margin: 0 auto; // Center it
-        top: 24px; // Remove explicit top
-        left: 24px; // Remove explicit left
-    }
-    @include breakpoint(tablet-md) { // 768px
-        max-width: 350px;
-    }
-    @include breakpoint(mobile-lg) { // 576px
-        max-width: 100%;
-        height: 100%;
-        position: static;
-        padding: 20px;
-        
-    }
-}
-
-.about__biomarkers-count {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: "RethinkSans";
-    font-size: 12px; // Default
-    font-weight: 500;
-
-    img {
-        width: 24px; // Default
-        height: 24px; // Default
-        // padding: 5px;
-    }
-
-    span {
-        color: #ffffff;
-        font-size: 24px; // Default
-    }
-
-    // Responsive adjustments for biomarker count
-    @include breakpoint(mobile-lg) { // 576px
-        gap: 6px;
-        img {
-            width: 20px;
-            height: 20px;
-        }
-        span {
-            font-size: 20px;
-        }
-    }
-    @include breakpoint(mobile-sm) { // 375px
-        font-size: 11px;
-        img {
-            width: 18px;
-            height: 18px;
-        }
-        span {
-            font-size: 18px;
-        }
-    }
-}
-
-.about__biomarkers-bars {
-    display: flex;
-    width: 100%;
-    height: 10px; // Default
-    border-radius: 5px;
-    overflow: hidden;
-    margin-bottom: 15px; // Default
-
-    // Responsive adjustments for bars
-    @include breakpoint(mobile-lg) { // 576px
-        height: 8px;
-        margin-bottom: 12px;
-    }
-    @include breakpoint(mobile-sm) { // 375px
-        height: 6px;
-        margin-bottom: 10px;
-    }
-}
-
-.about__biomarker-bar {
-    height: 100%;
-    // Colors are defined here, no change needed
-
-    &--in-range { background-color: #763cea; }
-    &--out-of-range { background-color: #ff5c00; }
-    &--improving { background-color: #a3ffd2; }
-}
-
-.about__biomarkers-legend {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 20px; // Default horizontal and vertical gap
-    font-family: "RethinkSans";
-    font-size: 12px; // Default
-    color: rgba(255, 255, 255, 0.9);
-
-    // Responsive adjustments for legend
-    @include breakpoint(mobile-lg) { // 576px
-        font-size: 11px;
-        gap: 8px 16px;
-    }
-    @include breakpoint(mobile-sm) { // 375px
-        font-size: 10px;
-        gap: 6px 12px;
-    }
-
-    .about__legend-box {
-        width: 12px;
-        height: 12px;
-        border-radius: 3px;
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 4px; // Default
-
-        // Adjust box size
-        @include breakpoint(mobile-lg) { // 576px
-            width: 10px;
-            height: 10px;
-            margin-right: 3px;
-        }
-        @include breakpoint(mobile-sm) { // 375px
-            width: 8px;
-            height: 8px;
-            margin-right: 2px;
-        }
-        // Colors are defined here, no change needed
-        &--in-range { background-color: #763cea; }
-        &--out-of-range { background-color: #ff5c00; }
-        &--improving { background-color: #a3ffd2; }
-    }
-}
-
-/* --- Hematocrit Specific Styles (inside About Section) --- */
-.about__overlay--hematocrit {
-    width: 252px; // Default width
-    height: 289px; // Default height (will be auto)
-    position: absolute; // Default: absolute positioning
-    bottom: 24px;
-    right: 24px;
-    box-sizing: border-box; // Ensure padding is handled
-    padding: 20px;
-    height: auto; // Allow height to adjust to content
-
-    // When .about__section becomes column, overlays are no longer absolute
-    @include breakpoint(tablet-lg) { // 992px
-        position: absolute; // Remove absolute positioning
-        width: 100%; // Take full width of parent (right column)
-        max-width: 400px; // Keep a max-width
-        // margin: 0 auto; // Center it
-        bottom: 24px; // Remove explicit bottom
-        right: 24px; // Remove explicit right
-    }
-    @include breakpoint(tablet-md) { // 768px
-        max-width: 350px;
-    }
-    @include breakpoint(mobile-lg) { // 576px
-        position: static;
-        max-width: 100%;
-        height: 100%;
-        margin: 0 auto;
-    }
-}
-
-.about__hematocrit-value {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; // Center content
-    padding: 11px 16px 2px; // Default padding
-    gap: 8px;
-    box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    width: 100%; // Take full width of parent
-
-    margin-top: 16px; // Default top margin
-
-    // Responsive adjustments for hematocrit value box
-    @include breakpoint(mobile-lg) { // 576px
-        padding: 10px 14px 2px;
-        gap: 6px;
-        margin-top: 12px;
-    }
-    @include breakpoint(mobile-sm) { // 375px
-        padding: 8px 12px 2px;
-        gap: 5px;
-        margin-top: 10px;
-    }
-}
-
-.about__value-number {
-    font-family: "RethinkSans";
-    font-size: 64px; // Default
-    font-weight: 600;
-    color: #ffffff;
-    line-height: 1;
-    display: flex;
-    align-items: baseline; // Keep baseline for '%'
-    order: 2; // Keep order
-
-    // Responsive font size for value number
-    @include breakpoint(mobile-lg) { // 576px
-        font-size: 56px;
-    }
-    @include breakpoint(mobile-md) { // 480px
-        font-size: 48px;
-    }
-    @include breakpoint(mobile-sm) { // 375px
-        font-size: 40px;
-    }
-    @include breakpoint(mobile-xxs) { // 320px
-        font-size: 36px;
-    }
-}
-
-.about__value-percent {
-    font-size: 0.5em; // Relative to parent font size
-    font-weight: 400;
-    align-self: flex-start; // Align to start of flex item
-    margin-left: 5px; // Default
-    transform: translateY(-5px); // Default
-
-    // Adjustments for percent sign
-    @include breakpoint(mobile-lg) { // 576px
-        margin-left: 4px;
-        transform: translateY(-4px);
-    }
-    @include breakpoint(mobile-sm) { // 375px
-        margin-left: 3px;
-        transform: translateY(-3px);
-    }
-}
-
-.about__value-range--in-range {
-    font-family: "RethinkSans";
-    font-size: 11px; // Default for badge
-    font-weight: 600;
-    color: black;
-    background: #84ebdd;
-    border-radius: 999px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 54px; // Default
-    height: 16px; // Default
-    order: 1;
-
-    // Responsive adjustments for badge
-    @include breakpoint(mobile-lg) { // 576px
-        font-size: 10px;
-        width: 50px;
-        height: 15px;
-    }
-    @include breakpoint(mobile-sm) { // 375px
-        font-size: 9px;
-        width: 45px;
-        height: 14px;
-    }
-}
-
-.about__lab-reference-range {
-    font-family: "RethinkSans";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px; // Default
-    line-height: 20px; // Default
-    display: flex;
-    align-items: center;
-    letter-spacing: -0.03em;
-    font-feature-settings: "calt" off, "liga" off;
-    color: #ffffff;
-    width: 100%; // Take full width
-
-    // Responsive font size for reference range
-    @include breakpoint(mobile-lg) { // 576px
-        font-size: 13px;
-        line-height: 18px;
-    }
-    @include breakpoint(mobile-sm) { // 375px
-        font-size: 12px;
-        line-height: 16px;
-    }
-    @include breakpoint(mobile-xxs) { // 320px
-        font-size: 11px;
-        line-height: 15px;
-    }
-}
-
-.about__range-indicator--vertical {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: 100%;
-}
-
-.about__legend-item {
-    display: flex;
-    align-items: center;
-    gap: 8px; // Default
-    
-    // Responsive gap
-    @include breakpoint(mobile-lg) { // 576px
-        gap: 6px;
-    }
-    @include breakpoint(mobile-sm) { // 375px
-        gap: 4px;
-    }
-}
-
-.about__legend-box {
-    width: 12px;
-    height: 12px;
-    border-radius: 3px;
-    display: inline-block;
-    vertical-align: middle;
-    // margin-right: 4px; // Already handled by .about__legend-item gap
-
-    // Colors are defined here
-    &--above-range { background-color: #ff5c00; border-radius: 100%; }
-    &--in-range-hematocrit { background-color: #22d3bb; border-radius: 100%; }
-    &--below-range { background-color: #763cea; border-radius: 100%; }
-
-    // Adjust box size
-    @include breakpoint(mobile-lg) { // 576px
-        width: 10px;
-        height: 10px;
-    }
-    @include breakpoint(mobile-sm) { // 375px
-        width: 8px;
-        height: 8px;
-    }
-}
-
-.about__legend-text {
-    align-items: center;
-    padding: 0px;
-    // gap: 4px; // This is a property for flex containers, not text itself
-    font-size: 12px; // Default
-    width: 100%;
-    height: 16px; // Fixed height (will be auto)
-    height: auto; // Allow height to adjust
-
-    // Responsive font size for legend text
-    @include breakpoint(mobile-lg) { // 576px
-        font-size: 11px;
-    }
-    @include breakpoint(mobile-sm) { // 375px
-        font-size: 10px;
-    }
-    @include breakpoint(mobile-xxs) { // 320px
-        font-size: 9px;
-    }
-}

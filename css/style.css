@@ -14,6 +14,7 @@
 }
 
 .container {
+  position: relative;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -81,7 +82,6 @@
 }
 
 header {
-  position: absolute;
   width: 100%;
   z-index: 10;
   padding: 24px 0;
@@ -105,6 +105,12 @@ header {
   align-items: center;
   padding: 0;
 }
+@media only screen and (max-width: 576px) {
+  .navbar {
+    flex-direction: column;
+    gap: 23px;
+  }
+}
 
 .navbar__left-group {
   display: flex;
@@ -124,6 +130,11 @@ header {
 @media only screen and (max-width: 992px) {
   .navbar__left-group {
     gap: 0;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .navbar__left-group {
+    flex-direction: column;
   }
 }
 
@@ -172,12 +183,6 @@ header {
     gap: 20px;
   }
 }
-@media only screen and (max-width: 992px) {
-  .navbar__links {
-    display: none;
-  }
-}
-
 .navbar__list-item a {
   list-style: none;
   font-size: 14px;
@@ -225,248 +230,175 @@ header {
 .navbar__button:hover {
   background-color: rgb(88.875, 23.625, 219.375);
 }
-@media only screen and (max-width: 992px) {
-  .navbar__button {
-    display: none;
-  }
-}
-
-.navbar__hamburger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  position: relative;
-  z-index: 11;
-}
-.navbar__hamburger span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  margin: 5px 0;
-  transition: all 0.3s ease;
-}
-.navbar__hamburger span:nth-child(2) {
-  width: 20px;
-}
-@media only screen and (max-width: 992px) {
-  .navbar__hamburger {
-    display: block;
-  }
-}
-.navbar__hamburger.is-active span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-.navbar__hamburger.is-active span:nth-child(2) {
-  opacity: 0;
-}
-.navbar__hamburger.is-active span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
 .hero__section {
-  background-image: url(../../img/hero.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 820px;
-  width: 100%;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@media only screen and (max-width: 1200px) {
-  .hero__section {
-    height: auto;
-    min-height: calc(700 / 900 * 100vh);
-    background-position: center 35%;
-  }
-}
-@media only screen and (max-width: 992px) {
-  .hero__section {
-    height: auto;
-    min-height: calc(600 / 900 * 100vh);
-    background-position: center 40%;
-  }
 }
 @media only screen and (max-width: 768px) {
   .hero__section {
-    height: auto;
-    min-height: calc(550 / 900 * 100vh);
-    background-position: center 45%;
-  }
-}
-@media only screen and (max-width: 576px) {
-  .hero__section {
-    height: auto;
-    min-height: calc(500 / 900 * 100vh);
-    background-position: center 50%;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .hero__section {
-    height: auto;
-    min-height: calc(450 / 900 * 100vh);
-    background-position: center 55%;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .hero__section {
-    height: auto;
-    min-height: calc(400 / 900 * 100vh);
-    background-position: center 60%;
-  }
-}
-@media only screen and (max-width: 320px) {
-  .hero__section {
-    min-height: calc(350 / 900 * 100vh);
-    background-position: center 70%;
-  }
-}
-.hero__section .hero__section--gradient__light {
-  position: absolute;
-  width: 1065px;
-  height: 821px;
-  left: 0;
-  background: linear-gradient(90deg, #ffffff 44.71%, rgba(255, 255, 255, 0) 94.15%);
-  z-index: 1;
-}
-@media only screen and (max-width: 1200px) {
-  .hero__section .hero__section--gradient__light {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, #ffffff 40%, rgba(255, 255, 255, 0) 94.15%);
-  }
-}
-@media only screen and (max-width: 992px) {
-  .hero__section .hero__section--gradient__light {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, #ffffff 20%, rgba(255, 255, 255, 0) 90%);
-  }
-}
-@media only screen and (max-width: 768px) {
-  .hero__section .hero__section--gradient__light {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, #ffffff 10%, rgba(255, 255, 255, 0) 94.15%);
-  }
-}
-@media only screen and (max-width: 480px) {
-  .hero__section .hero__section--gradient__light {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, #ffffff 35%, rgba(255, 255, 255, 0) 70%);
-  }
-}
-.hero__section .hero__section__content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  position: relative;
-  z-index: 2;
-  padding: 40 0px;
-}
-@media only screen and (max-width: 1369px) {
-  .hero__section .hero__section__content {
-    width: 100%;
-  }
-}
-@media only screen and (max-width: 1200px) {
-  .hero__section .hero__section__content {
-    width: 100%;
-    padding: 100px 0 0 0;
-  }
-}
-@media only screen and (max-width: 1064px) {
-  .hero__section .hero__section__content {
-    padding: 100px 0 0 0;
-  }
-}
-@media only screen and (max-width: 992px) {
-  .hero__section .hero__section__content {
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-  }
-}
-@media only screen and (max-width: 576px) {
-  .hero__section .hero__section__content {
-    gap: 20px;
-  }
-}
-.hero__section .hero__section__content .hero__section__content__left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 0;
-  gap: 48px;
-  width: 780px;
-  height: 556px;
-  flex-shrink: 0;
-}
-@media only screen and (max-width: 1369px) {
-  .hero__section .hero__section__content .hero__section__content__left {
-    width: 520px;
-    height: auto;
-  }
-}
-@media only screen and (max-width: 1280px) {
-  .hero__section .hero__section__content .hero__section__content__left {
-    width: 480px;
-    height: auto;
-  }
-}
-@media only screen and (max-width: 1200px) {
-  .hero__section .hero__section__content .hero__section__content__left {
-    width: 360px;
-    padding: 100px 0;
-    height: auto;
-  }
-}
-@media only screen and (max-width: 1064px) {
-  .hero__section .hero__section__content .hero__section__content__left {
-    width: 250px;
-    height: auto;
-  }
-}
-@media only screen and (max-width: 992px) {
-  .hero__section .hero__section__content .hero__section__content__left {
-    width: 100%;
-    height: auto;
-    padding: 50px 0 0 0;
     gap: 32px;
   }
 }
-@media only screen and (max-width: 576px) {
-  .hero__section .hero__section__content .hero__section__content__left {
-    gap: 24px;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+.hero__section .hero__section__hero__background {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  height: 820px;
+  overflow: hidden;
+}
+@media only screen and (max-width: 768px) {
+  .hero__section .hero__section__hero__background {
+    position: relative;
+    top: unset;
+    left: unset;
+    right: unset;
+    bottom: unset;
+    width: 100%;
+    padding: 0 1.5rem;
+    height: 50vw;
   }
 }
-.hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item {
+.hero__section .hero__section__hero__background .hero__section__hero__background--img {
+  object-fit: cover;
+  width: 100%;
+  height: calc(100% + 72px);
+}
+@media only screen and (max-width: 768px) {
+  .hero__section .hero__section__hero__background .hero__section__hero__background--img {
+    border-radius: 2px;
+  }
+}
+.hero__section .hero__section__hero__background .hero__section__hero__background--gradient__light {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  width: 73.96%;
+  height: 100%;
+  background: linear-gradient(90deg, #fff 44.71%, rgba(255, 255, 255, 0) 94.15%);
+}
+@media only screen and (max-width: 768px) {
+  .hero__section .hero__section__hero__background .hero__section__hero__background--gradient__light {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.element__group {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  margin: 0 auto;
+  max-width: 90rem;
+}
+.element__group .element__group--component-hero1 {
+  position: absolute;
+  right: 56px;
+  bottom: 337px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+@media only screen and (max-width: 992px) {
+  .element__group .element__group--component-hero1 {
+    width: 200px;
+    bottom: 300px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .element__group .element__group--component-hero1 {
+    width: 150px;
+    bottom: 1rem;
+    right: 2.5rem;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .element__group .element__group--component-hero1 {
+    width: 100px;
+    bottom: 1rem;
+    right: 2.5rem;
+  }
+}
+.element__group .element__group--component-hero2 {
+  position: absolute;
+  bottom: 56px;
+  right: 56px;
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+@media only screen and (max-width: 992px) {
+  .element__group .element__group--component-hero2 {
+    width: 400px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .element__group .element__group--component-hero2 {
+    width: 17.5rem;
+    bottom: 1rem;
+    right: unset;
+    left: 2.5rem;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .element__group .element__group--component-hero2 {
+    width: 200px;
+    bottom: 1rem;
+    right: unset;
+    left: 2.5rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .element__group .element__group--component-hero2 {
+    width: 150px;
+    bottom: 1rem;
+    right: unset;
+    left: 2.5rem;
+  }
+}
+
+.hero__section__content {
+  padding: 50px 0;
+  width: 780px;
+  position: relative;
+}
+@media only screen and (max-width: 992px) {
+  .hero__section__content {
+    width: 100%;
+  }
+}
+.hero__section__content__left--item {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 0;
+  padding: 60px 0;
   gap: 32px;
   width: 100%;
+  z-index: 2;
+}
+@media only screen and (max-width: 768px) {
+  .hero__section__content__left--item {
+    padding: 30px 0;
+  }
 }
 @media only screen and (max-width: 576px) {
-  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item {
+  .hero__section__content__left--item {
     gap: 20px;
   }
 }
-.hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
+
+.hero__section__content__left--item-heading {
   width: 100%;
   height: auto;
   font-family: "RethinkSans";
@@ -475,104 +407,51 @@ header {
   line-height: 88px;
   letter-spacing: -0.02em;
   color: #171938;
-}
-@media only screen and (max-width: 1369px) {
-  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
-    font-size: 80px;
-    line-height: 80px;
-    width: 700px;
-  }
-}
-@media only screen and (max-width: 1280px) {
-  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
-    font-size: 72px;
-    line-height: 72px;
-  }
+  text-align: left;
 }
 @media only screen and (max-width: 1200px) {
-  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
-    font-size: 64px;
-    line-height: 64px;
-    width: 500px;
+  .hero__section__content__left--item-heading {
+    font-size: 72px;
+    line-height: 72px;
+    width: 30;
   }
 }
 @media only screen and (max-width: 1064px) {
-  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
-    font-size: 56px;
-    line-height: 56px;
-    width: 500px;
+  .hero__section__content__left--item-heading {
+    font-size: 60px;
+    line-height: 60px;
   }
 }
 @media only screen and (max-width: 992px) {
-  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
-    font-size: 64px;
-    line-height: 64px;
-    width: 500px;
+  .hero__section__content__left--item-heading {
+    width: 480px;
   }
 }
-@media only screen and (max-width: 576px) {
-  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
-    font-size: 46px;
-    line-height: 46px;
+@media only screen and (max-width: 768px) {
+  .hero__section__content__left--item-heading {
+    font-size: 50px;
+    line-height: 50px;
     width: 100%;
-    gap: 20px;
-    text-align: center;
   }
 }
-@media only screen and (max-width: 480px) {
-  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
-    font-size: 38px;
-    line-height: 38px;
-    width: 100%;
-    text-align: center;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading {
-    font-size: 28px;
-    line-height: 28px;
-  }
-}
-.hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading-paragraph {
-  width: calc(521 / 1440 * 100vw);
+.hero__section__content__left--item-heading-paragraph {
+  width: 521px;
   font-family: "RethinkSans";
   font-weight: 400;
-  font-size: calc(15 / 1440 * 100vw);
-  line-height: calc(20 / 1440 * 100vw);
+  font-size: 20px;
+  line-height: 30px;
   letter-spacing: -0.03em;
   color: #000000;
-}
-@media only screen and (max-width: 1200px) {
-  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading-paragraph {
-    width: 100%;
-    font-size: 16px;
-    line-height: 24px;
-  }
+  text-align: left;
 }
 @media only screen and (max-width: 992px) {
-  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading-paragraph {
+  .hero__section__content__left--item-heading-paragraph {
     font-size: 15px;
-    line-height: 22px;
-    width: 400px;
+    line-height: 18px;
+    width: 300px;
   }
 }
-@media only screen and (max-width: 576px) {
-  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading-paragraph {
-    font-size: 14px;
-    line-height: 20px;
-    width: 100%;
-    text-align: center;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--item .hero__section__content__left--item-heading-paragraph {
-    font-size: 10px;
-    line-height: 10px;
-    width: 100%;
-    text-align: center;
-  }
-}
-.hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--notify-button {
+.hero__section__content__left--notify-button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -587,34 +466,17 @@ header {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--notify-button:hover {
+.hero__section__content__left--notify-button:hover {
   background-color: rgb(88.875, 23.625, 219.375);
 }
-@media only screen and (max-width: 992px) {
-  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--notify-button {
-    width: 17.5rem;
-    height: 3.5rem;
-  }
-}
 @media only screen and (max-width: 576px) {
-  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--notify-button {
-    width: 50%;
-    height: 3.125rem;
-  }
-  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--notify-button .hero__section__content__left--notify-button--text__button {
-    font-size: 20px;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--notify-button {
+  .hero__section__content__left--notify-button {
     width: 70%;
+    max-width: 17.5rem;
     height: 3.125rem;
   }
-  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--notify-button .hero__section__content__left--notify-button--text__button {
-    font-size: 20px;
-  }
 }
-.hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--notify-button .hero__section__content__left--notify-button--text__button {
+.hero__section__content__left--notify-button .hero__section__content__left--notify-button--text__button {
   font-family: "RethinkSans";
   font-style: normal;
   font-weight: 500;
@@ -624,80 +486,15 @@ header {
   color: #ffffff;
 }
 @media only screen and (max-width: 576px) {
-  .hero__section .hero__section__content .hero__section__content__left .hero__section__content__left--notify-button .hero__section__content__left--notify-button--text__button {
-    font-size: 0.6875rem;
-    line-height: 0.6875rem;
-  }
-}
-.hero__section .hero__section__content .hero__section__content__right {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  justify-content: end;
-  flex: 1;
-  width: 100%;
-  position: relative;
-  padding: 53px 0;
-  height: 100%;
-}
-@media only screen and (max-width: 992px) {
-  .hero__section .hero__section__content .hero__section__content__right {
-    padding: 53px 0 0 0;
-    margin-top: -200px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .hero__section .hero__section__content .hero__section__content__right {
-    padding: 53px 0 0 0;
-    margin-top: 0;
-  }
-}
-@media only screen and (max-width: 576px) {
-  .hero__section .hero__section__content .hero__section__content__right {
-    align-items: center;
-    justify-content: center;
-  }
-}
-.hero__section .hero__section__content .hero__section__content__right img {
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
-.hero__section .hero__section__content .hero__section__content__right img:first-child {
-  width: 240px;
-}
-@media only screen and (max-width: 1064px) {
-  .hero__section .hero__section__content .hero__section__content__right img:first-child {
-    width: 200px;
-  }
-}
-@media only screen and (max-width: 576px) {
-  .hero__section .hero__section__content .hero__section__content__right img:first-child {
-    width: 200px;
+  .hero__section__content__left--notify-button .hero__section__content__left--notify-button--text__button {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 @media only screen and (max-width: 480px) {
-  .hero__section .hero__section__content .hero__section__content__right img:first-child {
-    width: 200px;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .hero__section .hero__section__content .hero__section__content__right img:first-child {
-    width: 200px;
-  }
-}
-.hero__section .hero__section__content .hero__section__content__right img:last-child {
-  width: 460px;
-}
-@media only screen and (max-width: 1064px) {
-  .hero__section .hero__section__content .hero__section__content__right img:last-child {
-    width: 400px;
-  }
-}
-@media only screen and (max-width: 576px) {
-  .hero__section .hero__section__content .hero__section__content__right img:last-child {
-    width: 100%;
-    order: 2;
+  .hero__section__content__left--notify-button .hero__section__content__left--notify-button--text__button {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
   }
 }
 
@@ -711,19 +508,17 @@ header {
 }
 @media only screen and (max-width: 1200px) {
   .features {
-    padding: 70px 0;
+    padding: 200px 0;
     gap: 50px;
   }
 }
 @media only screen and (max-width: 1064px) {
   .features {
-    padding: 65px 0;
     gap: 45px;
   }
 }
 @media only screen and (max-width: 992px) {
   .features {
-    padding: 60px 0;
     gap: 40px;
   }
 }
@@ -734,7 +529,12 @@ header {
 }
 @media only screen and (max-width: 576px) {
   .features {
-    gap: 60px;
+    gap: 40px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .features {
+    padding: 40px 0;
   }
 }
 .features__text {
@@ -1013,14 +813,6 @@ header {
     margin: 0 auto;
     gap: 20px;
   }
-  .features__our__benefits:first-child {
-    border-top: 1px solid;
-    padding-top: 20px;
-  }
-  .features__our__benefits:last-child {
-    border-bottom: 1px solid;
-    padding-bottom: 20px;
-  }
 }
 @media only screen and (max-width: 480px) {
   .features__our__benefits {
@@ -1144,25 +936,21 @@ header {
 @media only screen and (max-width: 576px) {
   .about__section {
     margin-top: 40px;
-    gap: 24px;
   }
 }
 @media only screen and (max-width: 480px) {
   .about__section {
     margin-top: 30px;
-    gap: 20px;
   }
 }
 @media only screen and (max-width: 375px) {
   .about__section {
     margin-top: 25px;
-    gap: 16px;
   }
 }
 @media only screen and (max-width: 320px) {
   .about__section {
     margin-top: 20px;
-    gap: 12px;
   }
 }
 
@@ -1390,13 +1178,12 @@ header {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 20px;
-  padding: 20px;
   box-sizing: border-box;
 }
 @media only screen and (max-width: 1369px) {
   .about__section__right-column {
-    width: 45%;
+    width: 588;
+    height: 615;
   }
 }
 @media only screen and (max-width: 1280px) {
@@ -1418,7 +1205,6 @@ header {
   .about__section__right-column {
     width: 100%;
     margin: 0 auto;
-    padding: 20px;
     gap: 20px;
     justify-items: center;
     align-items: center;
@@ -1428,7 +1214,6 @@ header {
 @media only screen and (max-width: 768px) {
   .about__section__right-column {
     min-height: 400px;
-    padding: 16px;
     gap: 16px;
   }
 }
@@ -1466,545 +1251,42 @@ header {
   transform: scaleX(-1);
   z-index: -1;
 }
-
-/* --- Base Styles for Overlays in About Section --- */
-.about__overlay {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  padding: 14.8879px;
-  gap: 15px;
-  background: rgba(17, 8, 33, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
-  box-shadow: 0px 8.93px 9.86px rgba(10, 13, 20, 0.05), inset -8px -13px 32px rgba(255, 255, 255, 0.05), inset 8px 11px 32px rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: #ffffff;
-  width: 100%;
-  max-width: 300px;
-}
-@media only screen and (max-width: 992px) {
-  .about__overlay {
-    padding: 14px;
-    gap: 14px;
-    max-width: 350px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .about__overlay {
-    padding: 12px;
-    gap: 12px;
-    max-width: 320px;
-  }
-}
-@media only screen and (max-width: 576px) {
-  .about__overlay {
-    padding: 10px;
-    gap: 10px;
-    max-width: 280px;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .about__overlay {
-    padding: 8px;
-    gap: 8px;
-    max-width: 250px;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .about__overlay {
-    padding: 6px;
-    gap: 6px;
-    max-width: 220px;
-  }
-}
-@media only screen and (max-width: 320px) {
-  .about__overlay {
-    padding: 5px;
-    gap: 5px;
-    max-width: 200px;
-  }
-}
-
-.about__overlay-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-.about__overlay-header p {
-  font-family: "RethinkSans";
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 22px;
-  color: #ffffff;
-  margin: 0;
-}
-@media only screen and (max-width: 576px) {
-  .about__overlay-header p {
-    font-size: 14px;
-    line-height: 20px;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .about__overlay-header p {
-    font-size: 13px;
-    line-height: 18px;
-  }
-}
-@media only screen and (max-width: 320px) {
-  .about__overlay-header p {
-    font-size: 12px;
-    line-height: 16px;
-  }
-}
-.about__overlay-header .about__view-details {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 3.98002px 5.97003px;
-  gap: 1.99px;
-  width: 82.9px;
-  height: 23.96px;
-  background: rgba(255, 255, 255, 0.2);
-  border: 0.995005px solid #e7e8eb;
-  box-shadow: 0px 0.995005px 1.99001px rgba(10, 13, 20, 0.03);
-  border-radius: 6.03772px;
-  color: white;
-  font-size: 11.94px;
-  font-weight: 500;
-}
-@media only screen and (max-width: 576px) {
-  .about__overlay-header .about__view-details {
-    width: 70px;
-    height: 20px;
-    font-size: 10px;
-    padding: 3px 5px;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .about__overlay-header .about__view-details {
-    width: 60px;
-    height: 18px;
-    font-size: 7px;
-    padding: 2px 4px;
-  }
-}
-
-/* --- Blood Biomarkers Specific Styles (inside About Section) --- */
-.about__overlay--blood-biomarkers {
-  width: 276px;
-  height: 166px;
+.about__section__right-column .about__section__right-column--img_1 {
   position: absolute;
   top: 24px;
-  left: 24px;
-  box-sizing: border-box;
-  height: auto;
+  left: 18px;
+  width: 276px;
+  backdrop-filter: blur(10px);
 }
-@media only screen and (max-width: 992px) {
-  .about__overlay--blood-biomarkers {
-    position: absolute;
-    width: 100%;
-    margin: 0 auto;
-    top: 24px;
-    left: 24px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .about__overlay--blood-biomarkers {
-    max-width: 350px;
+@media only screen and (max-width: 576px) {
+  .about__section__right-column .about__section__right-column--img_1 {
+    width: 240px;
   }
 }
 @media only screen and (max-width: 576px) {
-  .about__overlay--blood-biomarkers {
-    max-width: 100%;
-    height: 100%;
-    position: static;
-    padding: 20px;
+  .about__section__right-column .about__section__right-column--img_1 {
+    width: 170px;
+    top: 12px;
+    left: 12px;
   }
 }
-
-.about__biomarkers-count {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: "RethinkSans";
-  font-size: 12px;
-  font-weight: 500;
-}
-.about__biomarkers-count img {
-  width: 24px;
-  height: 24px;
-}
-.about__biomarkers-count span {
-  color: #ffffff;
-  font-size: 24px;
-}
-@media only screen and (max-width: 576px) {
-  .about__biomarkers-count {
-    gap: 6px;
-  }
-  .about__biomarkers-count img {
-    width: 20px;
-    height: 20px;
-  }
-  .about__biomarkers-count span {
-    font-size: 20px;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .about__biomarkers-count {
-    font-size: 11px;
-  }
-  .about__biomarkers-count img {
-    width: 18px;
-    height: 18px;
-  }
-  .about__biomarkers-count span {
-    font-size: 18px;
-  }
-}
-
-.about__biomarkers-bars {
-  display: flex;
-  width: 100%;
-  height: 10px;
-  border-radius: 5px;
-  overflow: hidden;
-  margin-bottom: 15px;
-}
-@media only screen and (max-width: 576px) {
-  .about__biomarkers-bars {
-    height: 8px;
-    margin-bottom: 12px;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .about__biomarkers-bars {
-    height: 6px;
-    margin-bottom: 10px;
-  }
-}
-
-.about__biomarker-bar {
-  height: 100%;
-}
-.about__biomarker-bar--in-range {
-  background-color: #763cea;
-}
-.about__biomarker-bar--out-of-range {
-  background-color: #ff5c00;
-}
-.about__biomarker-bar--improving {
-  background-color: #a3ffd2;
-}
-
-.about__biomarkers-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 20px;
-  font-family: "RethinkSans";
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.9);
-}
-@media only screen and (max-width: 576px) {
-  .about__biomarkers-legend {
-    font-size: 11px;
-    gap: 8px 16px;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .about__biomarkers-legend {
-    font-size: 10px;
-    gap: 6px 12px;
-  }
-}
-.about__biomarkers-legend .about__legend-box {
-  width: 12px;
-  height: 12px;
-  border-radius: 3px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 4px;
-}
-@media only screen and (max-width: 576px) {
-  .about__biomarkers-legend .about__legend-box {
-    width: 10px;
-    height: 10px;
-    margin-right: 3px;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .about__biomarkers-legend .about__legend-box {
-    width: 8px;
-    height: 8px;
-    margin-right: 2px;
-  }
-}
-.about__biomarkers-legend .about__legend-box--in-range {
-  background-color: #763cea;
-}
-.about__biomarkers-legend .about__legend-box--out-of-range {
-  background-color: #ff5c00;
-}
-.about__biomarkers-legend .about__legend-box--improving {
-  background-color: #a3ffd2;
-}
-
-/* --- Hematocrit Specific Styles (inside About Section) --- */
-.about__overlay--hematocrit {
-  width: 252px;
-  height: 289px;
+.about__section__right-column .about__section__right-column--img_2 {
   position: absolute;
   bottom: 24px;
   right: 24px;
-  box-sizing: border-box;
-  padding: 20px;
-  height: auto;
-}
-@media only screen and (max-width: 992px) {
-  .about__overlay--hematocrit {
-    position: absolute;
-    width: 100%;
-    max-width: 400px;
-    bottom: 24px;
-    right: 24px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .about__overlay--hematocrit {
-    max-width: 350px;
-  }
+  width: 252px;
+  backdrop-filter: blur(10px);
 }
 @media only screen and (max-width: 576px) {
-  .about__overlay--hematocrit {
-    position: static;
-    max-width: 100%;
-    height: 100%;
-    margin: 0 auto;
-  }
-}
-
-.about__hematocrit-value {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 11px 16px 2px;
-  gap: 8px;
-  box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  width: 100%;
-  margin-top: 16px;
-}
-@media only screen and (max-width: 576px) {
-  .about__hematocrit-value {
-    padding: 10px 14px 2px;
-    gap: 6px;
-    margin-top: 12px;
+  .about__section__right-column .about__section__right-column--img_2 {
+    width: 210px;
   }
 }
 @media only screen and (max-width: 375px) {
-  .about__hematocrit-value {
-    padding: 8px 12px 2px;
-    gap: 5px;
-    margin-top: 10px;
-  }
-}
-
-.about__value-number {
-  font-family: "RethinkSans";
-  font-size: 64px;
-  font-weight: 600;
-  color: #ffffff;
-  line-height: 1;
-  display: flex;
-  align-items: baseline;
-  order: 2;
-}
-@media only screen and (max-width: 576px) {
-  .about__value-number {
-    font-size: 56px;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .about__value-number {
-    font-size: 48px;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .about__value-number {
-    font-size: 40px;
-  }
-}
-@media only screen and (max-width: 320px) {
-  .about__value-number {
-    font-size: 36px;
-  }
-}
-
-.about__value-percent {
-  font-size: 0.5em;
-  font-weight: 400;
-  align-self: flex-start;
-  margin-left: 5px;
-  transform: translateY(-5px);
-}
-@media only screen and (max-width: 576px) {
-  .about__value-percent {
-    margin-left: 4px;
-    transform: translateY(-4px);
-  }
-}
-@media only screen and (max-width: 375px) {
-  .about__value-percent {
-    margin-left: 3px;
-    transform: translateY(-3px);
-  }
-}
-
-.about__value-range--in-range {
-  font-family: "RethinkSans";
-  font-size: 11px;
-  font-weight: 600;
-  color: black;
-  background: #84ebdd;
-  border-radius: 999px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 54px;
-  height: 16px;
-  order: 1;
-}
-@media only screen and (max-width: 576px) {
-  .about__value-range--in-range {
-    font-size: 10px;
-    width: 50px;
-    height: 15px;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .about__value-range--in-range {
-    font-size: 9px;
-    width: 45px;
-    height: 14px;
-  }
-}
-
-.about__lab-reference-range {
-  font-family: "RethinkSans";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.03em;
-  font-feature-settings: "calt" off, "liga" off;
-  color: #ffffff;
-  width: 100%;
-}
-@media only screen and (max-width: 576px) {
-  .about__lab-reference-range {
-    font-size: 13px;
-    line-height: 18px;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .about__lab-reference-range {
-    font-size: 12px;
-    line-height: 16px;
-  }
-}
-@media only screen and (max-width: 320px) {
-  .about__lab-reference-range {
-    font-size: 11px;
-    line-height: 15px;
-  }
-}
-
-.about__range-indicator--vertical {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 100%;
-}
-
-.about__legend-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-@media only screen and (max-width: 576px) {
-  .about__legend-item {
-    gap: 6px;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .about__legend-item {
-    gap: 4px;
-  }
-}
-
-.about__legend-box {
-  width: 12px;
-  height: 12px;
-  border-radius: 3px;
-  display: inline-block;
-  vertical-align: middle;
-}
-.about__legend-box--above-range {
-  background-color: #ff5c00;
-  border-radius: 100%;
-}
-.about__legend-box--in-range-hematocrit {
-  background-color: #22d3bb;
-  border-radius: 100%;
-}
-.about__legend-box--below-range {
-  background-color: #763cea;
-  border-radius: 100%;
-}
-@media only screen and (max-width: 576px) {
-  .about__legend-box {
-    width: 10px;
-    height: 10px;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .about__legend-box {
-    width: 8px;
-    height: 8px;
-  }
-}
-
-.about__legend-text {
-  align-items: center;
-  padding: 0px;
-  font-size: 12px;
-  width: 100%;
-  height: 16px;
-  height: auto;
-}
-@media only screen and (max-width: 576px) {
-  .about__legend-text {
-    font-size: 11px;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .about__legend-text {
-    font-size: 10px;
-  }
-}
-@media only screen and (max-width: 320px) {
-  .about__legend-text {
-    font-size: 9px;
+  .about__section__right-column .about__section__right-column--img_2 {
+    width: 150px;
+    bottom: 12px;
+    right: 12px;
   }
 }
 
@@ -2024,6 +1306,7 @@ header {
   box-sizing: border-box;
   height: auto;
   min-height: 300px;
+  position: relative;
 }
 @media only screen and (max-width: 1440px) {
   .contact__section {
@@ -2107,6 +1390,34 @@ header {
     margin-top: 20px;
   }
 }
+.contact__section .element-1 {
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+}
+.contact__section .element-2 {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 380px;
+}
+@media only screen and (max-width: 768px) {
+  .contact__section .element-2 {
+    right: 50px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .contact__section .element-2 {
+    right: 0;
+  }
+}
+.contact__section .element-3 {
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  right: 0;
+}
 .contact__section .contact__section_left-content {
   display: flex;
   flex-direction: column;
@@ -2132,8 +1443,6 @@ header {
 @media only screen and (max-width: 992px) {
   .contact__section .contact__section_left-content {
     width: 100%;
-    align-items: center;
-    text-align: center;
     gap: 16px;
   }
 }
@@ -2170,32 +1479,9 @@ header {
 }
 @media only screen and (max-width: 992px) {
   .contact__section .contact__section_left-content h2 {
-    font-size: 40px;
-    line-height: 40px;
-  }
-}
-@media only screen and (max-width: 640px) {
-  .contact__section .contact__section_left-content h2 {
-    font-size: 30px;
-    line-height: 30px;
-  }
-}
-@media only screen and (max-width: 576px) {
-  .contact__section .contact__section_left-content h2 {
-    font-size: 28px;
-    line-height: 28px;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .contact__section .contact__section_left-content h2 {
-    font-size: 24px;
-    line-height: 24px;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .contact__section .contact__section_left-content h2 {
-    font-size: 20px;
-    line-height: 20px;
+    font-size: 50px;
+    line-height: 50px;
+    width: 80%;
   }
 }
 .contact__section .contact__section_left-content p {
@@ -2222,14 +1508,8 @@ header {
 }
 @media only screen and (max-width: 992px) {
   .contact__section .contact__section_left-content p {
-    font-size: 13px;
+    font-size: 17px;
     line-height: 23px;
-  }
-}
-@media only screen and (max-width: 576px) {
-  .contact__section .contact__section_left-content p {
-    font-size: 10px;
-    line-height: 20px;
   }
 }
 .contact__section .contact__section_right-content {
@@ -2243,7 +1523,6 @@ header {
   isolation: isolate;
   width: 100%;
   height: 292px;
-  max-width: 480px;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.04);
   box-shadow: 0px 8.93px 9.86px rgba(10, 13, 20, 0.05), 0px 1px 2px rgba(10, 13, 20, 0.03), inset -8px -13px 42px rgba(255, 255, 255, 0.35), inset 8px 11px 16px rgba(255, 255, 255, 0.12);
@@ -2252,14 +1531,12 @@ header {
 }
 @media only screen and (max-width: 1200px) {
   .contact__section .contact__section_right-content {
-    max-width: 450px;
     padding: 28px;
     gap: 14px;
   }
 }
 @media only screen and (max-width: 1064px) {
   .contact__section .contact__section_right-content {
-    max-width: 400px;
     padding: 24px;
     gap: 12px;
   }
@@ -2267,43 +1544,36 @@ header {
 @media only screen and (max-width: 992px) {
   .contact__section .contact__section_right-content {
     width: 100%;
-    max-width: 500px;
     padding: 32px;
     gap: 16px;
-    margin: 0 auto;
   }
 }
 @media only screen and (max-width: 768px) {
   .contact__section .contact__section_right-content {
-    max-width: 450px;
     padding: 28px;
     gap: 14px;
   }
 }
 @media only screen and (max-width: 576px) {
   .contact__section .contact__section_right-content {
-    max-width: 350px;
     padding: 24px;
     gap: 12px;
   }
 }
 @media only screen and (max-width: 480px) {
   .contact__section .contact__section_right-content {
-    max-width: 300px;
     padding: 20px;
     gap: 10px;
   }
 }
 @media only screen and (max-width: 375px) {
   .contact__section .contact__section_right-content {
-    max-width: 280px;
     padding: 16px;
     gap: 8px;
   }
 }
 @media only screen and (max-width: 320px) {
   .contact__section .contact__section_right-content {
-    max-width: 250px;
     padding: 12px;
     gap: 6px;
   }

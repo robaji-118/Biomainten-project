@@ -22,8 +22,9 @@
 
 
 .container {
+    position: relative;
     width: 100%;
-    max-width: map-get($breakpoints, 'xxl'); // Menggunakan variabel untuk max-width
+    max-width: map-get($breakpoints, 'xxl'); 
     margin: 0 auto;
     padding: 0 toRem(80); // Default padding
 
