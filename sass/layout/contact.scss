@@ -1,434 +1,316 @@
-// layout/contact.scss
-
-
-.contact__section {
-    background-color: $color-primary; // Pastikan $color-primary didefinisikan
+.contact {
+  background-color: $color-primary;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 48px 64px;
+  gap: 48px;
+  isolation: isolate;
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  margin-top: 88px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  position: relative;
+  @include breakpoint(xxl) {
+    padding: 48px 64px;
+    gap: 64px;
+  }
+  @include breakpoint(lg-plus) {
+    padding: 40px 56px;
+    gap: 40px;
+  }
+  @include breakpoint(lg) {
+    padding: 40px 48px;
+    gap: 40px;
+  }
+  @include breakpoint(md-plus) {
+    padding: 32px 40px;
+    gap: 32px;
+    margin-top: 72px;
+  }
+  @include breakpoint(md) {
+    padding: 32px;
+    gap: 32px;
+    margin-top: 64px;
+  }
+  @include breakpoint(tablet-lg) {
+    flex-direction: column;
+    padding: 40px 32px;
+    gap: 32px;
+    margin-top: 56px;
+  }
+  @include breakpoint(tablet-md) {
+    padding: 32px 24px;
+    gap: 28px;
+    margin-top: 48px;
+  }
+  @include breakpoint(tablet-sm) {
+    padding: 28px 20px;
+    gap: 24px;
+    margin-top: 40px;
+  }
+  @include breakpoint(mobile-lg) {
+    padding: 24px 16px;
+    gap: 20px;
+    margin-top: 32px;
+  }
+  @include breakpoint(mobile-md) {
+    padding: 20px 16px;
+    gap: 16px;
+    margin-top: 28px;
+  }
+  @include breakpoint(mobile-sm) {
+    padding: 16px 12px;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  @include breakpoint(mobile-xxs) {
+    padding: 12px 10px;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .el1 {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+  }
+  .el2 {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 380px;
+    @include breakpoint(tablet-md) {
+      right: 50px;
+    }
+    @include breakpoint(tablet-sm) {
+      right: 0;
+    }
+  }
+  .el3 {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    right: 0;
+  }
+  .contact-left {
     display: flex;
-    flex-direction: row; // Default: dua kolom berdampingan
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 16px;
+    width: 572px;
+    margin: 0;
+    flex-shrink: 0;
+    @include breakpoint(md-plus) {
+      width: 50%;
+      gap: 14px;
+    }
+    @include breakpoint(md) {
+      width: 55%;
+      gap: 12px;
+    }
+    @include breakpoint(tablet-lg) {
+      width: 100%;
+      gap: 16px;
+    }
+    @include breakpoint(tablet-md) {
+      gap: 14px;
+    }
+    @include breakpoint(mobile-lg) {
+      gap: 12px;
+    }
+    @include breakpoint(mobile-sm) {
+      gap: 10px;
+    }
+    h2 {
+      font-family: "RethinkSans";
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 64px;
+      width: 100%;
+      letter-spacing: -0.04em;
+      color: #fff;
+      @include breakpoint(lg-plus) {
+        font-size: fluidSize(60);
+        line-height: fluidSize(60);
+      }
+      @include breakpoint(tablet-lg) {
+        font-size: 50px;
+        line-height: 50px;
+        width: 80%;
+      }
+    }
+    p {
+      font-family: "RethinkSans";
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 30px;
+      color: #fff;
+      opacity: 0.7;
+      width: 100%;
+      @include breakpoint(lg-plus) {
+        font-size: 19px;
+        line-height: 29px;
+      }
+      @include breakpoint(lg) {
+        font-size: 16px;
+        line-height: 26px;
+      }
+      @include breakpoint(tablet-lg) {
+        font-size: 17px;
+        line-height: 23px;
+      }
+    }
+  }
+  .contact-right {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 48px 64px; // Default padding horizontal (kiri-kanan) dan vertikal
-    gap: 48px;
-    isolation: isolate; // Untuk stacking context
+    padding: 32px;
+    gap: 16px;
+    isolation: isolate;
     width: 100%;
-    height: 388px; // Tinggi default (akan diubah ke auto)
-    margin-top: 88px;
+    height: auto;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0px 8.93px 9.86px rgba(10, 13, 20, 0.05),
+      0px 1px 2px rgba(10, 13, 20, 0.03),
+      inset -8px -13px 42px rgba(255, 255, 255, 0.35),
+      inset 8px 11px 16px rgba(255, 255, 255, 0.12);
     border-radius: 16px;
-    box-sizing: border-box; // Penting untuk padding
-
-    // Override fixed height for responsiveness
-    height: auto; // Biarkan tinggi menyesuaikan konten
-    min-height: 300px; // Berikan tinggi minimum agar tidak terlalu kecil di desktop
-    position: relative;
-
-    // Adjustments for larger screens
-    @include breakpoint(xxl) { // 1440px
-        padding: 48px 64px; // Tetap sama untuk XXL
-    gap: 64px; // Mungkin lebih besar gap untuk layar ekstra lebar
-
+    @include breakpoint(md-plus) {
+      padding: 28px;
+      gap: 14px;
     }
-    @include breakpoint(lg-plus) { // 1369px
-        padding: 40px 56px;
-        gap: 40px;
+    @include breakpoint(md) {
+      padding: 24px;
+      gap: 12px;
     }
-    @include breakpoint(lg) { // 1280px
-        padding: 40px 48px;
-        gap: 40px;
+    @include breakpoint(tablet-lg) {
+      width: 100%;
+      padding: 32px;
+      gap: 16px;
     }
-    @include breakpoint(md-plus) { // 1200px
-        padding: 32px 40px;
-        gap: 32px;
-        margin-top: 72px;
+    @include breakpoint(tablet-md) {
+      padding: 28px;
+      gap: 14px;
     }
-    @include breakpoint(md) { // 1064px
-        padding: 32px;
-        gap: 32px;
-        margin-top: 64px;
+    @include breakpoint(mobile-lg) {
+      padding: 24px;
+      gap: 12px;
     }
-    // Mobile-first approach for flex-direction
-    @include breakpoint(tablet-lg) { // 992px
-        flex-direction: column; // Mengubah menjadi satu kolom
-        padding: 40px 32px; // Padding vertikal lebih banyak saat bertumpuk
-        gap: 32px;
-        margin-top: 56px;
+    @include breakpoint(mobile-md) {
+      padding: 20px;
+      gap: 10px;
     }
-    @include breakpoint(tablet-md) { // 768px
-        padding: 32px 24px;
-        gap: 28px;
-        margin-top: 48px;
+    @include breakpoint(mobile-sm) {
+      padding: 16px;
+      gap: 8px;
     }
-    @include breakpoint(tablet-sm) { // 640px
-        padding: 28px 20px;
-        gap: 24px;
-        margin-top: 40px;
+    @include breakpoint(mobile-xxs) {
+      padding: 12px;
+      gap: 6px;
     }
-    @include breakpoint(mobile-lg) { // 576px
-        padding: 24px 16px;
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+      width: 100%;
+      gap: 24px;
+      @include breakpoint(mobile-lg) {
         gap: 20px;
-        margin-top: 32px;
-    }
-    @include breakpoint(mobile-md) { // 480px
-        padding: 20px 16px;
+      }
+      @include breakpoint(mobile-sm) {
         gap: 16px;
-        margin-top: 28px;
-    }
-    @include breakpoint(mobile-sm) { // 375px
-        padding: 16px 12px;
-        gap: 16px;
-        margin-top: 24px;
-    }
-    @include breakpoint(mobile-xxs) { // 320px
-        padding: 12px 10px;
-        gap: 12px;
-        margin-top: 20px;
-    }
-
-    .element-1{
-        position: absolute;
-        z-index: -1;
-        bottom: 0;
-        left: 0;
-    }
-    .element-2{
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        right: 380px;
-
-         @include breakpoint(tablet-md){
-            right: 50px;
+      }
+      input {
+        padding: 14px 10px 14px 12px;
+        gap: 8px;
+        caret-color: #fff;
+        color: #fff;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0px 1px 2px rgba(10, 13, 20, 0.03);
+        border-radius: 10px;
+        font-size: 16px;
+        &:focus {
+          outline: none;
+          border: 3px solid rgba(255, 255, 255, 0.2);
         }
-
-        @include breakpoint(tablet-sm){
-            right: 0;
+        &::placeholder {
+          color: rgba(#fff, 0.6);
+          opacity: 1;
         }
-    }
-
-    .element-3{
-        position: absolute;
-        z-index: -1;
-        bottom: 0;
-        right: 0;
-    }
-
-    .contact__section_left-content {
+        @include breakpoint(mobile-lg) {
+          font-size: 15px;
+          padding: 12px 10px;
+        }
+        @include breakpoint(mobile-sm) {
+          font-size: 14px;
+          padding: 10px 8px;
+        }
+      }
+      .btn {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start; // Teks rata kiri
-        padding: 0px;
-        gap: 16px;
-        width: 572px; // Default width
-        margin: 0; // Hapus margin auto jika align-items: flex-start
-        flex-shrink: 0; // Mencegah penyusutan terlalu banyak
-
-        // Responsive adjustments for left content
-        @include breakpoint(md-plus) { // 1200px
-            width: 50%; // Ambil 50% lebar
-            gap: 14px;
-        }
-        @include breakpoint(md) { // 1064px
-            width: 55%;
-            gap: 12px;
-        }
-        @include breakpoint(tablet-lg) { // 992px
-            width: 100%; // Ambil lebar penuh saat kolom bertumpuk
-            gap: 16px;
-        }
-        @include breakpoint(tablet-md) { // 768px
-            gap: 14px;
-        }
-        @include breakpoint(mobile-lg) { // 576px
-            gap: 12px;
-        }
-        @include breakpoint(mobile-sm) { // 375px
-            gap: 10px;
-        }
-
-
-        h2 {
-            font-family: "RethinkSans";
-            font-style: normal;
-            font-weight: 700;
-            font-size: 64px; // Default
-            line-height: 64px; // Default
-            width: 100%; // Pastikan judul mengambil lebar penuh parent
-            letter-spacing: -0.04em;
-            color: #ffffff;
-
-            // Responsive font sizes for h2
-            @include breakpoint(lg-plus) { // 1369px
-                font-size: fluidSize(60);
-                line-height: fluidSize(60);
-            }
-            @include breakpoint(lg) { // 1280px
-               
-            }
-            @include breakpoint(md-plus) { // 1200px
-                
-            }
-            @include breakpoint(md) { // 1064px
-                
-            }
-            @include breakpoint(tablet-lg) { // 992px
-                font-size: 50px; // Akan skala lebih lanjut di bawah
-                line-height: 50px;
-                width: 80%; // Batasi lebar heading di tablet agar tidak terlalu lebar
-                // margin: 0 auto; // Pusatkan
-            }
-            @include breakpoint(tablet-md) { // 768px
-               
-            }
-            @include breakpoint(tablet-sm) { // 640px
-                
-            }
-            @include breakpoint(mobile-lg) { // 576px
-               
-            }
-            @include breakpoint(mobile-md) { // 480px
-               
-            }
-            @include breakpoint(mobile-sm) { // 375px
-               
-            }
-            @include breakpoint(mobile-xs) { // 350px
-               
-            }
-            @include breakpoint(mobile-xxs) { // 320px
-                
-            }
-        }
-        p {
-            font-family: "RethinkSans";
-            font-style: normal;
-            font-weight: 400;
-            font-size: 20px; // Default
-            line-height: 30px; // Default
-            color: #ffffff;
-            opacity: 0.7;
-            width: 100%; // Pastikan paragraf mengambil lebar penuh parent
-
-            // Responsive font sizes for p
-            @include breakpoint(lg-plus) { // 1369px
-                font-size: 19px;
-                line-height: 29px;
-            }
-            @include breakpoint(lg) { // 1280px
-                 font-size: 16px;
-                line-height: 26px;
-            }
-            @include breakpoint(md-plus) { // 1200px
-                
-            }
-            @include breakpoint(md) { // 1064px
-                
-            }
-            @include breakpoint(tablet-lg) { // 992px
-
-                 font-size: 17px;
-                line-height: 23px;
-                
-                // width: 90%; // Batasi lebar paragraf di tablet
-                // margin: 0 auto; // Pusatkan
-            }
-            @include breakpoint(tablet-md) { // 768px
-                
-            }
-            @include breakpoint(mobile-lg) { // 576px
-                
-            }
-            @include breakpoint(mobile-md) { // 480px
-                
-            }
-            @include breakpoint(mobile-sm) { // 375px
-                
-            }
-            @include breakpoint(mobile-xxs) { // 320px
-               
-            }
-        }
-    }
-
-    .contact__section_right-content {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 32px; // Default padding
-        gap: 16px;
-        isolation: isolate;
-        width: 100%; // Default to 100% width, will be restricted by max-width
-        height: 292px; // Override this to auto for responsiveness
-        // max-width: 480px; // Maksimum lebar untuk form
-        margin: 0 auto; // Pusatkan di desktop jika flex-grow: 0;
-        background: rgba(255, 255, 255, 0.04);
-        box-shadow: 0px 8.93px 9.86px rgba(10, 13, 20, 0.05),
-            0px 1px 2px rgba(10, 13, 20, 0.03),
-            inset -8px -13px 42px rgba(255, 255, 255, 0.35),
-            inset 8px 11px 16px rgba(255, 255, 255, 0.12);
-        border-radius: 16px;
-
-        height: auto; // Biarkan tinggi menyesuaikan konten
-
-        // Responsive adjustments for right content
-        @include breakpoint(md-plus) { // 1200px
-            // max-width: 450px;
-            padding: 28px;
-            gap: 14px;
+        padding: 14px;
+        gap: 4px;
+        color: $color-primary;
+        font-size: 14px;
+        font-weight: 500;
+        width: 100%;
+        height: 48px;
+        background: #fff;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        &:hover {
+          background-color: darken(#fff, 10%);
         }
-        @include breakpoint(md) { // 1064px
-            // max-width: 400px;
-            padding: 24px;
-            gap: 12px;
+        @include breakpoint(mobile-lg) {
+          height: 44px;
+          font-size: 13px;
         }
-        @include breakpoint(tablet-lg) { // 992px
-            width: 100%; // Ambil lebar penuh container
-            // max-width: 500px; 
-            padding: 32px; // Padding yang sama dengan desktop kecil
-            gap: 16px;
-            // margin: 0 auto; // Pastikan terpusat
+        @include breakpoint(mobile-sm) {
+          height: 40px;
+          font-size: 12px;
         }
-        @include breakpoint(tablet-md) { // 768px
-            // max-width: 450px;
-            padding: 28px;
-            gap: 14px;
-        }
-        @include breakpoint(mobile-lg) { // 576px
-            // max-width: 350px;
-            padding: 24px;
-            gap: 12px;
-        }
-        @include breakpoint(mobile-md) { // 480px
-            // max-width: 300px;
-            padding: 20px;
-            gap: 10px;
-        }
-        @include breakpoint(mobile-sm) { // 375px
-            // max-width: 280px;
-            padding: 16px;
-            gap: 8px;
-        }
-        @include breakpoint(mobile-xxs) { // 320px
-            // max-width: 250px;
-            padding: 12px;
-            gap: 6px;
-        }
-
-
-        .contact__section_right-content--waitlist-form {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 0px;
-            width: 100%;
-            gap: 24px; // Gap antara input dan tombol
-
-            @include breakpoint(mobile-lg) { // 576px
-                gap: 20px;
-            }
-            @include breakpoint(mobile-sm) { // 375px
-                gap: 16px;
-            }
-
-            input {
-                box-sizing: border-box;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                padding: 14px 10px 14px 12px;
-                gap: 8px;
-                caret-color: #ffffff;
-                color: #ffffff;
-                width: 100%;
-                background: rgba(255, 255, 255, 0.2);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                box-shadow: 0px 1px 2px rgba(10, 13, 20, 0.03);
-                border-radius: 10px;
-                font-size: 16px; // Default font size for input
-
-                &:focus {
-                    outline: none;
-                    border: 3px solid rgba(255, 255, 255, 0.2);
-                }
-
-                &::placeholder {
-                    color: rgba(#ffffff, 0.6);
-                    opacity: 1;
-                }
-
-                // Responsive font size for input
-                @include breakpoint(mobile-lg) { // 576px
-                    font-size: 15px;
-                    padding: 12px 10px;
-                }
-                @include breakpoint(mobile-sm) { // 375px
-                    font-size: 14px;
-                    padding: 10px 8px;
-                }
-            }
-
-            button {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                padding: 14px;
-                gap: 4px;
-                color: $color-primary;
-                font-size: 14px; // Default font size for button
-                font-weight: 500;
-                width: 100%;
-                height: 48px; // Default height for button
-                background: #ffffff;
-                border-radius: 12px;
-                border: none;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
-
-                &:hover {
-                    background-color: darken(#ffffff, 10%);
-                }
-
-                // Responsive adjustments for button
-                @include breakpoint(mobile-lg) { // 576px
-                    height: 44px;
-                    font-size: 13px;
-                }
-                @include breakpoint(mobile-sm) { // 375px
-                    height: 40px;
-                    font-size: 12px;
-                }
-            }
-        }
-        .contact__section_right-content--privacy-text {
-            font-family: "RethinkSans";
-            font-style: normal;
-            font-weight: 500;
-            font-size: 16px; // Default
-            line-height: 24px; // Default
-            align-items: center;
-            text-align: center;
-            color: rgba(#ffffff, 0.8);
-            width: 100%; // Ensures text takes full width of its parent
-
-            // Responsive font size for privacy text
-            @include breakpoint(mobile-lg) { // 576px
-                font-size: 15px;
-                line-height: 22px;
-            }
-            @include breakpoint(mobile-md) { // 480px
-                font-size: 14px;
-                line-height: 20px;
-            }
-            @include breakpoint(mobile-sm) { // 375px
-                font-size: 13px;
-                line-height: 18px;
-            }
-            @include breakpoint(mobile-xxs) { // 320px
-                font-size: 12px;
-                line-height: 16px;
-            }
-        }
+      }
     }
+    .privacy {
+      font-family: "RethinkSans";
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+      color: rgba(#fff, 0.8);
+      width: 100%;
+      @include breakpoint(mobile-lg) {
+        font-size: 15px;
+        line-height: 22px;
+      }
+      @include breakpoint(mobile-md) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      @include breakpoint(mobile-sm) {
+        font-size: 13px;
+        line-height: 18px;
+      }
+      @include breakpoint(mobile-xxs) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+  }
 }

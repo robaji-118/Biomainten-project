@@ -230,17 +230,17 @@ header {
 .navbar__button:hover {
   background-color: rgb(88.875, 23.625, 219.375);
 }
-.hero__section {
+.hero {
   position: relative;
 }
 @media only screen and (max-width: 768px) {
-  .hero__section {
+  .hero {
     display: flex;
     flex-direction: column;
     gap: 32px;
   }
 }
-.hero__section .hero__section__hero__background {
+.hero__bg {
   position: absolute;
   top: -100px;
   left: 0;
@@ -252,7 +252,7 @@ header {
   overflow: hidden;
 }
 @media only screen and (max-width: 768px) {
-  .hero__section .hero__section__hero__background {
+  .hero__bg {
     position: relative;
     top: unset;
     left: unset;
@@ -263,17 +263,17 @@ header {
     height: 50vw;
   }
 }
-.hero__section .hero__section__hero__background .hero__section__hero__background--img {
+.hero__bg-img {
   object-fit: cover;
   width: 100%;
   height: calc(100% + 72px);
 }
 @media only screen and (max-width: 768px) {
-  .hero__section .hero__section__hero__background .hero__section__hero__background--img {
+  .hero__bg-img {
     border-radius: 2px;
   }
 }
-.hero__section .hero__section__hero__background .hero__section__hero__background--gradient__light {
+.hero__bg-gradient {
   position: absolute;
   top: 0;
   left: 0;
@@ -285,13 +285,12 @@ header {
   background: linear-gradient(90deg, #fff 44.71%, rgba(255, 255, 255, 0) 94.15%);
 }
 @media only screen and (max-width: 768px) {
-  .hero__section .hero__section__hero__background .hero__section__hero__background--gradient__light {
+  .hero__bg-gradient {
     visibility: hidden;
     opacity: 0;
   }
 }
-
-.element__group {
+.hero__elements {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -300,84 +299,79 @@ header {
   margin: 0 auto;
   max-width: 90rem;
 }
-.element__group .element__group--component-hero1 {
+.hero__elements .hero__element {
   position: absolute;
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+.hero__elements .hero__element--1 {
   right: 56px;
   bottom: 337px;
   height: auto;
   object-fit: contain;
   border-radius: 20px;
-  backdrop-filter: blur(10px);
-  z-index: 2;
 }
 @media only screen and (max-width: 992px) {
-  .element__group .element__group--component-hero1 {
+  .hero__elements .hero__element--1 {
     width: 200px;
     bottom: 300px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .element__group .element__group--component-hero1 {
+  .hero__elements .hero__element--1 {
     width: 150px;
     bottom: 1rem;
     right: 2.5rem;
   }
 }
 @media only screen and (max-width: 640px) {
-  .element__group .element__group--component-hero1 {
+  .hero__elements .hero__element--1 {
     width: 100px;
     bottom: 1rem;
     right: 2.5rem;
   }
 }
-.element__group .element__group--component-hero2 {
-  position: absolute;
+.hero__elements .hero__element--2 {
   bottom: 56px;
   right: 56px;
-  backdrop-filter: blur(10px);
-  z-index: 2;
 }
 @media only screen and (max-width: 992px) {
-  .element__group .element__group--component-hero2 {
+  .hero__elements .hero__element--2 {
     width: 400px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .element__group .element__group--component-hero2 {
+  .hero__elements .hero__element--2 {
     width: 17.5rem;
     bottom: 1rem;
-    right: unset;
     left: 2.5rem;
   }
 }
 @media only screen and (max-width: 640px) {
-  .element__group .element__group--component-hero2 {
+  .hero__elements .hero__element--2 {
     width: 200px;
     bottom: 1rem;
-    right: unset;
     left: 2.5rem;
   }
 }
 @media only screen and (max-width: 576px) {
-  .element__group .element__group--component-hero2 {
+  .hero__elements .hero__element--2 {
     width: 150px;
     bottom: 1rem;
-    right: unset;
     left: 2.5rem;
   }
 }
-
-.hero__section__content {
+.hero__content {
   padding: 50px 0;
   width: 780px;
   position: relative;
 }
 @media only screen and (max-width: 992px) {
-  .hero__section__content {
+  .hero__content {
     width: 100%;
   }
 }
-.hero__section__content__left--item {
+.hero__text {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -388,19 +382,17 @@ header {
   z-index: 2;
 }
 @media only screen and (max-width: 768px) {
-  .hero__section__content__left--item {
+  .hero__text {
     padding: 30px 0;
   }
 }
 @media only screen and (max-width: 576px) {
-  .hero__section__content__left--item {
+  .hero__text {
     gap: 20px;
   }
 }
-
-.hero__section__content__left--item-heading {
+.hero__title {
   width: 100%;
-  height: auto;
   font-family: "RethinkSans";
   font-weight: 600;
   font-size: 88px;
@@ -410,50 +402,48 @@ header {
   text-align: left;
 }
 @media only screen and (max-width: 1200px) {
-  .hero__section__content__left--item-heading {
+  .hero__title {
     font-size: 72px;
     line-height: 72px;
-    width: 30;
   }
 }
 @media only screen and (max-width: 1064px) {
-  .hero__section__content__left--item-heading {
+  .hero__title {
     font-size: 60px;
     line-height: 60px;
   }
 }
 @media only screen and (max-width: 992px) {
-  .hero__section__content__left--item-heading {
+  .hero__title {
     width: 480px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .hero__section__content__left--item-heading {
+  .hero__title {
     font-size: 50px;
     line-height: 50px;
     width: 100%;
   }
 }
-.hero__section__content__left--item-heading-paragraph {
+.hero__subtitle {
   width: 521px;
   font-family: "RethinkSans";
   font-weight: 400;
   font-size: 20px;
   line-height: 30px;
   letter-spacing: -0.03em;
-  color: #000000;
+  color: #000;
   text-align: left;
 }
 @media only screen and (max-width: 992px) {
-  .hero__section__content__left--item-heading-paragraph {
+  .hero__subtitle {
     font-size: 15px;
     line-height: 18px;
     width: 300px;
   }
 }
-.hero__section__content__left--notify-button {
+.hero__btn {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 1.25rem;
@@ -466,33 +456,32 @@ header {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.hero__section__content__left--notify-button:hover {
+.hero__btn:hover {
   background-color: rgb(88.875, 23.625, 219.375);
 }
 @media only screen and (max-width: 576px) {
-  .hero__section__content__left--notify-button {
+  .hero__btn {
     width: 70%;
     max-width: 17.5rem;
     height: 3.125rem;
   }
 }
-.hero__section__content__left--notify-button .hero__section__content__left--notify-button--text__button {
+.hero__btn-text {
   font-family: "RethinkSans";
-  font-style: normal;
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.5rem;
   letter-spacing: -0.03em;
-  color: #ffffff;
+  color: #fff;
 }
 @media only screen and (max-width: 576px) {
-  .hero__section__content__left--notify-button .hero__section__content__left--notify-button--text__button {
+  .hero__btn-text {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
 }
 @media only screen and (max-width: 480px) {
-  .hero__section__content__left--notify-button .hero__section__content__left--notify-button--text__button {
+  .hero__btn-text {
     font-size: 0.75rem;
     line-height: 1.125rem;
   }
@@ -542,11 +531,10 @@ header {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 0px;
+  padding: 0;
   gap: 24px;
   width: 100%;
   max-width: 920px;
-  text-align: center;
 }
 @media only screen and (max-width: 992px) {
   .features__text {
@@ -558,7 +546,7 @@ header {
     gap: 16px;
   }
 }
-.features__text--subtitle {
+.features__subtitle {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -571,43 +559,40 @@ header {
   background: #efebff;
   border-radius: 999px;
 }
-.features__text--subtitle p {
+.features__subtitle p {
   width: 380px;
   height: 20px;
   font-family: "RethinkSans";
-  font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.03em;
-  font-feature-settings: "calt" off, "liga" off;
   color: #763cea;
 }
 @media only screen and (max-width: 1064px) {
-  .features__text--subtitle p {
+  .features__subtitle p {
     width: 100%;
     font-size: 13px;
     line-height: 19px;
   }
 }
 @media only screen and (max-width: 992px) {
-  .features__text--subtitle {
+  .features__subtitle {
     padding: 3px 6px;
   }
-  .features__text--subtitle p {
+  .features__subtitle p {
     font-size: 12px;
     line-height: 18px;
   }
 }
 @media only screen and (max-width: 576px) {
-  .features__text--subtitle {
+  .features__subtitle {
     width: 100%;
     max-width: 320px;
     height: auto;
     padding: 2px 5px;
   }
-  .features__text--subtitle p {
-    width: auto;
+  .features__subtitle p {
     font-size: 12px;
     line-height: 18px;
     white-space: nowrap;
@@ -616,148 +601,138 @@ header {
   }
 }
 @media only screen and (max-width: 480px) {
-  .features__text--subtitle p {
+  .features__subtitle p {
     font-size: 10px;
     height: 15px;
   }
 }
 @media only screen and (max-width: 375px) {
-  .features__text--subtitle {
+  .features__subtitle {
     max-width: 240px;
   }
-  .features__text--subtitle p {
+  .features__subtitle p {
     font-size: 8px;
     line-height: 16px;
   }
 }
 @media only screen and (max-width: 320px) {
-  .features__text--subtitle {
+  .features__subtitle {
     max-width: 200px;
   }
-  .features__text--subtitle p {
+  .features__subtitle p {
     font-size: 6px;
     line-height: 14px;
   }
 }
-.features__text--description {
+.features__desc {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 16px;
   width: 920px;
-  height: 160px;
   height: auto;
 }
-.features__text--description h2 {
+.features__desc-title {
   font-family: "RethinkSans";
-  font-style: normal;
   font-weight: 600;
   font-size: 72px;
   line-height: 80px;
-  display: flex;
-  align-items: center;
   text-align: center;
   letter-spacing: -0.04em;
-  font-feature-settings: "calt" off, "liga" off;
-  color: #000000;
+  color: #000;
 }
-.features__text--description p {
-  width: 920px;
+.features__desc p {
+  width: 100%;
   font-family: "Manrope";
-  font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 32px;
-  display: flex;
-  align-items: center;
   text-align: center;
   letter-spacing: -0.03em;
-  font-feature-settings: "calt" off, "liga" off;
-  color: #000000;
-  width: 100%;
+  color: #000;
 }
 @media only screen and (max-width: 1280px) {
-  .features__text--description {
+  .features__desc {
     width: 80%;
   }
-  .features__text--description h2 {
+  .features__desc-title {
     font-size: 68px;
   }
-  .features__text--description p {
+  .features__desc p {
     font-size: 19px;
     line-height: 30px;
   }
 }
 @media only screen and (max-width: 1200px) {
-  .features__text--description {
+  .features__desc {
     width: 90%;
   }
 }
 @media only screen and (max-width: 1064px) {
-  .features__text--description {
+  .features__desc {
     width: 95%;
   }
 }
 @media only screen and (max-width: 992px) {
-  .features__text--description {
+  .features__desc {
     width: 95%;
     text-align: center;
   }
 }
 @media only screen and (max-width: 768px) {
-  .features__text--description {
+  .features__desc {
     width: 90%;
   }
-  .features__text--description h2 {
+  .features__desc-title {
     font-size: 64px;
   }
 }
 @media only screen and (max-width: 640px) {
-  .features__text--description {
+  .features__desc {
     width: 100%;
   }
-  .features__text--description h2 {
+  .features__desc-title {
     font-size: 60px;
     line-height: 60px;
   }
 }
 @media only screen and (max-width: 576px) {
-  .features__text--description {
+  .features__desc {
     width: 90%;
     text-align: center;
   }
 }
 @media only screen and (max-width: 480px) {
-  .features__text--description {
+  .features__desc {
     width: 95%;
   }
 }
 @media only screen and (max-width: 375px) {
-  .features__text--description {
+  .features__desc {
     width: 95%;
   }
-  .features__text--description h2 {
+  .features__desc-title {
     font-size: 50px;
     line-height: 50px;
   }
-  .features__text--description p {
+  .features__desc p {
     font-size: 15px;
     line-height: 26px;
   }
 }
 @media only screen and (max-width: 350px) {
-  .features__text--description {
+  .features__desc {
     width: 95%;
   }
 }
 @media only screen and (max-width: 320px) {
-  .features__text--description {
+  .features__desc {
     width: 95%;
   }
 }
-.features__our {
+.features__list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -766,79 +741,75 @@ header {
   gap: 32px;
 }
 @media only screen and (max-width: 1280px) {
-  .features__our {
+  .features__list {
     gap: 28px;
   }
-  .features__our .features__our__benefits {
+  .features__list .features__item {
     flex: 0 0 calc(50% - 14px);
     max-width: calc(50% - 14px);
   }
 }
 @media only screen and (max-width: 992px) {
-  .features__our {
+  .features__list {
     gap: 24px;
   }
-  .features__our .features__our__benefits {
+  .features__list .features__item {
     flex: 0 0 calc(50% - 12px);
     max-width: calc(50% - 12px);
   }
 }
 @media only screen and (max-width: 576px) {
-  .features__our {
+  .features__list {
     gap: 85px;
     flex-direction: column;
   }
 }
-.features__our__benefits {
+.features__item {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 32px;
   width: 296px;
-  height: 220px;
-  flex-shrink: 0;
   height: auto;
+  flex-shrink: 0;
 }
 @media only screen and (max-width: 1200px) {
-  .features__our__benefits {
+  .features__item {
     width: 280px;
     gap: 28px;
   }
 }
 @media only screen and (max-width: 576px) {
-  .features__our__benefits {
+  .features__item {
     width: 100%;
     margin: 0 auto;
     gap: 20px;
   }
 }
 @media only screen and (max-width: 480px) {
-  .features__our__benefits {
+  .features__item {
     width: 100%;
     gap: 16px;
   }
 }
 @media only screen and (max-width: 375px) {
-  .features__our__benefits {
+  .features__item {
     width: 95%;
     gap: 12px;
   }
 }
-.features__our__benefits h3 {
+.features__item h3 {
   font-family: "RethinkSans";
-  font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 32px;
-  align-items: center;
   text-align: center;
   letter-spacing: -0.04em;
-  font-feature-settings: "calt" off, "liga" off;
   color: #171938;
 }
-.features__our__benefits p {
+.features__item p {
   font-size: 18px;
   font-weight: 400;
   font-family: "RethinkSans";
@@ -847,42 +818,42 @@ header {
   width: 100%;
 }
 @media only screen and (max-width: 1280px) {
-  .features__our__benefits p {
+  .features__item p {
     width: 200px;
   }
 }
 @media only screen and (max-width: 992px) {
-  .features__our__benefits p {
+  .features__item p {
     font-size: 15px;
   }
 }
-.features__our__benefits__icon {
+.features__icon {
   height: 64px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.features__our__benefits__icon img {
+.features__icon img {
   max-width: 100%;
   height: auto;
 }
 @media only screen and (max-width: 992px) {
-  .features__our__benefits__icon {
+  .features__icon {
     height: 64px;
   }
 }
 @media only screen and (max-width: 576px) {
-  .features__our__benefits__icon {
+  .features__icon {
     height: 64px;
   }
 }
 @media only screen and (max-width: 480px) {
-  .features__our__benefits__icon {
+  .features__icon {
     height: 64px;
   }
 }
 
-.about__section {
+.about {
   margin-top: 114px;
   display: flex;
   flex-direction: row;
@@ -890,37 +861,35 @@ header {
   padding: 0;
   gap: 67px;
   width: 100%;
-  height: 624px;
-  box-sizing: border-box;
   height: auto;
   min-height: 500px;
 }
 @media only screen and (max-width: 1369px) {
-  .about__section {
+  .about {
     margin-top: 100px;
     gap: 60px;
   }
 }
 @media only screen and (max-width: 1280px) {
-  .about__section {
+  .about {
     margin-top: 90px;
     gap: 50px;
   }
 }
 @media only screen and (max-width: 1200px) {
-  .about__section {
+  .about {
     margin-top: 80px;
     gap: 40px;
   }
 }
 @media only screen and (max-width: 1064px) {
-  .about__section {
+  .about {
     margin-top: 70px;
     gap: 30px;
   }
 }
 @media only screen and (max-width: 992px) {
-  .about__section {
+  .about {
     flex-direction: column;
     margin-top: 60px;
     gap: 40px;
@@ -928,37 +897,36 @@ header {
   }
 }
 @media only screen and (max-width: 768px) {
-  .about__section {
+  .about {
     margin-top: 50px;
     gap: 32px;
   }
 }
 @media only screen and (max-width: 576px) {
-  .about__section {
+  .about {
     margin-top: 40px;
   }
 }
 @media only screen and (max-width: 480px) {
-  .about__section {
+  .about {
     margin-top: 30px;
   }
 }
 @media only screen and (max-width: 375px) {
-  .about__section {
+  .about {
     margin-top: 25px;
   }
 }
 @media only screen and (max-width: 320px) {
-  .about__section {
+  .about {
     margin-top: 20px;
   }
 }
-
-.about__section__left-column {
+.about__left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 32px;
   width: 617px;
   height: 100%;
@@ -966,31 +934,31 @@ header {
   flex-shrink: 0;
 }
 @media only screen and (max-width: 1369px) {
-  .about__section__left-column {
+  .about__left {
     width: 55%;
     gap: 28px;
   }
 }
 @media only screen and (max-width: 1280px) {
-  .about__section__left-column {
+  .about__left {
     width: 50%;
     gap: 24px;
   }
 }
 @media only screen and (max-width: 1200px) {
-  .about__section__left-column {
+  .about__left {
     width: 48%;
     gap: 20px;
   }
 }
 @media only screen and (max-width: 1064px) {
-  .about__section__left-column {
+  .about__left {
     width: 45%;
     gap: 18px;
   }
 }
 @media only screen and (max-width: 992px) {
-  .about__section__left-column {
+  .about__left {
     width: 100%;
     align-items: start;
     text-align: start;
@@ -998,99 +966,88 @@ header {
   }
 }
 @media only screen and (max-width: 768px) {
-  .about__section__left-column {
+  .about__left {
     gap: 28px;
   }
 }
 @media only screen and (max-width: 576px) {
-  .about__section__left-column {
+  .about__left {
     gap: 24px;
   }
 }
 @media only screen and (max-width: 375px) {
-  .about__section__left-column {
+  .about__left {
     gap: 20px;
   }
 }
-.about__section__left-column--heading {
+.about__heading {
   width: 100%;
-  height: 160px;
   font-family: "RethinkSans";
-  font-style: normal;
   font-weight: 600;
   font-size: 72px;
   line-height: 80px;
   letter-spacing: -0.04em;
-  font-feature-settings: "calt" off, "liga" off;
   color: #171938;
   height: auto;
 }
 @media only screen and (max-width: 1369px) {
-  .about__section__left-column--heading {
+  .about__heading {
     font-size: 68px;
     line-height: 76px;
   }
 }
 @media only screen and (max-width: 992px) {
-  .about__section__left-column--heading {
+  .about__heading {
     font-size: 60px;
     line-height: 60px;
   }
 }
 @media only screen and (max-width: 640px) {
-  .about__section__left-column--heading {
+  .about__heading {
     font-size: 50px;
     line-height: 50px;
   }
 }
 @media only screen and (max-width: 576px) {
-  .about__section__left-column--heading {
+  .about__heading {
     font-size: 40px;
     line-height: 40px;
   }
 }
 @media only screen and (max-width: 375px) {
-  .about__section__left-column--heading {
+  .about__heading {
     font-size: 40px;
     line-height: 40px;
   }
 }
 @media only screen and (max-width: 320px) {
-  .about__section__left-column--heading {
+  .about__heading {
     font-size: 40px;
     line-height: 40px;
   }
 }
-.about__section__left-column--benefit-list {
+.about__list {
   list-style: none;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 12px;
-  width: 617px;
-  height: 164px;
-  height: auto;
   width: 100%;
-}
-@media only screen and (max-width: 992px) {
-  .about__section__left-column--benefit-list {
-    width: 100%;
-  }
+  height: auto;
 }
 @media only screen and (max-width: 576px) {
-  .about__section__left-column--benefit-list {
+  .about__list {
     gap: 10px;
   }
 }
 @media only screen and (max-width: 375px) {
-  .about__section__left-column--benefit-list {
+  .about__list {
     gap: 8px;
   }
 }
-.about__section__left-column--benefit-list--item {
+.about__item {
   font-family: "RethinkSans";
-  font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 32px;
@@ -1098,31 +1055,30 @@ header {
   align-items: center;
   gap: 12px;
   letter-spacing: -0.03em;
-  font-feature-settings: "calt" off, "liga" off;
   color: #171938;
   width: 100%;
 }
 @media only screen and (max-width: 1280px) {
-  .about__section__left-column--benefit-list--item {
+  .about__item {
     font-size: 17px;
     line-height: 30px;
   }
 }
 @media only screen and (max-width: 992px) {
-  .about__section__left-column--benefit-list--item {
+  .about__item {
     font-size: 16px;
     line-height: 16px;
     width: 100%;
   }
 }
 @media only screen and (max-width: 576px) {
-  .about__section__left-column--benefit-list--item {
+  .about__item {
     font-size: 12px;
     line-height: 12px;
     width: 100%;
   }
 }
-.about__section__left-column--benefit-list--item-checkmark {
+.about__check {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1132,43 +1088,42 @@ header {
   border-radius: 50%;
   flex-shrink: 0;
 }
-.about__section__left-column--benefit-list--item-checkmark img {
+.about__check img {
   width: 20px;
   height: 20px;
   display: block;
 }
 @media only screen and (max-width: 992px) {
-  .about__section__left-column--benefit-list--item-checkmark {
+  .about__check {
     width: 24px;
     height: 24px;
   }
-  .about__section__left-column--benefit-list--item-checkmark img {
+  .about__check img {
     width: 18px;
     height: 18px;
   }
 }
 @media only screen and (max-width: 576px) {
-  .about__section__left-column--benefit-list--item-checkmark {
+  .about__check {
     width: 20px;
     height: 20px;
   }
-  .about__section__left-column--benefit-list--item-checkmark img {
+  .about__check img {
     width: 16px;
     height: 16px;
   }
 }
 @media only screen and (max-width: 375px) {
-  .about__section__left-column--benefit-list--item-checkmark {
+  .about__check {
     width: 18px;
     height: 18px;
   }
-  .about__section__left-column--benefit-list--item-checkmark img {
+  .about__check img {
     width: 14px;
     height: 14px;
   }
 }
-
-.about__section__right-column {
+.about__right {
   width: 596px;
   height: 624px;
   border-radius: 16px;
@@ -1181,63 +1136,62 @@ header {
   box-sizing: border-box;
 }
 @media only screen and (max-width: 1369px) {
-  .about__section__right-column {
-    width: 588;
-    height: 615;
+  .about__right {
+    width: 588px;
+    height: 615px;
   }
 }
 @media only screen and (max-width: 1280px) {
-  .about__section__right-column {
+  .about__right {
     width: 48%;
   }
 }
 @media only screen and (max-width: 1200px) {
-  .about__section__right-column {
+  .about__right {
     width: 50%;
   }
 }
 @media only screen and (max-width: 1064px) {
-  .about__section__right-column {
+  .about__right {
     width: 50%;
   }
 }
 @media only screen and (max-width: 992px) {
-  .about__section__right-column {
+  .about__right {
     width: 100%;
     margin: 0 auto;
     gap: 20px;
-    justify-items: center;
     align-items: center;
     justify-content: center;
   }
 }
 @media only screen and (max-width: 768px) {
-  .about__section__right-column {
+  .about__right {
     min-height: 400px;
     gap: 16px;
   }
 }
 @media only screen and (max-width: 576px) {
-  .about__section__right-column {
+  .about__right {
     height: 500px;
   }
 }
 @media only screen and (max-width: 480px) {
-  .about__section__right-column {
+  .about__right {
     height: 500px;
   }
 }
 @media only screen and (max-width: 375px) {
-  .about__section__right-column {
+  .about__right {
     height: 300px;
   }
 }
 @media only screen and (max-width: 320px) {
-  .about__section__right-column {
+  .about__right {
     height: 200px;
   }
 }
-.about__section__right-column::before {
+.about__right::before {
   content: "";
   position: absolute;
   top: 0;
@@ -1251,7 +1205,7 @@ header {
   transform: scaleX(-1);
   z-index: -1;
 }
-.about__section__right-column .about__section__right-column--img_1 {
+.about__img-1 {
   position: absolute;
   top: 24px;
   left: 18px;
@@ -1259,18 +1213,18 @@ header {
   backdrop-filter: blur(10px);
 }
 @media only screen and (max-width: 576px) {
-  .about__section__right-column .about__section__right-column--img_1 {
+  .about__img-1 {
     width: 240px;
   }
 }
 @media only screen and (max-width: 576px) {
-  .about__section__right-column .about__section__right-column--img_1 {
+  .about__img-1 {
     width: 170px;
     top: 12px;
     left: 12px;
   }
 }
-.about__section__right-column .about__section__right-column--img_2 {
+.about__img-2 {
   position: absolute;
   bottom: 24px;
   right: 24px;
@@ -1278,19 +1232,19 @@ header {
   backdrop-filter: blur(10px);
 }
 @media only screen and (max-width: 576px) {
-  .about__section__right-column .about__section__right-column--img_2 {
+  .about__img-2 {
     width: 210px;
   }
 }
 @media only screen and (max-width: 375px) {
-  .about__section__right-column .about__section__right-column--img_2 {
+  .about__img-2 {
     width: 150px;
     bottom: 12px;
     right: 12px;
   }
 }
 
-.contact__section {
+.contact {
   background-color: #763CEA;
   display: flex;
   flex-direction: row;
@@ -1300,48 +1254,47 @@ header {
   gap: 48px;
   isolation: isolate;
   width: 100%;
-  height: 388px;
+  height: auto;
+  min-height: 300px;
   margin-top: 88px;
   border-radius: 16px;
   box-sizing: border-box;
-  height: auto;
-  min-height: 300px;
   position: relative;
 }
 @media only screen and (max-width: 1440px) {
-  .contact__section {
+  .contact {
     padding: 48px 64px;
     gap: 64px;
   }
 }
 @media only screen and (max-width: 1369px) {
-  .contact__section {
+  .contact {
     padding: 40px 56px;
     gap: 40px;
   }
 }
 @media only screen and (max-width: 1280px) {
-  .contact__section {
+  .contact {
     padding: 40px 48px;
     gap: 40px;
   }
 }
 @media only screen and (max-width: 1200px) {
-  .contact__section {
+  .contact {
     padding: 32px 40px;
     gap: 32px;
     margin-top: 72px;
   }
 }
 @media only screen and (max-width: 1064px) {
-  .contact__section {
+  .contact {
     padding: 32px;
     gap: 32px;
     margin-top: 64px;
   }
 }
 @media only screen and (max-width: 992px) {
-  .contact__section {
+  .contact {
     flex-direction: column;
     padding: 40px 32px;
     gap: 32px;
@@ -1349,170 +1302,168 @@ header {
   }
 }
 @media only screen and (max-width: 768px) {
-  .contact__section {
+  .contact {
     padding: 32px 24px;
     gap: 28px;
     margin-top: 48px;
   }
 }
 @media only screen and (max-width: 640px) {
-  .contact__section {
+  .contact {
     padding: 28px 20px;
     gap: 24px;
     margin-top: 40px;
   }
 }
 @media only screen and (max-width: 576px) {
-  .contact__section {
+  .contact {
     padding: 24px 16px;
     gap: 20px;
     margin-top: 32px;
   }
 }
 @media only screen and (max-width: 480px) {
-  .contact__section {
+  .contact {
     padding: 20px 16px;
     gap: 16px;
     margin-top: 28px;
   }
 }
 @media only screen and (max-width: 375px) {
-  .contact__section {
+  .contact {
     padding: 16px 12px;
     gap: 16px;
     margin-top: 24px;
   }
 }
 @media only screen and (max-width: 320px) {
-  .contact__section {
+  .contact {
     padding: 12px 10px;
     gap: 12px;
     margin-top: 20px;
   }
 }
-.contact__section .element-1 {
+.contact .el1 {
   position: absolute;
   z-index: -1;
   bottom: 0;
   left: 0;
 }
-.contact__section .element-2 {
+.contact .el2 {
   position: absolute;
   z-index: -1;
   top: 0;
   right: 380px;
 }
 @media only screen and (max-width: 768px) {
-  .contact__section .element-2 {
+  .contact .el2 {
     right: 50px;
   }
 }
 @media only screen and (max-width: 640px) {
-  .contact__section .element-2 {
+  .contact .el2 {
     right: 0;
   }
 }
-.contact__section .element-3 {
+.contact .el3 {
   position: absolute;
   z-index: -1;
   bottom: 0;
   right: 0;
 }
-.contact__section .contact__section_left-content {
+.contact .contact-left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 16px;
   width: 572px;
   margin: 0;
   flex-shrink: 0;
 }
 @media only screen and (max-width: 1200px) {
-  .contact__section .contact__section_left-content {
+  .contact .contact-left {
     width: 50%;
     gap: 14px;
   }
 }
 @media only screen and (max-width: 1064px) {
-  .contact__section .contact__section_left-content {
+  .contact .contact-left {
     width: 55%;
     gap: 12px;
   }
 }
 @media only screen and (max-width: 992px) {
-  .contact__section .contact__section_left-content {
+  .contact .contact-left {
     width: 100%;
     gap: 16px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .contact__section .contact__section_left-content {
+  .contact .contact-left {
     gap: 14px;
   }
 }
 @media only screen and (max-width: 576px) {
-  .contact__section .contact__section_left-content {
+  .contact .contact-left {
     gap: 12px;
   }
 }
 @media only screen and (max-width: 375px) {
-  .contact__section .contact__section_left-content {
+  .contact .contact-left {
     gap: 10px;
   }
 }
-.contact__section .contact__section_left-content h2 {
+.contact .contact-left h2 {
   font-family: "RethinkSans";
-  font-style: normal;
   font-weight: 700;
   font-size: 64px;
   line-height: 64px;
   width: 100%;
   letter-spacing: -0.04em;
-  color: #ffffff;
+  color: #fff;
 }
 @media only screen and (max-width: 1369px) {
-  .contact__section .contact__section_left-content h2 {
+  .contact .contact-left h2 {
     font-size: calc(60 / 1440 * 100vw);
     line-height: calc(60 / 1440 * 100vw);
   }
 }
 @media only screen and (max-width: 992px) {
-  .contact__section .contact__section_left-content h2 {
+  .contact .contact-left h2 {
     font-size: 50px;
     line-height: 50px;
     width: 80%;
   }
 }
-.contact__section .contact__section_left-content p {
+.contact .contact-left p {
   font-family: "RethinkSans";
-  font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 30px;
-  color: #ffffff;
+  color: #fff;
   opacity: 0.7;
   width: 100%;
 }
 @media only screen and (max-width: 1369px) {
-  .contact__section .contact__section_left-content p {
+  .contact .contact-left p {
     font-size: 19px;
     line-height: 29px;
   }
 }
 @media only screen and (max-width: 1280px) {
-  .contact__section .contact__section_left-content p {
+  .contact .contact-left p {
     font-size: 16px;
     line-height: 26px;
   }
 }
 @media only screen and (max-width: 992px) {
-  .contact__section .contact__section_left-content p {
+  .contact .contact-left p {
     font-size: 17px;
     line-height: 23px;
   }
 }
-.contact__section .contact__section_right-content {
+.contact .contact-right {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -1522,90 +1473,84 @@ header {
   gap: 16px;
   isolation: isolate;
   width: 100%;
-  height: 292px;
+  height: auto;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.04);
   box-shadow: 0px 8.93px 9.86px rgba(10, 13, 20, 0.05), 0px 1px 2px rgba(10, 13, 20, 0.03), inset -8px -13px 42px rgba(255, 255, 255, 0.35), inset 8px 11px 16px rgba(255, 255, 255, 0.12);
   border-radius: 16px;
-  height: auto;
 }
 @media only screen and (max-width: 1200px) {
-  .contact__section .contact__section_right-content {
+  .contact .contact-right {
     padding: 28px;
     gap: 14px;
   }
 }
 @media only screen and (max-width: 1064px) {
-  .contact__section .contact__section_right-content {
+  .contact .contact-right {
     padding: 24px;
     gap: 12px;
   }
 }
 @media only screen and (max-width: 992px) {
-  .contact__section .contact__section_right-content {
+  .contact .contact-right {
     width: 100%;
     padding: 32px;
     gap: 16px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .contact__section .contact__section_right-content {
+  .contact .contact-right {
     padding: 28px;
     gap: 14px;
   }
 }
 @media only screen and (max-width: 576px) {
-  .contact__section .contact__section_right-content {
+  .contact .contact-right {
     padding: 24px;
     gap: 12px;
   }
 }
 @media only screen and (max-width: 480px) {
-  .contact__section .contact__section_right-content {
+  .contact .contact-right {
     padding: 20px;
     gap: 10px;
   }
 }
 @media only screen and (max-width: 375px) {
-  .contact__section .contact__section_right-content {
+  .contact .contact-right {
     padding: 16px;
     gap: 8px;
   }
 }
 @media only screen and (max-width: 320px) {
-  .contact__section .contact__section_right-content {
+  .contact .contact-right {
     padding: 12px;
     gap: 6px;
   }
 }
-.contact__section .contact__section_right-content .contact__section_right-content--waitlist-form {
+.contact .contact-right .form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   width: 100%;
   gap: 24px;
 }
 @media only screen and (max-width: 576px) {
-  .contact__section .contact__section_right-content .contact__section_right-content--waitlist-form {
+  .contact .contact-right .form {
     gap: 20px;
   }
 }
 @media only screen and (max-width: 375px) {
-  .contact__section .contact__section_right-content .contact__section_right-content--waitlist-form {
+  .contact .contact-right .form {
     gap: 16px;
   }
 }
-.contact__section .contact__section_right-content .contact__section_right-content--waitlist-form input {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.contact .contact-right .form input {
   padding: 14px 10px 14px 12px;
   gap: 8px;
-  caret-color: #ffffff;
-  color: #ffffff;
+  caret-color: #fff;
+  color: #fff;
   width: 100%;
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1613,29 +1558,28 @@ header {
   border-radius: 10px;
   font-size: 16px;
 }
-.contact__section .contact__section_right-content .contact__section_right-content--waitlist-form input:focus {
+.contact .contact-right .form input:focus {
   outline: none;
   border: 3px solid rgba(255, 255, 255, 0.2);
 }
-.contact__section .contact__section_right-content .contact__section_right-content--waitlist-form input::placeholder {
+.contact .contact-right .form input::placeholder {
   color: rgba(255, 255, 255, 0.6);
   opacity: 1;
 }
 @media only screen and (max-width: 576px) {
-  .contact__section .contact__section_right-content .contact__section_right-content--waitlist-form input {
+  .contact .contact-right .form input {
     font-size: 15px;
     padding: 12px 10px;
   }
 }
 @media only screen and (max-width: 375px) {
-  .contact__section .contact__section_right-content .contact__section_right-content--waitlist-form input {
+  .contact .contact-right .form input {
     font-size: 14px;
     padding: 10px 8px;
   }
 }
-.contact__section .contact__section_right-content .contact__section_right-content--waitlist-form button {
+.contact .contact-right .form .btn {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 14px;
@@ -1645,58 +1589,56 @@ header {
   font-weight: 500;
   width: 100%;
   height: 48px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 12px;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.contact__section .contact__section_right-content .contact__section_right-content--waitlist-form button:hover {
+.contact .contact-right .form .btn:hover {
   background-color: rgb(229.5, 229.5, 229.5);
 }
 @media only screen and (max-width: 576px) {
-  .contact__section .contact__section_right-content .contact__section_right-content--waitlist-form button {
+  .contact .contact-right .form .btn {
     height: 44px;
     font-size: 13px;
   }
 }
 @media only screen and (max-width: 375px) {
-  .contact__section .contact__section_right-content .contact__section_right-content--waitlist-form button {
+  .contact .contact-right .form .btn {
     height: 40px;
     font-size: 12px;
   }
 }
-.contact__section .contact__section_right-content .contact__section_right-content--privacy-text {
+.contact .contact-right .privacy {
   font-family: "RethinkSans";
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  align-items: center;
   text-align: center;
   color: rgba(255, 255, 255, 0.8);
   width: 100%;
 }
 @media only screen and (max-width: 576px) {
-  .contact__section .contact__section_right-content .contact__section_right-content--privacy-text {
+  .contact .contact-right .privacy {
     font-size: 15px;
     line-height: 22px;
   }
 }
 @media only screen and (max-width: 480px) {
-  .contact__section .contact__section_right-content .contact__section_right-content--privacy-text {
+  .contact .contact-right .privacy {
     font-size: 14px;
     line-height: 20px;
   }
 }
 @media only screen and (max-width: 375px) {
-  .contact__section .contact__section_right-content .contact__section_right-content--privacy-text {
+  .contact .contact-right .privacy {
     font-size: 13px;
     line-height: 18px;
   }
 }
 @media only screen and (max-width: 320px) {
-  .contact__section .contact__section_right-content .contact__section_right-content--privacy-text {
+  .contact .contact-right .privacy {
     font-size: 12px;
     line-height: 16px;
   }
