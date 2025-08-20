@@ -271,6 +271,10 @@
     left: 18px;
     width: 276px;
     backdrop-filter: blur(10px);
+    background-color: hsla(0, 0%, 100%, .2);
+    box-shadow: inset -8px -13px 32px 0 hsla(0, 0%, 100%, .45), inset 8px 11px 32px 0 hsla(0, 0%, 100%, .45), 0 8.93px 9.86px 0 rgba(10, 13, 20, .05);
+    border-radius: 16px;
+    border: 1px solid hsla(0, 0%, 100%, .3);
     @include breakpoint(mobile-lg) {
       width: 240px;
     }
@@ -286,6 +290,10 @@
     right: 24px;
     width: 252px;
     backdrop-filter: blur(10px);
+    background-color: hsla(0, 0%, 100%, .2);
+    box-shadow: inset -8px -13px 32px 0 hsla(0, 0%, 100%, .45), inset 8px 11px 32px 0 hsla(0, 0%, 100%, .45), 0 8.93px 9.86px 0 rgba(10, 13, 20, .05);
+    border-radius: 16px;
+    border: 1px solid hsla(0, 0%, 100%, .3);
     @include breakpoint(mobile-lg) {
       width: 210px;
     }

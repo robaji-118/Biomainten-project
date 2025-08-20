@@ -248,7 +248,7 @@ header {
   bottom: 0;
   z-index: -1;
   width: 100%;
-  height: 820px;
+  height: calc(100% + 72px);
   overflow: hidden;
 }
 @media only screen and (max-width: 768px) {
@@ -302,9 +302,14 @@ header {
 .hero__elements .hero__element {
   position: absolute;
   backdrop-filter: blur(10px);
+  box-shadow: inset -8px -13px 32px 0 hsla(0, 0%, 100%, 0.45), inset 8px 11px 32px 0 hsla(0, 0%, 100%, 0.45), 0 8.93px 9.86px 0 rgba(10, 13, 20, 0.05);
+  background-color: hsla(0, 0%, 100%, 0.2);
+  border: 1px solid hsla(0, 0%, 100%, 0.3);
+  border-radius: 16px;
   z-index: 2;
 }
 .hero__elements .hero__element--1 {
+  width: 220px;
   right: 56px;
   bottom: 337px;
   height: auto;
@@ -332,6 +337,7 @@ header {
   }
 }
 .hero__elements .hero__element--2 {
+  width: 460px;
   bottom: 56px;
   right: 56px;
 }
@@ -397,7 +403,7 @@ header {
   font-weight: 600;
   font-size: 88px;
   line-height: 88px;
-  letter-spacing: -0.02em;
+  letter-spacing: -1, 76em;
   color: #171938;
   text-align: left;
 }
@@ -1211,6 +1217,10 @@ header {
   left: 18px;
   width: 276px;
   backdrop-filter: blur(10px);
+  background-color: hsla(0, 0%, 100%, 0.2);
+  box-shadow: inset -8px -13px 32px 0 hsla(0, 0%, 100%, 0.45), inset 8px 11px 32px 0 hsla(0, 0%, 100%, 0.45), 0 8.93px 9.86px 0 rgba(10, 13, 20, 0.05);
+  border-radius: 16px;
+  border: 1px solid hsla(0, 0%, 100%, 0.3);
 }
 @media only screen and (max-width: 576px) {
   .about__img-1 {
@@ -1230,6 +1240,10 @@ header {
   right: 24px;
   width: 252px;
   backdrop-filter: blur(10px);
+  background-color: hsla(0, 0%, 100%, 0.2);
+  box-shadow: inset -8px -13px 32px 0 hsla(0, 0%, 100%, 0.45), inset 8px 11px 32px 0 hsla(0, 0%, 100%, 0.45), 0 8.93px 9.86px 0 rgba(10, 13, 20, 0.05);
+  border-radius: 16px;
+  border: 1px solid hsla(0, 0%, 100%, 0.3);
 }
 @media only screen and (max-width: 576px) {
   .about__img-2 {
@@ -1476,7 +1490,7 @@ header {
   height: auto;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.04);
-  box-shadow: 0px 8.93px 9.86px rgba(10, 13, 20, 0.05), 0px 1px 2px rgba(10, 13, 20, 0.03), inset -8px -13px 42px rgba(255, 255, 255, 0.35), inset 8px 11px 16px rgba(255, 255, 255, 0.12);
+  box-shadow: inset -8px -13px 32px 0 hsla(0, 0%, 100%, 0.45), inset 8px 11px 32px 0 hsla(0, 0%, 100%, 0.45), 0 8.93px 9.86px 0 rgba(10, 13, 20, 0.05);
   border-radius: 16px;
 }
 @media only screen and (max-width: 1200px) {
